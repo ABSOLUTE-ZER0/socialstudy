@@ -1,0 +1,3 @@
+make header icons clickable => change into fontawesome icons?
+
+First finish designing pages. Think about linking them afterwards
