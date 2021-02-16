@@ -4,3 +4,6 @@ notice board post input might contain images or videos so accoding to that write
 
 icons and images are hard to find. so im using dummy images for the time being.
 
+Study material and syllabus of Institute/subject tab is not shown so im leaving it after creating the button
+Register of Institute/Event tab is not shown so im leaving it after creating the button
+View profile of Institute/people tab is not shown so im leaving it after creating the button

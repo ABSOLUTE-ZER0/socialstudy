@@ -14,7 +14,6 @@
           <h2  style="text-align: left;">Description</h2>
           <p style="text-align: left;">Some detailed Description</p>
         </div>
-
       </b-row>
 
 
@@ -59,13 +58,8 @@
           </div>
         </b-row>
         </div>
-
       </b-col>
       </b-row>
-
-
-
-
     </b-container>
 
   </div>

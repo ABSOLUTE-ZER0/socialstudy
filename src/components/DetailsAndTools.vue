@@ -96,8 +96,7 @@
       return {
         pageName: "MyProfile",
         mainProps: {
-          blank: true,
-          blankColor: '#777',
+          src: "https://placekitten.com/1000/300",
           width: 130,
           height: 130,
           class: 'profile-img'

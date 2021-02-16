@@ -3,6 +3,7 @@
     <Header v-on:changeSite="updateSite($event)" />
     <Options :siteNameProp="siteName" v-on:changeSite="updateSite($event);changePage()" v-if="options.find(check)==siteName" />
     <Profile v-if="siteName == 'MyProfile'" />
+    <Institute />
   </div>
 </template>
 
@@ -10,13 +11,14 @@
   import Header from "../components/Header";
   import Options from "../components/Options";
   import Profile from "../components/Profile";
+  import Institute from "../components/Institute";
 
 
 
   export default {
     data() {
       return {
-        siteName: 'NoticeBoard',
+        siteName: 'Institute',
         options: ["NoticeBoard", "Library"]
 
       }
@@ -24,7 +26,8 @@
     components: {
       Header,
       Options,
-      Profile
+      Profile,
+      Institute
     },
     methods: {
       updateSite(newValue) {
