@@ -16,19 +16,19 @@
         <b-col class="options" cols="6">
           <b-navbar style="text-align:center" toggleable="lg">
             <b-navbar-nav>
-              <b-nav-item @click="pageName='NoticeBoard';changePage()" class="nav-item">
+              <b-nav-item @click="pageName='NoticeBoard';changePage()" class="navitem">
                 <b-icon class="icon" icon="clipboard" font-scale="3"></b-icon>Notice Board
               </b-nav-item>
 
-              <b-nav-item @click="pageName='Library';changePage()" class="nav-item">
+              <b-nav-item @click="pageName='Library';changePage()" class="navitem">
                 <b-icon class="icon" icon="book" font-scale="3"></b-icon>Library
               </b-nav-item>
 
-              <b-nav-item @click="pageName='Institute';changePage()" class="nav-item">
+              <b-nav-item @click="pageName='Institute';changePage()" class="navitem">
                 <b-icon class="icon" icon="building" font-scale="3"> </b-icon>Institute
               </b-nav-item>
 
-              <b-nav-item @click="pageName='Connections';changePage()" class="nav-item">
+              <b-nav-item @click="pageName='Connections';changePage()" class="navitem">
                 <b-icon class="icon" icon="person-plus" font-scale="3"></b-icon>Connections
               </b-nav-item>
             </b-navbar-nav>
@@ -70,10 +70,10 @@
     font-size: 3em !important;
   }
 
-
-  .options{
-    display: flex;
+  .navitem{
+    margin: 0 5%;
   }
+
   .input-group-prepend {
     border-top-left-radius: 5em !important;
     border-bottom-left-radius: 5em !important;
@@ -90,7 +90,7 @@
   }
 
   .icon {
-    width: 100%;
+    width: 100% !important;
   }
 
   .icon1 {
