@@ -1,9 +1,9 @@
 <template>
-<div>
-<b-row style="padding: 1em" class="comp">
+  <div>
+    <b-row style="padding: 1em" class="comp">
       <b-col style="text-align: center; margin-right: 2em" cols="12" md="auto">
         <b-row>
-          <b-img style="margin-bottom: 1em"  v-bind="mainProps" rounded="circle" alt="Circle image"></b-img>
+          <b-img style="margin-bottom: 1em" v-bind="mainProps" rounded="circle" alt="Circle image"></b-img>
         </b-row>
         <b-button variant="link" @click="pageName='MyProfile';changePage()">My Profile </b-button>
       </b-col>
@@ -15,58 +15,59 @@
       </b-col>
     </b-row>
     <b-row class="comp">
-      <b-row>
-        <h4 style="margin: 2em; font-weight: bold; margin-bottom: 0;margin-top: 1em;">Tools</h4>
-      </b-row>
-      <b-row>
-        <b-col>
-          <b-card-group deck>
-            <b-card class="tools-img" img-src="https://placekitten.com/1000/300" img-alt="Card image" img-top>
-              <b-card-text>
-                Start Live Class
-              </b-card-text>
-            </b-card>
+      <b-col>
+        <b-row>
+          <h4 style="margin: 2em; font-weight: bold; margin-bottom: 0;margin-top: 1em;">Tools</h4>
+        </b-row>
+        <b-row>
+          <b-col>
 
-            <b-card class="tools-img" img-src="https://placekitten.com/1000/300" img-alt="Card image" img-top>
-              <b-card-text>
-                File Sharing
-              </b-card-text>
-            </b-card>
-            <b-card class="tools-img" img-src="https://placekitten.com/1000/300" img-alt="Card image" img-top>
-              <b-card-text>
-                Assignment
-              </b-card-text>
-            </b-card>
-            <b-card class="tools-img" img-src="https://placekitten.com/1000/300" img-alt="Card image" img-top>
-              <b-card-text>
-                Manage Group
-              </b-card-text>
-            </b-card>
-            <b-card class="tools-img" img-src="https://placekitten.com/1000/300" img-alt="Card image" img-top>
-              <b-card-text>
-                Attendance
-              </b-card-text>
-            </b-card>
-            <b-card class="tools-img" img-src="https://placekitten.com/1000/300" img-alt="Card image" img-top>
-              <b-card-text>
-                Report Card
-              </b-card-text>
-            </b-card>
-          </b-card-group>
-        </b-col>
-      </b-row>
+            <b-navbar style="margin-top: 2em">
+              <b-navbar-nav>
+                <b-nav-item class="tool" @click="pageName='NoticeBoard';changePage()">
+                  <b-icon class="icon" icon="clipboard" font-scale="4"></b-icon>Start Live Class
+                </b-nav-item>
+                <b-nav-item class="tool" @click="pageName='Library';changePage()">
+                  <b-icon class="icon" icon="book" font-scale="4"></b-icon>File Sharing
+                </b-nav-item>
+              </b-navbar-nav>
+            </b-navbar>
+
+            <b-navbar>
+              <b-navbar-nav>
+                <b-nav-item class="tool" @click="pageName='Institute';changePage()">
+                  <b-icon class="icon" icon="building" font-scale="4"> </b-icon>Assignment
+                </b-nav-item>
+                <b-nav-item class="tool" @click="pageName='Connections';changePage()">
+                  <b-icon class="icon" icon="person-plus" font-scale="4"></b-icon>Manage Group
+                </b-nav-item>
+              </b-navbar-nav>
+            </b-navbar>
+
+            <b-navbar>
+              <b-navbar-nav>
+                <b-nav-item class="tool" @click="pageName='NoticeBoard';changePage()">
+                  <b-icon class="icon" icon="clipboard" font-scale="4"></b-icon>Attendance
+                </b-nav-item>
+                <b-nav-item class="tool" @click="pageName='Library';changePage()">
+                  <b-icon class="icon" icon="book" font-scale="4"></b-icon>Report Card
+                </b-nav-item>
+              </b-navbar-nav>
+            </b-navbar>
+
+          </b-col>
+        </b-row>
+      </b-col>
     </b-row>
 
-</div>
-    
+  </div>
+
 </template>
 
 
 <style scoped>
-
-    .tools-img {
+  .tools-img {
     min-width: 8em;
-    max-width: 8em;
     margin: 1em 3em !important;
     border: 0;
     text-align: center;
@@ -78,23 +79,23 @@
     margin: 1em;
   }
 
-    .card-body {
-    padding: 0;
+  .tool {
+    text-align: center;
+    margin: 1em 2em;
   }
 
-  .card-img-top {
-    min-height: 7.5em !important;
-    border-radius: 1em;
-
+  .icon {
+    width: 100%;
   }
+  
 </style>
 
 <script>
-export default {
+  export default {
     data() {
       return {
-          pageName: "MyProfile",
-          mainProps: {
+        pageName: "MyProfile",
+        mainProps: {
           blank: true,
           blankColor: '#777',
           width: 130,
@@ -103,11 +104,11 @@ export default {
         }
       }
     },
-    methods:{
-      changePage: function(){
+    methods: {
+      changePage: function () {
         this.$emit("changeSite", this.pageName)
       }
     }
 
-}
+  }
 </script>

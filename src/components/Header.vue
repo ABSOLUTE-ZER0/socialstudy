@@ -70,9 +70,6 @@
     font-size: 3em !important;
   }
 
-  .options {
-    display: inline-flex !important;
-  }
 
 
   .input-group-prepend {
