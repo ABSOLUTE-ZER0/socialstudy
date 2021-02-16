@@ -1,0 +1,6 @@
+Online friends should be sent as an array or json obj and v-for needs to be used on the component.
+
+notice board post input might contain images or videos so accoding to that write a function to change the vale from false to true. New feeds show be implemented the same as online friends. (v-for)
+
+icons and images are hard to find. so im using dummy images for the time being.
+

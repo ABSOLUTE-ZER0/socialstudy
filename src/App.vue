@@ -20,8 +20,5 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-body{
-  background-color: rgb(224, 224, 224) !important;
 
-}
 </style>

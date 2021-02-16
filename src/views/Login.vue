@@ -108,6 +108,9 @@
 </template>
 
 <style scoped>
+body{
+  background-color: rgb(255, 255, 255);
+}
 .main-div{
   margin: 4%;
   margin-left: 7%;
