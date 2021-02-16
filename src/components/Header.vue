@@ -14,8 +14,8 @@
         </b-col>
 
         <b-col class="options" cols="6">
-          <b-navbar style="text-align:center" toggleable="lg">
-            <b-navbar-nav>
+          <b-navbar style="text-align:center">
+            <b-navbar-nav style="width:100%">
               <b-nav-item @click="pageName='NoticeBoard';changePage()" class="navitem">
                 <b-icon class="icon" icon="clipboard" font-scale="3"></b-icon>Notice Board
               </b-nav-item>
@@ -63,7 +63,9 @@
     max-height: 10em;
   }
 
-
+.navbar-nav{
+  width: 100%;
+}
 
   h1 {
     color: rgb(0, 203, 218);
@@ -81,6 +83,10 @@
 
   .searchbar-div {
     width: 15em;
+  }
+
+  .navbar{
+
   }
 
   .searchbar {

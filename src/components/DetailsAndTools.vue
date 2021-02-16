@@ -25,21 +25,10 @@
             <b-navbar style="margin-top: 1em">
               <b-navbar-nav>
                 <b-nav-item class="tool" @click="pageName='';changePage()">
-                  <b-icon class="icon" icon="clipboard" font-scale="4"></b-icon>Start Live Class
+                  <i class="fas fa-4x icon fa-video"></i>Start Live Class
                 </b-nav-item>
                 <b-nav-item class="tool" @click="pageName='';changePage()">
-                  <b-icon class="icon" icon="book" font-scale="4"></b-icon>File Sharing
-                </b-nav-item>
-              </b-navbar-nav>
-            </b-navbar>
-
-            <b-navbar>
-              <b-navbar-nav>
-                <b-nav-item class="tool" @click="pageName='';changePage()">
-                  <b-icon class="icon" icon="building" font-scale="4"> </b-icon>Assignment
-                </b-nav-item>
-                <b-nav-item class="tool" @click="pageName='';changePage()">
-                  <b-icon class="icon" icon="person-plus" font-scale="4"></b-icon>Manage Group
+                  <i class="fas fa-4x icon fa-folder"></i>File Sharing
                 </b-nav-item>
               </b-navbar-nav>
             </b-navbar>
@@ -47,10 +36,21 @@
             <b-navbar>
               <b-navbar-nav>
                 <b-nav-item class="tool" @click="pageName='';changePage()">
-                  <b-icon class="icon" icon="clipboard" font-scale="4"></b-icon>Attendance
+                  <i class="fas fa-4x icon fa-clipboard-check"></i>Assignment
                 </b-nav-item>
                 <b-nav-item class="tool" @click="pageName='';changePage()">
-                  <b-icon class="icon" icon="book" font-scale="4"></b-icon>Report Card
+                  <i class="fas fa-4x icon fa-users"></i>Manage Group
+                </b-nav-item>
+              </b-navbar-nav>
+            </b-navbar>
+
+            <b-navbar>
+              <b-navbar-nav>
+                <b-nav-item class="tool" @click="pageName='';changePage()">
+                  <i class="fas fa-4x icon fa-clipboard-list"></i>Attendance
+                </b-nav-item>
+                <b-nav-item class="tool" @click="pageName='';changePage()">
+                  <i class="fas fa-4x icon fa-file-alt"></i>Report Card
                 </b-nav-item>
               </b-navbar-nav>
             </b-navbar>
