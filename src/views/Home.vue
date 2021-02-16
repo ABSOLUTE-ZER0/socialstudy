@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header v-on:changeSite="updateSite($event)"  />
-    <NoticeBoard v-if="siteName == 'NoticeBoard'"/>
+    <NoticeBoard v-on:changeSite="updateSite($event)" v-if="siteName == 'NoticeBoard'"/>
     <Profile  v-if="siteName == 'MyProfile'" />
   </div>
 </template>

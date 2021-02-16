@@ -5,7 +5,7 @@
       <b-img class="profile-img" fluid src="https://placekitten.com/1000/300" rounded="circle" alt="Circle image"></b-img>
       <b-row>
       <b-col cols="4">
-      <b-row style="margin-top: 5em;" class="comp">
+      <b-row style="margin-top: 6em;" class="comp">
         <div class="desc">
           <h2 class="profile-name">Name</h2>
           <p>Year, Branch</p>

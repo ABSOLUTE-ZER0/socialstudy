@@ -1,3 +1,5 @@
+update friendslist and news feed input data tyoe
+
 make header icons clickable => change into fontawesome icons?
 
 First finish designing pages. Think about linking them afterwards
@@ -5,3 +7,5 @@ First finish designing pages. Think about linking them afterwards
 background for login page should be white
 
 Set proper routing for home page.
+
+

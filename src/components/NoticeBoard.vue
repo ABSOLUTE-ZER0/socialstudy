@@ -3,7 +3,7 @@
     <b-container fluid>
       <b-row>
           <b-col cols="3">
-            <Tools />
+            <Tools v-on:changeSite="updateSite($event);changePage()"/>
           </b-col>
 
         <b-col class="" cols="6">
@@ -105,12 +105,20 @@ import Tools from "./DetailsAndTools"
   export default {
     data() {
       return {
-
+        siteName: ""
       }
     },
     components: {
       StartPost,
       Tools
-    }
+    },
+  methods:{
+    updateSite(newValue){
+      this.siteName=newValue;
+    },
+      changePage: function(){
+        this.$emit("changeSite", this.siteName)
+      }
+  }
   }
 </script>

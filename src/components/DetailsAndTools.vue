@@ -3,9 +3,9 @@
 <b-row style="padding: 1em" class="comp">
       <b-col style="text-align: center; margin-right: 2em" cols="12" md="auto">
         <b-row>
-          <b-img v-bind="mainProps" rounded="circle" alt="Circle image"></b-img>
+          <b-img style="margin-bottom: 1em"  v-bind="mainProps" rounded="circle" alt="Circle image"></b-img>
         </b-row>
-        <a href="/">My Profile </a>
+        <b-button variant="link" @click="pageName='MyProfile';changePage()">My Profile </b-button>
       </b-col>
       <b-col>
         <p>Name</p>
@@ -66,6 +66,7 @@
 
     .tools-img {
     min-width: 8em;
+    max-width: 8em;
     margin: 1em 3em !important;
     border: 0;
     text-align: center;
@@ -92,6 +93,7 @@
 export default {
     data() {
       return {
+          pageName: "MyProfile",
           mainProps: {
           blank: true,
           blankColor: '#777',
@@ -99,6 +101,11 @@ export default {
           height: 130,
           class: 'profile-img'
         }
+      }
+    },
+    methods:{
+      changePage: function(){
+        this.$emit("changeSite", this.pageName)
       }
     }
 
