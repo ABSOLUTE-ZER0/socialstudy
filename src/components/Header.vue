@@ -71,7 +71,9 @@
   }
 
 
-
+  .options{
+    display: flex;
+  }
   .input-group-prepend {
     border-top-left-radius: 5em !important;
     border-bottom-left-radius: 5em !important;

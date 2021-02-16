@@ -22,12 +22,12 @@
         <b-row>
           <b-col>
 
-            <b-navbar style="margin-top: 2em">
+            <b-navbar style="margin-top: 1em">
               <b-navbar-nav>
-                <b-nav-item class="tool" @click="pageName='NoticeBoard';changePage()">
+                <b-nav-item class="tool" @click="pageName='';changePage()">
                   <b-icon class="icon" icon="clipboard" font-scale="4"></b-icon>Start Live Class
                 </b-nav-item>
-                <b-nav-item class="tool" @click="pageName='Library';changePage()">
+                <b-nav-item class="tool" @click="pageName='';changePage()">
                   <b-icon class="icon" icon="book" font-scale="4"></b-icon>File Sharing
                 </b-nav-item>
               </b-navbar-nav>
@@ -35,10 +35,10 @@
 
             <b-navbar>
               <b-navbar-nav>
-                <b-nav-item class="tool" @click="pageName='Institute';changePage()">
+                <b-nav-item class="tool" @click="pageName='';changePage()">
                   <b-icon class="icon" icon="building" font-scale="4"> </b-icon>Assignment
                 </b-nav-item>
-                <b-nav-item class="tool" @click="pageName='Connections';changePage()">
+                <b-nav-item class="tool" @click="pageName='';changePage()">
                   <b-icon class="icon" icon="person-plus" font-scale="4"></b-icon>Manage Group
                 </b-nav-item>
               </b-navbar-nav>
@@ -46,10 +46,10 @@
 
             <b-navbar>
               <b-navbar-nav>
-                <b-nav-item class="tool" @click="pageName='NoticeBoard';changePage()">
+                <b-nav-item class="tool" @click="pageName='';changePage()">
                   <b-icon class="icon" icon="clipboard" font-scale="4"></b-icon>Attendance
                 </b-nav-item>
-                <b-nav-item class="tool" @click="pageName='Library';changePage()">
+                <b-nav-item class="tool" @click="pageName='';changePage()">
                   <b-icon class="icon" icon="book" font-scale="4"></b-icon>Report Card
                 </b-nav-item>
               </b-navbar-nav>
@@ -87,7 +87,7 @@
   .icon {
     width: 100%;
   }
-  
+
 </style>
 
 <script>
