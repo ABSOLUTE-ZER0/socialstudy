@@ -3,7 +3,7 @@
     <Header v-on:changeSite="updateSite($event)" />
     <Options :siteNameProp="siteName" v-on:changeSite="updateSite($event);changePage()" v-if="options.find(check)==siteName" />
     <Profile v-if="siteName == 'MyProfile'" />
-    <Institute />
+    <Institute v-if="siteName == 'Institute'"/>
   </div>
 </template>
 
@@ -18,7 +18,7 @@
   export default {
     data() {
       return {
-        siteName: 'Institute',
+        siteName: 'NoticeBoard',
         options: ["NoticeBoard", "Library"]
 
       }

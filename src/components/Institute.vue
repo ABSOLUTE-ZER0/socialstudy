@@ -71,7 +71,7 @@
                     <h2 style="margin-top: 0.5em">{{ event.name }} </h2>
                     <h5>{{ event.type }}</h5>
                   </b-col>
-                  <b-col cols="3">
+                  <b-col cols="2">
                     <b-button variant="info" class="event-button">Register</b-button>
                   </b-col>
                 </div>
