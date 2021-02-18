@@ -9,6 +9,7 @@
         <b-col cols="9">
           <NoticeBoard v-if="siteNameProp == 'NoticeBoard'"/>
           <Library v-if="siteNameProp == 'Library'"/>
+          <Connections v-if="siteNameProp == 'Connections'"/>
         </b-col>
       </b-row>
     </b-container>
@@ -26,6 +27,7 @@
   import NoticeBoard from "./NoticeBoard"
   import Tools from "./DetailsAndTools"
   import Library from "./Library"
+  import Connections from "./Connections"
 
   export default {
     data() {
@@ -36,7 +38,8 @@
     components: {
       NoticeBoard,
       Tools,
-      Library
+      Library,
+      Connections
     },
     methods: {
       updateSite(newValue) {

@@ -19,7 +19,7 @@
     data() {
       return {
         siteName: 'NoticeBoard',
-        options: ["NoticeBoard", "Library"]
+        options: ["NoticeBoard", "Library", "Connections"]
 
       }
     },

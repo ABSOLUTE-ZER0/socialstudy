@@ -38,6 +38,7 @@
     background-color: white !important;
     border-radius: 2em;
     margin: 1em;
+    white-space: pre-wrap;
   }
 
   .post-profile-img {
@@ -60,6 +61,7 @@
   .post-profile-position {
     margin: 0;
   }
+  
 </style>
 
 
@@ -79,7 +81,7 @@
             branch: "Branch",
             place: "Place",
             profileSrc: "https://placekitten.com/1000/300",
-            text: "Some random text goes here",
+            text: "Some random text goes here.\nWith video",
             image: "",
             video: "https://www.youtube.com/embed/wrspWfZ52R8",
             hasVideo: true
@@ -91,7 +93,7 @@
             branch: "Branch",
             place: "Place",
             profileSrc: "https://placekitten.com/1000/300",
-            text: "Some random text goes here",
+            text: "Some random text goes here.\nWith Image",
             image: "https://picsum.photos/300/150/?image=41",
             video: "",
             hasVideo: false

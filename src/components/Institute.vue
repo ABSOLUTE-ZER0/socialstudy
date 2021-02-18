@@ -3,6 +3,7 @@
     <b-container fluid>
       <b-img class="cover-img" fluid src="https://placekitten.com/1000/300"></b-img>
       <b-row>
+
         <b-col cols="4">
           <b-row>
             <div class="group">
@@ -11,9 +12,8 @@
               </b-button>
             </div>
           </b-row>
-
-
         </b-col>
+
         <b-col cols="8">
           <b-row>
             <b-button @click="activeTab='About'" class="tab-button" variant="outline-primary">About</b-button>
@@ -25,18 +25,13 @@
             </b-button>
           </b-row>
 
-
-
-
           <div v-on="item = groupFilter">
-
 
             <div v-if="activeTab=='About'">
               <b-row style="margin-top: 0" class="comp">
                 <p class="about"> {{item.about}} </p>
               </b-row>
             </div>
-
 
             <div v-if="activeTab=='Subject'">
               <b-row v-for="sub in item.subject" :key="sub" class="comp">
@@ -57,9 +52,6 @@
               </b-row>
             </div>
 
-
-
-
             <div v-if="activeTab=='Event'">
               <b-row v-for="event in item.events" :key="event" class="comp">
                 <div class="event">
@@ -78,9 +70,6 @@
               </b-row>
             </div>
 
-
-
-
             <div v-if="activeTab=='People'">
               <b-row v-for="people in item.persons" :key="people" class="comp">
                 <b-col cols="8">
@@ -93,26 +82,16 @@
                   </b-card>
                 </b-col>
                 <b-col cols="4">
-                  <b-button @click="activeGroup='People'" class="people-button" variant="outline-primary">Syllabus
+                  <b-button class="people-button" variant="outline-primary">View Profile
                   </b-button>
                 </b-col>
               </b-row>
             </div>
 
-
-
-
-
           </div>
-
         </b-col>
       </b-row>
-
-
-
-
     </b-container>
-
   </div>
 </template>
 
