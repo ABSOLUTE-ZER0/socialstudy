@@ -68,7 +68,7 @@
             <div v-if="activeTab=='People'">
               <b-row v-for="people in item.persons" :key="people" class="comp">
                 <b-col cols="8">
-                  <CardImg3 margin="margin-top: -1em" :src="people.src" :name="people.name" :sub1="people.year" :sub2="people.group" :sub3="people.institute"/>
+                  <CardImg3 styles="margin-top: -1em" :src="people.src" :name="people.name" :sub1="people.year" :sub2="people.group" :sub3="people.institute"/>
                 </b-col>
                 <b-col cols="4">
                   <b-button class="people-button" variant="outline-primary">View Profile
@@ -138,22 +138,6 @@
   }
 
 
-  .subject-card {
-    margin: 1em 2em 0;
-    border: 0;
-    width: 100%;
-    border-radius: 0;
-  }
-
-  .card-img-left {
-    border: 0;
-    width: 5em;
-    height: 5em;
-    margin-top: 1.5em;
-    border-radius: 50%;
-  }
-
-
 
   .event {
     width: 100%;
@@ -172,14 +156,6 @@
   .event-button {
     width: 20em;
     margin-top: 2em;
-  }
-
-
-  .people-card {
-    margin: 1em 2em 0;
-    border: 0;
-    width: 100%;
-    border-radius: 0;
   }
 
 
