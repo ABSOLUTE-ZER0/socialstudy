@@ -19,43 +19,17 @@
         <b-row>
           <h4 style="margin: 2em; font-weight: bold; margin-bottom: 0;margin-top: 1em;">Tools</h4>
         </b-row>
+
         <b-row>
-          <b-col>
+          <Navitem v-on:changeSite="updateSite($event);changePage()" :items="navitems1" />
+        </b-row>
 
-            <b-navbar style="margin-top: 1em">
-              <b-navbar-nav>
-                <b-nav-item class="tool" @click="pageName='';changePage()">
-                  <i class="fas fa-4x icon fa-video"></i>Start Live Class
-                </b-nav-item>
-                <b-nav-item class="tool" @click="pageName='';changePage()">
-                  <i class="fas fa-4x icon fa-folder"></i>File Sharing
-                </b-nav-item>
-              </b-navbar-nav>
-            </b-navbar>
+        <b-row>
+          <Navitem v-on:changeSite="updateSite($event);changePage()" :items="navitems2" />
+        </b-row>
 
-            <b-navbar>
-              <b-navbar-nav>
-                <b-nav-item class="tool" @click="pageName='';changePage()">
-                  <i class="fas fa-4x icon fa-clipboard-check"></i>Assignment
-                </b-nav-item>
-                <b-nav-item class="tool" @click="pageName='';changePage()">
-                  <i class="fas fa-4x icon fa-users"></i>Manage Group
-                </b-nav-item>
-              </b-navbar-nav>
-            </b-navbar>
-
-            <b-navbar>
-              <b-navbar-nav>
-                <b-nav-item class="tool" @click="pageName='';changePage()">
-                  <i class="fas fa-4x icon fa-clipboard-list"></i>Attendance
-                </b-nav-item>
-                <b-nav-item class="tool" @click="pageName='';changePage()">
-                  <i class="fas fa-4x icon fa-file-alt"></i>Report Card
-                </b-nav-item>
-              </b-navbar-nav>
-            </b-navbar>
-
-          </b-col>
+        <b-row>
+          <Navitem v-on:changeSite="updateSite($event);changePage()" :items="navitems3" />
         </b-row>
       </b-col>
     </b-row>
@@ -83,17 +57,47 @@
     text-align: center;
     margin: 1em 2em;
   }
-
-  .icon {
-    width: 100%;
-  }
-
 </style>
 
 <script>
+  import Navitem from "./Navitem"
   export default {
     data() {
       return {
+        navitems1: [{
+            name: "Start Live Class",
+            pageName: "StartLiveClass",
+            imgclass: "fas fa-4x icon fa-video"
+          },
+          {
+            name: "File Sharing",
+            pageName: "FileSharing",
+            imgclass: "fas fa-4x icon fa-folder"
+          },
+
+        ],
+        navitems2: [{
+            name: "Assignment",
+            pageName: "Assignment",
+            imgclass: "fas fa-4x icon fa-clipboard-check"
+          }, {
+            name: "Manage Group",
+            pageName: "ManageGroup",
+            imgclass: "fas fa-4x icon fa-users"
+          },
+
+        ],
+        navitems3: [{
+            name: "Attendance",
+            pageName: "Attendance",
+            imgclass: "fas fa-4x icon fa-clipboard-list"
+          },
+          {
+            name: "Report Card",
+            pageName: "ReportCard",
+            imgclass: "fas fa-4x icon fa-file-alt"
+          },
+        ],
         pageName: "MyProfile",
         mainProps: {
           src: "https://placekitten.com/1000/300",
@@ -106,7 +110,13 @@
     methods: {
       changePage: function () {
         this.$emit("changeSite", this.pageName)
+      },
+      updateSite(newValue) {
+        this.pageName = newValue;
       }
+    },
+    components: {
+      Navitem
     }
 
   }

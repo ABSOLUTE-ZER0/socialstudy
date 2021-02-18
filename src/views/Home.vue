@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="background-color: rgb(236, 236, 236);">
     <Header v-on:changeSite="updateSite($event)" />
     <Options :siteNameProp="siteName" v-on:changeSite="updateSite($event);changePage()" v-if="options.find(check)==siteName" />
     <Profile v-if="siteName == 'MyProfile'" />
@@ -43,7 +43,4 @@
 </script>
 
 <style>
-  body {
-    background-color: rgb(236, 236, 236) !important;
-  }
 </style>
