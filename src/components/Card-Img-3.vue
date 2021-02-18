@@ -1,9 +1,9 @@
 <template>
   <b-card class="card" img-left :img-src="src">
-    <b-card-body style="margin-top:-1em" class="body">
+    <b-card-body :style="margin" >
       <b-card-title> {{name}} </b-card-title>
-      <b-card-sub-title class="mb-2"> {{designation}} | {{group}}</b-card-sub-title>
-      <b-card-sub-title class="mb-2"> {{institute}} </b-card-sub-title>
+      <b-card-sub-title class="mb-2"> {{sub1}} | {{sub2}}</b-card-sub-title>
+      <b-card-sub-title class="mb-2"> {{sub3}} </b-card-sub-title>
     </b-card-body>
   </b-card>
 </template>
@@ -21,7 +21,6 @@
     margin: 1em 2em 0;
     border: 0;
     width: 100%;
-    border-radius: 0;
   }
 </style>
 
@@ -30,10 +29,10 @@
     props: {
       name: String,
       src: String,
-      designation: String,
-      group: String,
-      institute: String
-
+      sub1: String,
+      sub2: String,
+      sub3: String,
+      margin: String
     }
   }
 </script>

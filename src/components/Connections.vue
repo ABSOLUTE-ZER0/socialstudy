@@ -39,7 +39,7 @@
     <div v-if="activeTab=='Faculty/Admin'">
       <b-row v-for="teacher in faculty" :key="teacher" class="comp">
         <b-col cols="8">
-          <CardImg3 :src="teacher.src" :name="teacher.name" :designation="teacher.designation" :group="teacher.group" :institute="teacher.institute" />
+          <CardImg3  margin="margin-top: -1em" :src="teacher.src" :name="teacher.name" :sub1="teacher.designation" :sub2="teacher.group" :sub3="teacher.institute" />
         </b-col>
         <b-col cols="4">
           <b-button class="faculty-button" variant="info">View Profile
@@ -51,7 +51,7 @@
     <div v-if="activeTab=='Friends'">
       <b-row v-for="friend in friends" :key="friend" class="comp">
         <b-col cols="8">
-          <CardImg3 :src="friend.src" :name="friend.name" :designation="friend.year" :group="friend.group" :institute="friend.institute" />
+          <CardImg3  margin="margin-top: -1em" :src="friend.src" :name="friend.name" :sub1="friend.year" :sub2="friend.group" :sub3="friend.institute" />
 
         </b-col>
         <b-col cols="4">

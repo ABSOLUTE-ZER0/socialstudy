@@ -36,12 +36,7 @@
             <div v-if="activeTab=='Subject'">
               <b-row v-for="sub in item.subject" :key="sub" class="comp">
                 <b-col cols="6">
-                  <b-card class="subject-card" img-left :img-src="sub.src">
-                    <b-card-body class="subject-body">
-                      <b-card-title> {{sub.name}} </b-card-title>
-                      <b-card-sub-title class="mb-2"> {{sub.year}} </b-card-sub-title>
-                    </b-card-body>
-                  </b-card>
+                  <CardImg :src="sub.src" :name="sub.name" :sub1="sub.year" />
                 </b-col>
                 <b-col cols="6">
                   <b-button @click="activeGroup='Event'" class="subject-button" variant="outline-primary">Study Material
@@ -73,13 +68,7 @@
             <div v-if="activeTab=='People'">
               <b-row v-for="people in item.persons" :key="people" class="comp">
                 <b-col cols="8">
-                  <b-card class="people-card" img-left :img-src="people.src">
-                    <b-card-body style="margin-top:-1em" class="people-body">
-                      <b-card-title> {{people.name}} </b-card-title>
-                      <b-card-sub-title class="mb-2"> {{people.year}} | {{people.group}}</b-card-sub-title>
-                      <b-card-sub-title class="mb-2"> {{people.institute}} </b-card-sub-title>
-                    </b-card-body>
-                  </b-card>
+                  <CardImg3 margin="margin-top: -1em" :src="people.src" :name="people.name" :sub1="people.year" :sub2="people.group" :sub3="people.institute"/>
                 </b-col>
                 <b-col cols="4">
                   <b-button class="people-button" variant="outline-primary">View Profile
@@ -204,6 +193,8 @@
 
 
 <script>
+  import CardImg from "./Card-Img"
+  import CardImg3 from "./Card-Img-3"
   export default {
     data() {
       return {
@@ -280,6 +271,10 @@
         });
         return final.content;
       },
+    },
+    components:{
+      CardImg,
+      CardImg3
     }
   }
 </script>

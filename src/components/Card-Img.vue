@@ -1,7 +1,7 @@
 <template>
   <b-card class="card" img-left :img-src="src">
-    <b-card-body style="margin-top:-1em" class="body">
-      <b-card-title> {{name}} </b-card-title>
+    <b-card-body class="body">
+      <b-card-title > {{name}} </b-card-title>
       <b-card-sub-title class="mb-2"> {{sub1}}</b-card-sub-title>
       <b-card-sub-title class="mb-2"> {{sub2}} </b-card-sub-title>
     </b-card-body>
@@ -21,7 +21,6 @@
     margin: 1em 2em 0;
     border: 0;
     width: 100%;
-    border-radius: 0;
   }
 </style>
 
@@ -31,7 +30,9 @@
       name: String,
       src: String,
       sub1: String,
-      sub2: String
+      sub2: String,
+      margin: String,
+
     }
   }
 </script>
