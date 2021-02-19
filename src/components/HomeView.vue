@@ -10,6 +10,7 @@
           <NoticeBoard v-if="siteNameProp == 'NoticeBoard'"/>
           <Library v-if="siteNameProp == 'Library'"/>
           <Connections v-if="siteNameProp == 'Connections'"/>
+          <ToolView :pageName="view" v-if="siteNameProp == 'ToolView'"/>
         </b-col>
       </b-row>
     </b-container>
@@ -28,26 +29,34 @@
   import Tools from "./DetailsAndTools"
   import Library from "./Library"
   import Connections from "./Connections"
+  import ToolView from "./ToolView"
+
 
   export default {
     data() {
       return {
         siteName: "NoticeBoard",
+        view: ""
       }
     },
     components: {
       NoticeBoard,
       Tools,
       Library,
-      Connections
+      Connections,
+      ToolView
     },
     methods: {
       updateSite(newValue) {
+        this.view = newValue;
+        newValue = "ToolView";
         this.siteName = newValue;
+
       },
-      changePage: function () {
+      changePage() {
         this.$emit("changeSite", this.siteName)
-      }
+      },
+
     },
     props:{
       siteNameProp: String

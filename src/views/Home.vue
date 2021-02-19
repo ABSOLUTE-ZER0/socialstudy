@@ -1,7 +1,7 @@
 <template>
   <div style="background-color: rgb(236, 236, 236); min-height: 100vh">
     <Header v-on:changeSite="updateSite($event)" />
-    <Options :siteNameProp="siteName" v-on:changeSite="updateSite($event);changePage()" v-if="options.find(check)==siteName" />
+    <HomeView :siteNameProp="siteName" v-on:changeSite="updateSite($event);changePage()" v-if="options.find(check)==siteName" />
     <Profile v-if="siteName == 'MyProfile'" />
     <Institute v-if="siteName == 'Institute'"/>
   </div>
@@ -9,7 +9,7 @@
 
 <script>
   import Header from "../components/Header";
-  import Options from "../components/Options";
+  import HomeView from "../components/HomeView";
   import Profile from "../components/Profile";
   import Institute from "../components/Institute";
 
@@ -19,13 +19,13 @@
     data() {
       return {
         siteName: 'NoticeBoard',
-        options: ["NoticeBoard", "Library", "Connections"]
+        options: ["NoticeBoard", "Library", "Connections", "ToolView"]
 
       }
     },
     components: {
       Header,
-      Options,
+      HomeView,
       Profile,
       Institute
     },
