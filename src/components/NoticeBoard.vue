@@ -1,11 +1,11 @@
 <template>
 
   <b-row>
-    <b-col class="" cols="8">
+    <b-col lg="8" cols="12">
       <StartPost />
       <div v-for="post in posts" :key="post.id" style="padding: 2em" class="comp">
         <b-row>
-          <b-col cols="12" md="auto">
+          <b-col cols="2" md="auto">
             <b-img class="post-profile-img" :src="post.profileSrc" rounded="circle" alt="Circle image">
             </b-img>
           </b-col>
@@ -15,18 +15,18 @@
             <p class="post-profile-place">{{post.place}}</p>
           </b-col>
         </b-row>
-        <b-row style="margin-top:1em">
+        <b-row class="post-text" style="margin-top:1em">
           <p>{{post.text}}</p>
         </b-row>
         <b-row style="margin-top:1em">
           <b-img class="post-img" :src="post.image"></b-img>
         </b-row>
-        <b-row v-if="post.hasVideo" style="margin-top:1em">
+        <b-row v-if="post.hasVideo" class="post-video" style="margin-top:1em">
           <b-embed :src="post.video"></b-embed>
         </b-row>
       </div>
     </b-col>
-    <b-col style="margin-top: 10em; margin-left: 4%" class="comp" cols="3">
+    <b-col style="margin-top: 10em; margin-left: 4%" class="comp d-none d-lg-block" cols="3">
       <Friends />
     </b-col>
   </b-row>
@@ -55,13 +55,25 @@
 
   .post-img {
     width: 100%;
-    margin: 0 2em;
   }
 
   .post-profile-position {
     margin: 0;
   }
-  
+
+  @media (max-width: 768px) {
+    .post-profile-img {
+      width: 5em !important;
+      height: 5em;
+      margin-top: 0 !important;
+    }
+    .post-text{
+      margin: 0 !important;
+    }
+    .post-video{
+      margin-top: 0  !important;
+    }
+  }
 </style>
 
 
@@ -98,7 +110,6 @@
             video: "",
             hasVideo: false
           }
-
         ]
       }
     },
@@ -106,8 +117,6 @@
       StartPost,
       Friends
     },
-    methods: {
-
-    }
+    methods: {}
   }
 </script>

@@ -1,13 +1,13 @@
 <template>
 
   <b-row>
-    <b-col class="" cols="8">
+    <b-col class="" lg="8" cols="12">
       <b-row class="comp">
         <b-button variant="info" class="create-btn" >+ Create / Upload Study Material</b-button>
       </b-row>
       <div style="padding: 2em" class="comp">
         <b-row>
-          <b-col cols="12" md="auto">
+          <b-col cols="2" md="auto">
             <b-img class="post-profile-img" src="https://placekitten.com/1000/300" rounded="circle" alt="Circle image">
             </b-img>
           </b-col>
@@ -18,7 +18,7 @@
           </b-col>
         </b-row>
         <b-row style="margin-top:1em">
-          <p>Some random text goes here</p>
+          <p class="post-text">Some random text goes here</p>
         </b-row>
         <b-row style="margin-top:1em">
           <b-img></b-img>
@@ -28,7 +28,7 @@
         </b-row>
       </div>
     </b-col>
-    <b-col style="margin-top: 10em; margin-left: 4%" class="comp" cols="3">
+    <b-col style="margin-top: 10em; margin-left: 4%" class="comp d-none d-lg-block" cols="3">
       <Friends />
     </b-col>
   </b-row>
@@ -67,6 +67,21 @@
   .post-profile-position {
     margin: 0;
   }
+
+    @media (max-width: 768px) {
+    .post-profile-img {
+      width: 5em !important;
+      height: 5em;
+      margin-top: 0 !important;
+    }
+    .post-text{
+      margin: 0 !important;
+    }
+    .post-video{
+      margin-top: 0  !important;
+    }
+  }
+
 </style>
 
 

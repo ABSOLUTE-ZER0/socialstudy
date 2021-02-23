@@ -1,18 +1,21 @@
 <template>
   <div class="main-div">
     <b-container fluid>
-      <b-row>
-        <b-col class="col1">
+      <b-row >
+        <h1>socialstudy</h1>
+      </b-row>
 
-          <h1>socialstudy</h1>
+      <b-row>
+        <b-col lg="6" class="col1 d-none d-lg-block">
+
           <h3><i class="fas fa-user"></i> Maintain your academic profile</h3>
           <h3><i class="fas fa-user-plus"></i> Connect with faculty and friends</h3>
           <h3><i class="fas fa-book-open"></i> Access to study materials </h3>
           <img class="home-img" src="../assets/dummy-image.jpg">
         </b-col>
 
-        <b-col>
-          <h2>Join your Academic Community</h2>
+        <b-col lg="6">
+          <h2 style="margin-top: -1em">Join your Academic Community</h2>
           <b-form>
             <b-form-group>
               <b-form-input class="home-input" type="text" placeholder="Username"></b-form-input>
@@ -57,7 +60,7 @@
                     <b-form-input class="home-input" type="text" placeholder="User type - student/teacher/admin">
                     </b-form-input>
                   </b-form-group>
-                  <b-button class="register-btn" href="" variant="info"
+                  <b-button style="margin-left: 70%" class="register-btn" href="" variant="info"
                     @click="registerModal1=false;registerModal2=true">Next</b-button>
                 </b-form>
 
@@ -89,7 +92,7 @@
                   <b-form-group>
                     <b-form-input class="home-input" type="text" placeholder="Specialization"></b-form-input>
                   </b-form-group>
-                  <b-button class="register-btn" href="" variant="info"
+                  <b-button style="margin-left: 25%" class="register-btn" href="" variant="info"
                     @click="registerModal1=true;registerModal2=false">Back</b-button>
                   <b-button class="register-btn" href="/home" variant="info"
                     @click="registerModalDiv=false;registerModal1=false;registerModal2=false;">Register</b-button>
@@ -118,6 +121,7 @@
   .main-div {
     margin: 4%;
     margin-left: 7%;
+    margin-top: 0;
     color: rgb(0, 202, 202);
   }
 
@@ -200,7 +204,7 @@
     align-items: center;
   }
 
-  .registerModal {
+      .registerModal {
     position: fixed;
     z-index: 2;
     top: 0;
@@ -212,10 +216,10 @@
     transition: opacity .3s ease;
   }
 
-  .modal-dialog {
+      .modal-dialog {
     pointer-events: all !important;
-    max-width: 130vh !important;
-    min-width: 130vh !important
+    max-width: none !important;
+    min-width: 100% !important;
   }
 
   .modal-wrapper {
@@ -237,6 +241,37 @@
   .modal-header {
     display: inline-block;
     min-width: 100%;
+  }
+
+    @media (max-width: 992px) and (min-width: 768px) {
+    .main-div {
+      text-align: center;
+    }
+    }
+
+    
+    @media (max-width: 768px) {
+    .main-div {
+      text-align: center;
+    } 
+    h1{
+      font-size: 3em;
+
+    }
+    h2{
+      font-size: 2em;
+          margin-top: 10% !important;
+    margin-bottom: 1.5em;
+    }
+      .register-btn {
+        width: 30%;
+    border-radius: 1em;
+    margin: 1em;
+    margin-left: 1.5em !important;
+  }
+  .register-title{
+    font-size: 2em;
+  }
   }
 </style>
 

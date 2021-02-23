@@ -2,11 +2,11 @@
   <div class="main-div">
     <b-container fluid>
       <b-row>
-        <b-col cols="3">
+        <b-col cols="12" lg="3" sm="12">
           <Tools v-on:changeSite="updateSite($event);changePage()" />
         </b-col>
 
-        <b-col cols="9">
+        <b-col lg="9" sm="12">
           <NoticeBoard v-if="siteNameProp == 'NoticeBoard'"/>
           <Library v-if="siteNameProp == 'Library'"/>
           <Connections v-if="siteNameProp == 'Connections'"/>

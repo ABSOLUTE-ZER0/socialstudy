@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-row style="padding: 1em" class="comp">
+    <b-row style="padding: 1em" class="comp gone">
       <b-col style="text-align: center; margin-right: 2em" cols="12" md="auto">
         <b-row>
           <b-img style="margin-bottom: 1em" v-bind="mainProps" rounded="circle" alt="Circle image"></b-img>
@@ -14,24 +14,26 @@
         <p>Position</p>
       </b-col>
     </b-row>
-    <b-row class="comp">
-      <b-col>
-        <b-row>
-          <h4 style="margin: 2em; font-weight: bold; margin-bottom: 0;margin-top: 1em;">Tools</h4>
-        </b-row>
+    <b-row class="comp tool-div">
+      <b-card-group class="tool-card-div" deck>
+        <b-card class="tool-card">
+          <template class="tool-row">
+            <Navitem v-on:changeSite="updateSite($event);changePage()" :items="navitems1" />
+          </template>
+        </b-card>
 
-        <b-row>
-          <Navitem v-on:changeSite="updateSite($event);changePage()" :items="navitems1" />
-        </b-row>
+        <b-card class="tool-card">
+          <template class="tool-row">
+            <Navitem v-on:changeSite="updateSite($event);changePage()" :items="navitems2" />
+          </template>
+        </b-card>
 
-        <b-row>
-          <Navitem v-on:changeSite="updateSite($event);changePage()" :items="navitems2" />
-        </b-row>
-
-        <b-row>
-          <Navitem v-on:changeSite="updateSite($event);changePage()" :items="navitems3" />
-        </b-row>
-      </b-col>
+        <b-card class="tool-card">
+          <template class="tool-row">
+            <Navitem v-on:changeSite="updateSite($event);changePage()" :items="navitems3" />
+          </template>
+        </b-card>
+      </b-card-group>
     </b-row>
 
   </div>
@@ -40,24 +42,84 @@
 
 
 <style scoped>
-  .tools-img {
-    min-width: 8em;
-    margin: 1em 3em !important;
-    border: 0;
-    text-align: center;
-  }
-
   .comp {
     background-color: white !important;
     border-radius: 2em;
     margin: 1em;
   }
 
-  .tool {
-    text-align: center;
-    margin: 1em 2em;
+  .tool-card-div {
+    display: block;
+
+  }
+
+  .navitem{
+    width: 50%;
+  }
+
+    .card-body {
+      padding: -15px;
+    }
+
+  .tool-card {
+    border: 0;
+    max-width: 100%;
+    border-radius: 2em;
+  }
+
+
+  @media (max-width: 768px) {
+    .tool-row {
+      width: 30%;
+      font-size: 0.5em;
+    }
+
+    .tool-div {
+      border-radius: 2em;
+      margin-bottom: 0 !important;
+    }
+
+    .tool-col {
+      background-color: white !important;
+      border-radius: 2em;
+      margin: 1em;
+      display: flex;
+    }
+
+    .tool-card-div {
+      display: flex;
+    }
+
+    .tool-card {
+      border: 0;
+      max-width: 100%;
+      font-size: 0.6em;
+      border-radius: 2em;
+      margin-bottom: 0 !important;
+    }
+
+    .card-body {
+      padding: 0;
+    }
+
+    .navbar-div {
+      padding: 0;
+      margin-top: 0 !important;
+
+    }
+
+
+    .gone {
+      display: none;
+    }
   }
 </style>
+
+
+
+
+
+
 
 <script>
   import Navitem from "./Navitem"

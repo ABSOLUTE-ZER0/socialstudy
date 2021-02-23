@@ -3,7 +3,7 @@
     <b-container fluid>
       <b-row>
 
-        <b-col cols="3">
+        <b-col cols="10" md="3">
           <h1>socialstudy</h1>
           <b-input-group class="searchbar-div mb-2" size="sm">
             <b-input-group-prepend is-text>
@@ -13,8 +13,8 @@
           </b-input-group>
         </b-col>
 
-        <b-col class="options" cols="6">
-          <b-navbar style="text-align:center">
+        <b-col class="options" cols="10" md="6">
+          <b-navbar style="text-align:center; padding: 0">
             <b-navbar-nav style="width:100%">
               <b-nav-item @click="pageName='NoticeBoard';changePage()" class="navitem">
                 <b-icon class="icon" icon="clipboard" font-scale="3"></b-icon>Notice Board
@@ -35,14 +35,17 @@
           </b-navbar>
         </b-col>
 
-        <b-col style="margin-top: 1em" class="options" cols="3">
-          <b-navbar right toggleable="lg">
-            <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-            <b-collapse style="text-align: center;" id="nav-collapse" is-nav>
-              <b-navbar-nav class="ml-auto">
-                <b-nav-item @click="pageName='Message';changePage()" href="#"><button class="icon1 fas fa-2x fa-bell"></button>Message</b-nav-item>
-                <b-nav-item @click="pageName='Notification';changePage()" href="#"><button class="icon1 fas fa-2x fa-comment-dots"></button>Notification</b-nav-item>
-                <b-nav-item @click="pageName='MyProfile';changePage()" href="#"><button class="icon1 fas fa-user fa-2x"></button>My Profile</b-nav-item>
+        <b-col style="margin-top: 1em" class="options drop-down-div" cols="2" md="3">
+          <b-navbar style="padding: 0" right toggleable="lg">
+            <b-navbar-toggle class="drop-down-button" target="nav-collapse"></b-navbar-toggle>
+            <b-collapse style="text-align: center;z-index: 4" id="nav-collapse" is-nav>
+              <b-navbar-nav class="ml-auto drop-down">
+                <b-nav-item @click="pageName='Message';changePage()" class="navitem2" href="#"><button
+                    class="icon1 fas fa-2x fa-bell"></button>Message</b-nav-item>
+                <b-nav-item @click="pageName='Notification';changePage()" class="navitem2" href="#"><button
+                    class="icon1 fas fa-2x fa-comment-dots"></button>Notification</b-nav-item>
+                <b-nav-item @click="pageName='MyProfile';changePage()" class="navitem2" href="#"><button
+                    class="icon1 fas fa-user fa-2x"></button>My Profile</b-nav-item>
               </b-navbar-nav>
             </b-collapse>
           </b-navbar>
@@ -63,16 +66,16 @@
     max-height: 10em;
   }
 
-.navbar-nav{
-  width: 100%;
-}
+  .navbar-nav {
+    width: 100%;
+  }
 
   h1 {
     color: rgb(0, 203, 218);
     font-size: 3em !important;
   }
 
-  .navitem{
+  .navitem {
     margin: 0 5%;
   }
 
@@ -85,8 +88,8 @@
     width: 15em;
   }
 
-  .navbar{
-
+  .drop-down {
+    background-color: white;
   }
 
   .searchbar {
@@ -105,14 +108,55 @@
     background-color: white;
   }
 
-  .icon-text {
-    width: 100%;
-    margin-top: 0.5em;
+
+
+  @media (max-width: 992px) and (min-width: 768px) {
+    .main-div {
+      text-align: center;
+    }
   }
 
-  .icon-div {
-    padding: 2em;
-    text-align: center;
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2em !important;
+      margin-bottom: 0 !important;
+    }
+
+    .icon {
+      font-size: 2em !important;
+      width: 100% !important;
+    }
+
+    .icon1 {
+      font-size: 2em;
+    }
+
+    .navitem, .navitem2 {
+      font-size: 1em;
+      margin: 0 0;
+      margin-bottom: 1em !important;
+    }
+
+    .searchbar-div {
+      display: none;
+    }
+
+    .drop-down-div {
+      margin: 0;
+      margin-left: -3em;
+    }
+
+
+    .options {
+      z-index: 3;
+      margin-top: 0 !important;
+    }
+
+    .drop-down-button{
+      margin-top: 3em;
+      font-size: 0.5em;
+    }
   }
 </style>
 
@@ -121,12 +165,12 @@
 <script>
   export default {
     data() {
-      return{
+      return {
         pageName: "NoticeBoard"
       }
     },
-    methods:{
-      changePage: function(){
+    methods: {
+      changePage: function () {
         this.$emit("changeSite", this.pageName)
       }
     }
