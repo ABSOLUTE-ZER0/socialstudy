@@ -60,7 +60,7 @@
     .card-body {
       padding: -15px;
     }
-
+    
   .tool-card {
     border: 0;
     max-width: 100%;

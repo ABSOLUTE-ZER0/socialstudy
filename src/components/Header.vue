@@ -46,6 +46,7 @@
                     class="icon1 fas fa-2x fa-comment-dots"></button>Notification</b-nav-item>
                 <b-nav-item @click="pageName='MyProfile';changePage()" class="navitem2" href="#"><button
                     class="icon1 fas fa-user fa-2x"></button>My Profile</b-nav-item>
+                <b-button variant="danger" class="navitem2 logout" href="/">LOGOUT</b-button>
               </b-navbar-nav>
             </b-collapse>
           </b-navbar>
@@ -64,6 +65,7 @@
     padding-top: 2em;
     max-width: 100%;
     max-height: 10em;
+    
   }
 
   .navbar-nav {
@@ -100,6 +102,7 @@
 
   .icon {
     width: 100% !important;
+    font-size: 2.5em !important;
   }
 
   .icon1 {
@@ -108,6 +111,10 @@
     background-color: white;
   }
 
+  .logout{
+    height: fit-content;
+    margin-top: -2.5em;
+  }
 
 
   @media (max-width: 992px) and (min-width: 768px) {
@@ -132,7 +139,8 @@
       font-size: 2em;
     }
 
-    .navitem, .navitem2 {
+    .navitem,
+    .navitem2 {
       font-size: 1em;
       margin: 0 0;
       margin-bottom: 1em !important;
@@ -153,7 +161,7 @@
       margin-top: 0 !important;
     }
 
-    .drop-down-button{
+    .drop-down-button {
       margin-top: 3em;
       font-size: 0.5em;
     }
