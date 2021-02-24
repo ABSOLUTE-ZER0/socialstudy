@@ -1,21 +1,21 @@
 <template>
-        <b-row>
-      <b-col cols="3">
+        <b-row class="class-row">
+      <b-col class="class-col" cols="3">
         <CheckBox :item="classes[0]" />
         <CheckBox :item="classes[0]" />
         <CheckBox :item="classes[0]" />
       </b-col>
-      <b-col cols="3">
+      <b-col class="class-col" cols="3">
         <CheckBox :item="classes[0]" />
         <CheckBox :item="classes[0]" />
         <CheckBox :item="classes[0]" />
       </b-col>
-      <b-col cols="3">
+      <b-col class="class-col" cols="3">
         <CheckBox :item="classes[1]" />
         <CheckBox :item="classes[1]" />
         <CheckBox :item="classes[1]" />
       </b-col>
-      <b-col cols="3">
+      <b-col class="class-col" cols="3">
         <CheckBox :item="classes[1]" />
         <CheckBox :item="classes[1]" />
         <CheckBox :item="classes[1]" />
@@ -25,7 +25,16 @@
     </b-row>
 </template>
 
-
+<style scoped>
+    @media (max-width: 768px){
+      .class-col{
+        padding: 0;
+      }
+      .class-row{
+        margin: 1em;
+      }
+    }
+</style>
 
 
 

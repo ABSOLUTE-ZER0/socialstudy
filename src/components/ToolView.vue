@@ -8,7 +8,7 @@
           <b-button style="margin-left: 10%" class="assignment-btn " variant="outline-info">Start Live Class</b-button>
           <b-button class="assignment-btn " variant="info">+ Create Group</b-button>
         </b-col>
-        <b-col cols="3">
+        <b-col class="filter-col" cols="3">
           <b-navbar>
             <b-navbar-nav>
               <b-nav-item class="filter">
@@ -33,7 +33,7 @@
           <b-button style="margin-left: 10%" class="assignment-btn " variant="outline-info">+ Upload File</b-button>
           <b-button class="assignment-btn " variant="info">+ Create Group</b-button>
         </b-col>
-        <b-col cols="3">
+        <b-col class="filter-col" cols="3">
           <b-navbar>
             <b-navbar-nav>
               <b-nav-item class="filter">
@@ -57,7 +57,7 @@
             <b-button style="margin-left: 10%" class="assignment-btn" variant="outline-info">+ Create Assignment
             </b-button>
           </b-col>
-          <b-col cols="3">
+          <b-col class="filter-col" cols="3">
             <b-navbar>
               <b-navbar-nav>
                 <b-nav-item class="filter">
@@ -68,18 +68,15 @@
           </b-col>
         </b-row>
         <b-row>
-          <p style="margin-left: 10%">Select group to start live classes</p>
-          <p style="margin-left: 10%">Below active background is not a bug ,once you give different id's for different
-            sections it will work properly</p>
         </b-row>
       </div>
 
       <div v-for="item in items" :key="item" class="comp">
         <b-row>
-          <b-col cols="8">
+          <b-col cols="6" md="8">
             <CardImg3 :src="item.src" :name="item.name" :sub2="item.subject" :sub1="item.group" />
           </b-col>
-          <b-col cols="4">
+          <b-col cols="6" md="4">
             <b-button class="assignment-button" variant="info">Edit
             </b-button>
             <b-button class="assignment-button" variant="danger">Delete
@@ -93,7 +90,10 @@
 
     <div v-if="pageName=='Attendance'" class="comp">
       <h3 class="attendance-title" >Attendance</h3>
-      <b-table class="attendance-table" striped hover :items="attendance" :fields="fields"></b-table>
+      <div class="attendance-table">
+      <b-table  striped hover :items="attendance" :fields="fields"></b-table>
+
+      </div>
 
       <h4 class="avg-att-title" >Overall Average Attendance</h4>
       <div id="chart">
@@ -101,11 +101,6 @@
       </div>
 
     </div>
-
-
-
-
-
 
     <div class="comp" v-if="pageName=='StartLiveClass' || pageName=='FileSharing' || pageName=='ManageGroup'">
       <SetSection />
@@ -161,7 +156,6 @@
 
   .attendance-table{
     margin: 0 5%;
-    width: 90%;
   }
   .avg-att-title{
     margin: 2em;
@@ -170,6 +164,47 @@
   #chart{
     margin-left: 20%;
   }
+
+
+    @media (max-width: 768px) {
+      .assignment-btn {
+    margin: 1em !important;
+    width: 40%;
+    border-radius: 1em;
+    font-size: 1.2em;
+  }
+  .filter-col{
+    padding: 0;
+    margin-left: -2em;
+    width: 100%;
+  }
+
+  .navbar{
+    padding: 0;
+  }
+
+    .gone {
+      display: none;
+    }
+
+    .assignment-btn{
+      width: fit-content;
+    }
+
+  .assignment-button {
+    margin: 2em 0.125em;
+    border-radius: 0.5em;
+    font-size: 1.4em;
+    width: 40%;
+  }
+.attendance-title{
+  font-size: 2em;
+}
+.attendance-table{
+  margin: 1em;
+}
+  }
+
 </style>
 
 

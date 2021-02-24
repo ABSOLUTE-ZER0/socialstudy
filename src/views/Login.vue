@@ -35,7 +35,7 @@
     </b-container>
     <div v-if="registerModalDiv">
       <div class="modal-mask registerModal">
-        <div class="modal-wrapper">
+        <div class="modal-wrapper ">
           <div class="modal-dialog">
             <div class="modal-content">
               <div v-if="registerModal1" class="modal-dialog">
