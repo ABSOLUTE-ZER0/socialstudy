@@ -1,11 +1,11 @@
 <template>
   <div>
-    <b-row>
-      <b-col class="comp" cols="8">
+    <b-row class="comp">
+      <b-col cols="10">
         <b-button style="float: left;" class="con-group-btn" variant="info">+ Create Group</b-button>
         <b-button style="float: right;" class="con-group-btn" variant="outline-info">Groups</b-button>
       </b-col>
-      <b-col class="comp" cols="3">
+      <b-col class="filter-col" cols="2">
         <b-navbar>
           <b-navbar-nav>
             <b-nav-item class="filter" @click="pageName='';changePage()">
@@ -23,11 +23,11 @@
     <div v-if="activeTab == 'Enrollment'">
       <b-row v-for="enroll in enrollment" :key="enroll" class="comp">
 
-        <b-col cols="8">
+        <b-col md="8" cols="7">
           <CardImg :src="enroll.src" :name="enroll.name" :sub1="enroll.institute" />
         </b-col>
 
-        <b-col cols="4">
+        <b-col class="gone" md="4" cols="5">
           <b-button class="enrollment-button" variant="info">View Page
           </b-button>
         </b-col>
@@ -39,9 +39,10 @@
     <div v-if="activeTab=='Faculty/Admin'">
       <b-row v-for="teacher in faculty" :key="teacher" class="comp">
         <b-col cols="8">
-          <CardImg3  styles="margin-top: -1em;" :src="teacher.src" :name="teacher.name" :sub1="teacher.designation" :sub2="teacher.group" :sub3="teacher.institute" />
+          <CardImg3 styles="margin-top: -1em;" :src="teacher.src" :name="teacher.name" :sub1="teacher.designation"
+            :sub2="teacher.group" :sub3="teacher.institute" />
         </b-col>
-        <b-col cols="4">
+        <b-col class="gone" cols="4">
           <b-button class="faculty-button" variant="info">View Profile
           </b-button>
         </b-col>
@@ -51,19 +52,16 @@
     <div v-if="activeTab=='Friends'">
       <b-row v-for="friend in friends" :key="friend" class="comp">
         <b-col cols="8">
-          <CardImg3  styles="margin-top: -1em" :src="friend.src" :name="friend.name" :sub1="friend.year" :sub2="friend.group" :sub3="friend.institute" />
+          <CardImg3 styles="margin-top: -1em" :src="friend.src" :name="friend.name" :sub1="friend.year"
+            :sub2="friend.group" :sub3="friend.institute" />
 
         </b-col>
-        <b-col cols="4">
+        <b-col class="gone" cols="4">
           <b-button class="faculty-button" variant="info">View Profile
           </b-button>
         </b-col>
       </b-row>
     </div>
-
-
-
-
 
   </div>
 
@@ -81,7 +79,6 @@
     text-align: center;
     font-weight: bold;
     font-size: 1.2em;
-
   }
 
   .con-btn {
@@ -114,13 +111,45 @@
     width: 80%;
   }
 
+
+  @media (max-width: 768px) {
+    .con-group-btn {
+      float: none !important;
+      margin: 1em;
+      width: 40%;
+      border-radius: 1em;
+      font-size: 1.2em;
+    }
+
+    .navbar {
+      padding: 0;
+    }
+
+    .filter-col {
+      padding: 0;
+      margin-left: -2em;
+
+    }
+
+    .con-btn {
+      margin: 0.5em;
+      width: 30%;
+      border-radius: 1em;
+      font-size: 1.2em;
+
+    }
+
+    .gone {
+      display: none;
+    }
+
+  }
 </style>
 
 
 <script>
-
-    import CardImg3 from './Card-Img-3';
-    import CardImg from './Card-Img'
+  import CardImg3 from './Card-Img-3';
+  import CardImg from './Card-Img'
   export default {
     data() {
       return {
@@ -144,7 +173,7 @@
           group: "Information Technology",
           institute: "D Y patil College of Engineering"
         }],
-                friends: [{
+        friends: [{
           src: "https://image.shutterstock.com/image-photo/large-beautiful-drops-transparent-rain-600w-668593321.jpg",
           name: "Friend Name",
           year: "3rd Year Section A",
