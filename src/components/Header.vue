@@ -13,7 +13,7 @@
           </b-input-group>
         </b-col>
 
-        <b-col class="options" cols="10" md="6">
+        <b-col style="margin-top: 1em" class="options" cols="10" md="6">
           <b-navbar style="text-align:center; padding: 0">
             <b-navbar-nav style="width:100%">
               <b-nav-item @click="pageName='NoticeBoard';changePage()" class="navitem">
@@ -65,7 +65,7 @@
     padding-top: 2em;
     max-width: 100%;
     max-height: 10em;
-    
+
   }
 
   .navbar-nav {
@@ -78,7 +78,8 @@
   }
 
   .navitem {
-    margin: 0 5%;
+    flex: auto;
+
   }
 
   .input-group-prepend {
@@ -111,9 +112,12 @@
     background-color: white;
   }
 
-  .logout{
+  .logout {
     height: fit-content;
     margin-top: -2.5em;
+    position: absolute;
+    top: 0;
+    right: 0;
   }
 
 
@@ -142,7 +146,7 @@
     .navitem,
     .navitem2 {
       font-size: 1em;
-      margin: 0 0;
+      margin: 0 0 !important;
       margin-bottom: 1em !important;
     }
 
@@ -153,6 +157,10 @@
     .drop-down-div {
       margin: 0;
       margin-left: -3em;
+    }
+
+    .logout {
+      position: relative;
     }
 
 

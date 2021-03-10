@@ -17,6 +17,7 @@
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-size: 0.85em;
   }
 
   @media (max-width: 768px) {

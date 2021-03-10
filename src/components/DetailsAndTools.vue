@@ -50,22 +50,32 @@
 
   .tool-card-div {
     display: block;
-
+    width: 100%;
   }
 
   .navitem{
-    width: 50%;
+    flex: 1;
   }
 
+  .tool-row{
+      width: 100%;
+
+  }
+
+
+
     .card-body {
-      padding: -15px;
+      padding: 0;
     }
     
   .tool-card {
     border: 0;
-    max-width: 100%;
+    width: 100%;
     border-radius: 2em;
+    
   }
+
+  
 
 
   @media (max-width: 768px) {
@@ -129,35 +139,41 @@
         navitems1: [{
             name: "Start Live Class",
             pageName: "StartLiveClass",
-            imgclass: "fas fa-4x icon fa-video"
+            imgclass: "fas fa-4x icon fa-video",
+            color: "color:#df4949"
           },
           {
             name: "File Sharing",
             pageName: "FileSharing",
-            imgclass: "fas fa-4x icon fa-folder"
+            imgclass: "fas fa-4x icon fa-folder",
+            color: "color:#7a75ff"
           },
 
         ],
         navitems2: [{
             name: "Assignment",
             pageName: "Assignment",
-            imgclass: "fas fa-4x icon fa-clipboard-check"
+            imgclass: "fas fa-4x icon fa-clipboard-check",
+            color: "color:#2bd5a9"
           }, {
             name: "Manage Group",
             pageName: "ManageGroup",
-            imgclass: "fas fa-4x icon fa-users"
+            imgclass: "fas fa-4x icon fa-users",
+            color: "color:#efd74f"
           },
 
         ],
         navitems3: [{
             name: "Attendance",
             pageName: "Attendance",
-            imgclass: "fas fa-4x icon fa-clipboard-list"
+            imgclass: "fas fa-4x icon fa-clipboard-list",
+            color: "color:#6c757d"
           },
           {
             name: "Report Card",
             pageName: "ReportCard",
-            imgclass: "fas fa-4x icon fa-file-alt"
+            imgclass: "fas fa-4x icon fa-file-alt",
+            color: "color:#ffcd51"
           },
         ],
         pageName: "MyProfile",

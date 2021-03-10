@@ -26,7 +26,7 @@
         </b-row>
       </div>
     </b-col>
-    <b-col style="margin-top: 10em; margin-left: 4%" class="comp d-none d-lg-block" cols="3">
+    <b-col class="comp friends-col d-none d-lg-block" cols="3">
       <Friends />
     </b-col>
   </b-row>
@@ -45,6 +45,12 @@
     width: 4em !important;
     height: 4em;
     margin-top: 0.5em;
+  }
+
+  .friends-col {
+    margin-top: 12em;
+    margin-left: 4%;
+    height: fit-content;
   }
 
   .post-profile-name {
@@ -67,11 +73,19 @@
       height: 5em;
       margin-top: 0 !important;
     }
-    .post-text{
+
+    .post-text {
       margin: 0 !important;
     }
-    .post-video{
-      margin-top: 0  !important;
+
+    .post-img {
+      padding: 1em;
+    }
+
+
+    .post-video {
+      margin-top: 0 !important;
+      padding: 1em;
     }
   }
 </style>

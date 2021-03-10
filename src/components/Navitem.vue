@@ -2,7 +2,7 @@
   <b-navbar class="navbar-div" style="margin-top: 1em">
     <b-navbar-nav>
       <b-nav-item v-for="item in items" :key="item" class="navitem tools-nav" @click="pageName=item.pageName;changePage()">
-        <i :class="item.imgclass"></i> {{ item.name }}
+        <i :style="item.color" :class="item.imgclass"></i> {{ item.name }}
       </b-nav-item>
     </b-navbar-nav>
   </b-navbar>
@@ -11,7 +11,16 @@
 <style scoped>
   .navitem {
     text-align: center;
-    padding: 1em 2em;
+    flex: 1;
+  }
+
+  .navbar-div{
+      width: 100%;
+
+  }
+
+  .navbar-nav{
+      width: 100%;
 
   }
 
@@ -34,6 +43,7 @@
 export default {
   data(){
     return{
+      style: "",
         pageName: "MyProfile",
 
     }

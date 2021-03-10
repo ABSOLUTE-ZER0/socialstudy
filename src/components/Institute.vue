@@ -119,7 +119,7 @@
   .tab-button {
     margin: 1em 0.5em;
     border-radius: 0.5em;
-    font-size: 2em;
+    font-size: 1.5em;
     width: 20%;
   }
 

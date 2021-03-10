@@ -85,7 +85,7 @@
     margin: 1em;
     width: 20%;
     border-radius: 1em;
-    font-size: 2em;
+    font-size: 1.5em;
 
   }
 
@@ -93,7 +93,7 @@
     margin: 1.5em;
     width: 30%;
     border-radius: 1em;
-    font-size: 2em;
+    font-size: 1.5em;
   }
 
   .enrollment-button {

@@ -1,9 +1,12 @@
 <template>
   <div class="main-div">
     <b-container fluid>
-      <b-img class="cover-img" fluid src="https://placekitten.com/1000/300"></b-img>
-      <b-img class="profile-img" fluid src="https://placekitten.com/1000/300" rounded="circle" alt="Circle image">
-      </b-img>
+      <div>
+        <b-img class="cover-img" fluid src="https://placekitten.com/1000/300"></b-img>
+        <b-img class="profile-img" fluid src="https://placekitten.com/1000/300" rounded="circle" alt="Circle image">
+        </b-img>
+      </div>
+
       <b-row>
         <b-col md="4" cols="12">
           <b-row style="margin-top: 6em;" class="comp">
@@ -55,7 +58,7 @@
                   <p class="report-class">{{ item.class.split(" ")[1] }}</p>
                 </b-col>
                 <b-col cols="6">
-                  <h2 class="report-title" >{{ item.name}}</h2>
+                  <h2 class="report-title">{{ item.name}}</h2>
                   <h5 class="report-desc">{{item.institute}}</h5>
                 </b-col>
                 <b-col class="gone" cols="4">
@@ -94,20 +97,19 @@
 
   .cover-img {
     width: 100%;
-    max-height: 25rem !important;
-    min-height: 25rem !important;
+    max-height: 400px !important;
+    min-height: 400px !important;
     border: 3px solid rgb(0, 183, 255);
     border-radius: 2em;
     background-color: rgb(0, 183, 255);
   }
 
-
   .profile-img {
     position: absolute;
-    left: 15em;
-    top: 30rem;
-    width: 10rem;
-    height: 10rem;
+    left: 160px;
+    top: 450px;
+    width: 160px;
+    height: 160px;
     background-color: rgb(0, 183, 255);
     border: 3px solid rgb(0, 183, 255);
 
@@ -155,10 +157,10 @@
 
   @media (max-width: 1000px) and (min-width: 768px) {
     .profile-img {
-      left: 5em;
-      top: 30em;
-      width: 10rem;
-      height: 10rem;
+      left: 100px;
+      top: 450px;
+      width: 160px;
+      height: 160px;
     }
   }
 
@@ -218,12 +220,12 @@
       display: none;
     }
 
-    .report-title{
+    .report-title {
       font-size: 1.5em;
       margin-top: 0.2em;
     }
 
-    .report-desc{
+    .report-desc {
       font-size: 1.2em;
     }
 
