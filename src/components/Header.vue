@@ -2,7 +2,6 @@
   <div class="main-div">
     <b-container fluid>
       <b-row>
-
         <b-col cols="10" md="3">
           <h1>socialstudy</h1>
           <b-input-group class="searchbar-div mb-2" size="sm">
@@ -12,29 +11,24 @@
             <b-form-input class="searchbar" type="search" placeholder="Search"></b-form-input>
           </b-input-group>
         </b-col>
-
         <b-col style="margin-top: 1em" class="options" cols="10" md="6">
           <b-navbar style="text-align:center; padding: 0">
             <b-navbar-nav style="width:100%">
               <b-nav-item @click="pageName='NoticeBoard';changePage()" class="navitem">
                 <b-icon class="icon" icon="clipboard" font-scale="3"></b-icon>Notice Board
               </b-nav-item>
-
               <b-nav-item @click="pageName='Library';changePage()" class="navitem">
                 <b-icon class="icon" icon="book" font-scale="3"></b-icon>Library
               </b-nav-item>
-
               <b-nav-item @click="pageName='Institute';changePage()" class="navitem">
-                <b-icon class="icon" icon="building" font-scale="3"> </b-icon>Institute
+                <b-icon class="icon" icon="building" font-scale="3"></b-icon>Institute
               </b-nav-item>
-
               <b-nav-item @click="pageName='Connections';changePage()" class="navitem">
                 <b-icon class="icon" icon="person-plus" font-scale="3"></b-icon>Connections
               </b-nav-item>
             </b-navbar-nav>
           </b-navbar>
         </b-col>
-
         <b-col style="margin-top: 1em" class="options drop-down-div" cols="2" md="3">
           <b-navbar style="padding: 0" right toggleable="lg">
             <b-navbar-toggle class="drop-down-button" target="nav-collapse"></b-navbar-toggle>
@@ -46,19 +40,19 @@
                     class="icon1 fas fa-2x fa-comment-dots"></button>Notification</b-nav-item>
                 <b-nav-item @click="pageName='MyProfile';changePage()" class="navitem2" href="#"><button
                     class="icon1 fas fa-user fa-2x"></button>My Profile</b-nav-item>
+                <b-nav-item class="d-md-none">
+                  <b-icon icon="search"></b-icon>Search
+                </b-nav-item>
+
                 <b-button variant="danger" class="navitem2 logout" href="/">LOGOUT</b-button>
               </b-navbar-nav>
             </b-collapse>
           </b-navbar>
         </b-col>
-
       </b-row>
     </b-container>
   </div>
 </template>
-
-
-
 <style scoped>
   .main-div {
     background-color: rgb(255, 255, 255);
@@ -175,16 +169,15 @@
     }
   }
 </style>
-
-
-
 <script>
   export default {
     data() {
       return {
         pageName: "NoticeBoard"
       }
-    },
+    }
+
+    ,
     methods: {
       changePage: function () {
         this.$emit("changeSite", this.pageName)

@@ -15,6 +15,8 @@
       </b-col>
     </b-row>
     <b-row class="comp tool-div">
+          <h1 class="d-none d-lg-block title">Tools</h1>
+
       <b-card-group class="tool-card-div" deck>
         <b-card class="tool-card">
           <template class="tool-row">
@@ -51,6 +53,12 @@
   .tool-card-div {
     display: block;
     width: 100%;
+  }
+
+  .title{
+    font-size: 2em;
+    font-weight: bold;
+    margin: 1em 1em 0;
   }
 
   .navitem{

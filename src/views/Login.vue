@@ -28,8 +28,8 @@
                 <b-form-input class="home-input-main" type="password" placeholder="Password"></b-form-input>
                 <a class="home-forgot-password" href="#">Forgot Password</a>
               </b-form-group>
-              <b-button class="home-btn" href="/home" type="submit" variant="info">Log In</b-button>
-              <b-button class="home-btn" href="" variant="outline-primary" @click="openRegisterModal">Create New Account
+              <b-button class="home-btn" href="/home" type="submit" style="background-color: #01C4C9;border:0" variant="info">Log In</b-button>
+              <b-button class="home-btn second" href="" variant="outline-primary" style="color: #01C4C9;border-color:#01c4c9" @click="openRegisterModal">Create New Account
               </b-button>
             </b-form>
           </div>
@@ -127,7 +127,7 @@
     margin: 4%;
     margin-left: 7%;
     margin-top: 0;
-    color: rgb(0, 202, 202);
+    color: #01C4C9;
   }
 
   .input-col {
@@ -172,6 +172,11 @@
     border-radius: 1.5em;
     font-size: 1.5em;
     margin: 0.2em 0;
+  }
+
+  .home-btn.second:hover{
+    color: white !important;
+    background-color: #01C4C9;
   }
 
   .home-input {
