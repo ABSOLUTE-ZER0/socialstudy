@@ -3,7 +3,10 @@
   <b-row>
     <b-col class="" lg="8" cols="12">
       <b-row class="comp">
-        <b-button variant="info" class="create-btn">+ Create / Upload Study Material</b-button>
+        <div class="search-div">
+          <b-icon icon="search"></b-icon>
+          <input class="search-bar" type="text" placeholder="Search Library">
+        </div>
       </b-row>
       <div style="padding: 2em" class="comp">
         <b-row>
@@ -18,7 +21,9 @@
           </b-col>
         </b-row>
         <b-row style="margin-top:1em">
-          <p class="post-text">Some random text goes here</p>
+          <b-col>
+            <p class="post-text">Some random text goes here</p>
+          </b-col>
         </b-row>
         <b-row style="margin-top:1em">
           <b-img></b-img>
@@ -42,21 +47,29 @@
     margin: 1em;
   }
 
+  .search-bar{
+    border: 0;
+    margin-left: 0.5em;
+  }
+
   .friends-col {
     margin-top: 10em;
     margin-left: 4%;
     height: fit-content;
   }
 
+  input:focus{
+    outline: 0 !important;
+  }
 
-  .create-btn {
+
+  .search-div {
     width: 100%;
     margin: 1em;
-    font-size: 2em;
+    font-size: 1.5em;
     border-radius: 0.5em;
     border: 0;
     color: gray;
-    background-color: rgba(127, 255, 212, 0.233);
   }
 
   .post-profile-img {

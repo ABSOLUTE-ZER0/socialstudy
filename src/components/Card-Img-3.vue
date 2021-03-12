@@ -1,6 +1,6 @@
 <template>
   <b-card @click="log" img-left :img-src="src">
-    <b-card-body class="body profile" :style="styles">
+    <b-card-body class="profile" :style="styles">
       <b-card-title class="title"> {{name}} </b-card-title>
       <b-card-sub-title class="mb-2 sub"> {{sub1}} | {{sub2}}</b-card-sub-title>
       <b-card-sub-title class="mb-2 sub"> {{sub3}} </b-card-sub-title>
@@ -17,11 +17,18 @@
     border-radius: 50%;
   }
 
+  
+        .profile{
+      margin-top: 0 !important;
+      padding: 0;
+
+    }
+
+
   .card {
-    margin: 1em 2em 0;
+    margin: 1em;
     border: 0;
     width: 100%;
-    pointer-events: all;
   }
 
 
@@ -41,11 +48,7 @@
     .sub{
       font-size: 1em;
     }
-    .body{
-      margin-top: -1em !important;
-      padding: 0;
 
-    }
         .profile{
       margin-top: 0 !important;
       padding: 0;

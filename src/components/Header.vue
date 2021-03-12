@@ -35,9 +35,9 @@
             <b-collapse style="text-align: center;z-index: 4" id="nav-collapse" is-nav>
               <b-navbar-nav class="ml-auto drop-down">
                 <b-nav-item @click="pageName='Message';changePage()" class="navitem2" href="#"><button
-                    class="icon1 fas fa-2x fa-bell"></button>Message</b-nav-item>
+                    class="icon1 fas fa-2x fa-comment-dots"></button>Message</b-nav-item>
                 <b-nav-item @click="pageName='Notification';changePage()" class="navitem2" href="#"><button
-                    class="icon1 fas fa-2x fa-comment-dots"></button>Notification</b-nav-item>
+                    class="icon1 fas fa-2x fa-bell"></button>Notification</b-nav-item>
                 <b-nav-item @click="pageName='MyProfile';changePage()" class="navitem2" href="#"><button
                     class="icon1 fas fa-user fa-2x"></button>My Profile</b-nav-item>
                 <b-nav-item class="d-md-none">

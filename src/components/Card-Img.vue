@@ -1,5 +1,5 @@
 <template>
-  <b-card class="card" img-left :img-src="src">
+  <b-card :class="className" img-left :img-src="src">
     <b-card-body :style="style" class="body">
       <b-card-title class="title"> {{name}} </b-card-title>
       <b-card-sub-title class="sub mb-2"> {{sub1}}</b-card-sub-title>
@@ -17,8 +17,18 @@
     border-radius: 50%;
   }
 
+    .req>img {
+    width: 4em;
+    height: 4em;
+    margin-top: 0;
+  }
+
+  .body {
+    padding: 0;
+  }
+
   .card {
-    margin: 1em 2em 0;
+    margin: 1em;
     border: 0;
     width: 100%;
   }
@@ -63,7 +73,8 @@
       src: String,
       sub1: String,
       sub2: String,
-      style: String
+      style: String,
+      className: String
     }
   }
 </script>

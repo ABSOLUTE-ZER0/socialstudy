@@ -16,7 +16,9 @@
           </b-col>
         </b-row>
         <b-row class="post-text" style="margin-top:1em">
-          <p>{{post.text}}</p>
+          <b-col>
+            <p>{{post.text}}</p>
+          </b-col>
         </b-row>
         <b-row style="margin-top:1em">
           <b-img class="post-img" :src="post.image"></b-img>

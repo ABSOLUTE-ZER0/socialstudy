@@ -1,20 +1,5 @@
 <template>
-  <div>
-    <b-row style="padding: 1em" class="comp gone">
-      <b-col style="text-align: center; margin-right: 2em" cols="12" md="auto">
-        <b-row>
-          <b-img style="margin-bottom: 1em" v-bind="mainProps" rounded="circle" alt="Circle image"></b-img>
-        </b-row>
-        <b-button variant="link" @click="pageName='MyProfile';changePage()">My Profile </b-button>
-      </b-col>
-      <b-col>
-        <p>Name</p>
-        <p>Institution</p>
-        <p>Year and Branch</p>
-        <p>Position</p>
-      </b-col>
-    </b-row>
-    <b-row class="comp tool-div">
+      <b-row class="comp tool-div">
           <h1 class="d-none d-lg-block title">Tools</h1>
 
       <b-card-group class="tool-card-div" deck>
@@ -37,14 +22,11 @@
         </b-card>
       </b-card-group>
     </b-row>
-
-  </div>
-
 </template>
 
 
 <style scoped>
-  .comp {
+.comp {
     background-color: white !important;
     border-radius: 2em;
     margin: 1em;
@@ -70,9 +52,7 @@
 
   }
 
-
-
-    .card-body {
+      .card-body {
       padding: 0;
     }
     
@@ -82,11 +62,7 @@
     border-radius: 2em;
     
   }
-
-  
-
-
-  @media (max-width: 768px) {
+ @media (max-width: 768px) {
     .tool-row {
       width: 30%;
       font-size: 0.5em;
@@ -132,10 +108,6 @@
     }
   }
 </style>
-
-
-
-
 
 
 
@@ -203,7 +175,7 @@
     },
     components: {
       Navitem
-    }
+          }
 
   }
 </script>
