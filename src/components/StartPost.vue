@@ -3,17 +3,17 @@
     <b-button @click="displayModal=true" class="create-button shadow-none"><i class="far fa-edit"></i> Create...
     </b-button>
     <b-col class="p-div">
-      <p class="p"><i class="fas fa-image"></i> Photo</p>
+      <p class="p"><i class="fas fa-image"></i> Assignment</p>
     </b-col>
     <b-col class="p-div">
-      <p class="p"><i class="fab fa-youtube"></i> Video</p>
+      <p class="p"><i class="fab fa-youtube"></i> Material</p>
     </b-col>
     <b-col class="p-div">
-      <p class="p"><i class="fab fa-wpforms"></i> Form</p>
+      <p class="p"><i class="fab fa-wpforms"></i> Announcement</p>
 
     </b-col>
     <b-col class="p-div">
-      <p class="p"><i class="far fa-newspaper"></i> Write article</p>
+      <p class="p"><i class="far fa-newspaper"></i> Event</p>
     </b-col>
 
     <div v-if="displayModal">
@@ -79,11 +79,6 @@
 
 
 
-  .comp {
-    background-color: white !important;
-    border-radius: 2em;
-    margin: 1em;
-  }
 
 
 

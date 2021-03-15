@@ -31,12 +31,6 @@
     font-weight: bold;
   }
 
-  .comp {
-    background-color: white !important;
-    border-radius: 2em;
-    margin: 1em;
-  }
-
   .subject-button {
     margin: 2em 0.5em 0;
     border-radius: 0.5em;

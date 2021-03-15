@@ -16,15 +16,11 @@
     margin-top: 1.5em;
     border-radius: 50%;
   }
+  .profile {
+    margin-top: 0 !important;
+    padding: 0;
 
-  
-        .profile{
-      margin-top: 0 !important;
-      padding: 0;
-
-    }
-
-
+  }
   .card {
     margin: 1em;
     border: 0;
@@ -33,28 +29,32 @@
 
 
   @media (max-width: 768px) {
-      .card-img-left {
-    border: 0;
-    width: 6em;
-    height: 6em;
-    margin-top: 1em;
-  }
-  .card{
-    margin: 1em;
-  }
-    .title{
+    .card-img-left {
+      border: 0;
+      width: 6em;
+      height: 6em;
+      margin-top: 1em;
+    }
+
+    .card {
+      margin: 1em;
+    }
+
+    .title {
       font-size: 1.3em;
     }
-    .sub{
+
+    .sub {
       font-size: 1em;
     }
 
-        .profile{
+    .profile {
       margin-top: 0 !important;
       padding: 0;
 
     }
-    .card-body{
+
+    .card-body {
       padding: 1em .5em 0;
 
     }
@@ -72,7 +72,7 @@
       styles: String
     },
     methods: {
-      log(){
+      log() {
         console.log("hello");
       }
     },

@@ -26,12 +26,6 @@
 
 
 <style scoped>
-.comp {
-    background-color: white !important;
-    border-radius: 2em;
-    margin: 1em;
-  }
-
   .tool-card-div {
     display: block;
     width: 100%;

@@ -20,6 +20,15 @@
     font-size: 0.85em;
   }
 
+    .comp {
+    background-color: white !important;
+    border-radius: 1em;
+    margin: 10px;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+
   @media (max-width: 768px) {
     body {
       font-size: 0.5em !important;

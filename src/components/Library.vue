@@ -68,12 +68,6 @@
 
 
 <style scoped>
-  .comp {
-    background-color: white !important;
-    border-radius: 2em;
-    margin: 1em;
-  }
-
   .filter {
     padding: 1em;
   }

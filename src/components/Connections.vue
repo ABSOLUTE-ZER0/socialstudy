@@ -1,6 +1,6 @@
 <template>
   <b-row>
-    <b-col lg="7">
+    <b-col lg="8">
       <h1 class="title">All your connections</h1>
       <b-row v-for="friend in friends" :key="friend" class="comp">
         <b-col cols="8">
@@ -42,12 +42,6 @@
 
 
 <style scoped>
-  .comp {
-    background-color: white !important;
-    border-radius: 2em;
-    margin: 1em;
-  }
-
   .title {
     padding: 1em 1em 0;
     font-size: 2em;

@@ -41,9 +41,13 @@
                 <button @click="openModal()" class="add-sub">+ Add Subject</button>
 
               </b-row>
-              <b-row v-for="sub in item.subject" :key="sub" class="comp">
-                <b-col md="6" cols="12">
+              <b-row  v-for="sub in item.subject" :key="sub" class="comp">
+                <b-col md="9">
                     <CardImg :src="sub.src" :name="sub.name" :sub1="sub.year" />
+                </b-col>
+                <b-col md="3">
+                  <b-button href="/subject/detail" class="subject-button" variant="outline-primary">View
+                  </b-button>
                 </b-col>
               </b-row>
 
@@ -152,12 +156,6 @@
     box-shadow: 1px black !important;
   }
 
-  .comp {
-    background-color: white !important;
-    border-radius: 2em;
-    margin: 1em;
-  }
-
   .group {
     width: 100%;
     padding: 1em;
@@ -219,6 +217,13 @@
     margin: 2em;
     display: flex;
   }
+
+      .subject-button {
+    margin: 2.5em 0.5em 0;
+    border-radius: 0.5em;
+    font-size: 1.4em;
+    width: 80%;
+    }
 
   .event-date {
     color: rgb(128, 128, 128);

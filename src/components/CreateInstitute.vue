@@ -122,11 +122,6 @@
     font-size: 0.8em;
   }
 
-  .comp {
-    background-color: white !important;
-    border-radius: 2em;
-    margin: 1em;
-  }
 
 
   .createpostModal {

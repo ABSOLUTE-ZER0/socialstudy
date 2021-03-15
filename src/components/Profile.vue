@@ -8,7 +8,7 @@
       </div>
 
       <b-row>
-        <b-col md="4" cols="12">
+        <b-col md="3">
           <b-row style="margin-top: 6em;" class="comp">
             <div class="desc">
               <h2 class="profile-title">Name</h2>
@@ -24,7 +24,7 @@
 
 
         </b-col>
-        <b-col cols="12" md="8">
+        <b-col cols="12" md="9">
 
           <StartPost />
           <b-row>
@@ -57,11 +57,11 @@
                   <p class="report-class">{{ item.class.split(" ")[0] }}</p>
                   <p class="report-class">{{ item.class.split(" ")[1] }}</p>
                 </b-col>
-                <b-col cols="6">
+                <b-col cols="7">
                   <h2 class="report-title">{{ item.name}}</h2>
                   <h5 class="report-desc">{{item.institute}}</h5>
                 </b-col>
-                <b-col class="gone" cols="4">
+                <b-col class="gone" cols="3">
                   <b-button variant="info" class="report-button">View</b-button>
                 </b-col>
               </div>
@@ -78,12 +78,6 @@
 <style scoped>
   .main-div {
     max-width: 100%;
-    margin: 1em;
-  }
-
-  .comp {
-    background-color: white !important;
-    border-radius: 2em;
     margin: 1em;
   }
 
