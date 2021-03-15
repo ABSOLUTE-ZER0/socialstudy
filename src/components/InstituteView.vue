@@ -45,8 +45,6 @@
                 <b-col md="6" cols="12">
                     <CardImg :src="sub.src" :name="sub.name" :sub1="sub.year" />
                 </b-col>
-                <b-col md="6" cols="12">
-                </b-col>
               </b-row>
 
 

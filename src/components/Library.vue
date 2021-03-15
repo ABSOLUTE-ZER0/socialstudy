@@ -34,7 +34,34 @@
       </div>
     </b-col>
     <b-col class="friends-col comp d-none d-lg-block" cols="3">
-      <Friends />
+      <div class="comp filter">
+        <h4>Filters</h4>
+        <b-form-group class="filters" label="Chapter">
+          <b-form-checkbox v-for="option in options" :key="option.value" :value="option.value">
+            {{ option.text }}
+          </b-form-checkbox>
+        </b-form-group>
+        <b-form-group class="filters" label="Chapter">
+          <b-form-checkbox v-for="option in options" :key="option.value" :value="option.value">
+            {{ option.text }}
+          </b-form-checkbox>
+        </b-form-group>
+        <b-form-group class="filters" label="Chapter">
+          <b-form-checkbox v-for="option in options" :key="option.value" :value="option.value">
+            {{ option.text }}
+          </b-form-checkbox>
+        </b-form-group>
+        <b-form-group class="filters" label="Chapter">
+          <b-form-checkbox v-for="option in options" :key="option.value" :value="option.value">
+            {{ option.text }}
+          </b-form-checkbox>
+        </b-form-group>
+        <b-form-group class="filters" label="Chapter">
+          <b-form-checkbox v-for="option in options" :key="option.value" :value="option.value">
+            {{ option.text }}
+          </b-form-checkbox>
+        </b-form-group>
+      </div>
     </b-col>
   </b-row>
 </template>
@@ -47,18 +74,21 @@
     margin: 1em;
   }
 
-  .search-bar{
+  .filter {
+    padding: 1em;
+  }
+
+  .search-bar {
     border: 0;
     margin-left: 0.5em;
   }
 
   .friends-col {
-    margin-top: 10em;
     margin-left: 4%;
     height: fit-content;
   }
 
-  input:focus{
+  input:focus {
     outline: 0 !important;
   }
 
@@ -108,17 +138,30 @@
 
 
 <script>
-  import Friends from "./Friends"
-
   export default {
     data() {
       return {
-        siteName: ""
+        siteName: "",
+        options: [{
+            text: 'All',
+            value: 'all'
+          },
+          {
+            text: 'Algebra',
+            value: 'algebra'
+          },
+          {
+            text: 'Set Theory',
+            value: 'sets'
+          },
+          {
+            text: 'Trigonometry',
+            value: 'trigonometry'
+          }
+        ]
       }
     },
-    components: {
-      Friends
-    },
+    components: {},
     methods: {
 
     }

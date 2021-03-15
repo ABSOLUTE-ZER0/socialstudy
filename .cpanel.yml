@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/code4yo/public_html/
+    - /bin/cp -R * $DEPLOYPATH

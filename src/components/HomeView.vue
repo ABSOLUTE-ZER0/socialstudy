@@ -21,6 +21,9 @@
           <InstituteView v-if="siteNameProp == 'Institute'" />
         </b-col>
       </b-row>
+      <div>
+        <Friends v-if="siteNameProp == 'NoticeBoard'" />
+      </div>
     </b-container>
   </div>
 </template>
@@ -42,6 +45,7 @@
   import ToolView from "./ToolView"
   import Details from "./Details"
   import Create from "./CreateInstitute"
+  import Friends from "./Friends"
 
   export default {
     data() {
@@ -61,7 +65,8 @@
       Details,
       InstituteView,
       Create,
-      Institute
+      Institute,
+      Friends
     },
     methods: {
       updateSite(newValue) {

@@ -28,9 +28,6 @@
         </b-row>
       </div>
     </b-col>
-    <b-col class="comp friends-col d-none d-lg-block" cols="3">
-      <Friends />
-    </b-col>
   </b-row>
 </template>
 
@@ -47,12 +44,6 @@
     width: 4em !important;
     height: 4em;
     margin-top: 0.5em;
-  }
-
-  .friends-col {
-    margin-top: 12em;
-    margin-left: 4%;
-    height: fit-content;
   }
 
   .post-profile-name {
@@ -96,7 +87,6 @@
 
 <script>
   import StartPost from "./StartPost"
-  import Friends from "./Friends"
 
   export default {
     data() {
@@ -131,7 +121,6 @@
     },
     components: {
       StartPost,
-      Friends
     },
     methods: {}
   }
