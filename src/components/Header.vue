@@ -41,7 +41,7 @@
                 <b-nav-item @click="pageName='Notification';changePage()" class="navitem2" href="#"><button
                     class="icon1 fas fa-2x fa-bell"></button>Notification</b-nav-item>
                 <b-nav-item @click="profileClick()" class="navitem2 profile-dropdown" href="#">
-                  <button class="icon1 fas fa-user fa-2x"></button>My Profile</b-nav-item>
+                  <button class="icon1 fas fa-user fa-2x"></button>Profile <b-icon class="dropdown-arrow" icon="triangle-fill"></b-icon></b-nav-item>
                 <div class="profile-dropdown-div shadow" v-if="profileDropdown">
                   <b-nav-item @click="pageName='MyProfile';changePage()">My Profile</b-nav-item>
                   <b-nav-item>Settings</b-nav-item>
@@ -66,6 +66,13 @@
     max-height: 10em;
     padding: 0 200%;
     margin-left: -200%;
+  }
+
+  .dropdown-arrow{
+    font-size: 0.7em !important;
+    transform: rotate(180deg);
+    position: relative;
+    top: -2px;
   }
 
   input:focus {
@@ -95,22 +102,11 @@
     margin-top: 0.5em;
   }
 
-  .profile-dropdown:after {
-    content: " ";
-    position: relative;
-    right: -40px;
-    top: -30px;
-    border: solid black;
-    border-width: 0 3px 3px 0;
-    display: inline-block;
-    padding: 3px;
-    transform: rotate(45deg);
-  }
-
   .profile-dropdown-div {
     position: absolute;
     top: 43px;
     left: 75%;
+    width: 8em !important;
     width: fit-content;
     overflow: hidden;
     background-color: white;
@@ -153,6 +149,7 @@
   .logout {
     height: fit-content;
     font-size: 1em;
+    width: 100%;
   }
 
 

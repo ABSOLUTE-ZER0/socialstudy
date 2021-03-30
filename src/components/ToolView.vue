@@ -15,8 +15,7 @@
                   <b-form-input class="input" type="text" placeholder="Group Name"></b-form-input>
                 </b-form-group>
                 <b-form-group>
-                  <DropdownInput :textarea="true" className="assignment" placeHolder="+ Subject/Topic"
-                    :items="A_list2" />
+                  <b-form-select class="input" v-model="selectedSubject" :options="optionsGroup"></b-form-select>
                 </b-form-group>
                 <b-form-group>
                   <b-form-input class="input" type="text" placeholder="Description"></b-form-input>
@@ -126,16 +125,13 @@
                 <h1 class="title shadow-none"><i class="far fa-edit"></i> Create Assignment</h1>
                 <b-form>
                   <b-form-group>
-                    <DropdownInput :textarea="false" className="assignment" placeHolder="+ Select Group"
-                      :items="A_list1" />
+                                      <b-form-select class="input" v-model="selectedAssignGroup" :options="optionsAssignGroup"></b-form-select>
                   </b-form-group>
                   <b-form-group>
-                    <DropdownInput :textarea="false" className="assignment" placeHolder="+ Subject/Topic"
-                      :items="A_list2" />
+                                      <b-form-select class="input" v-model="selectedAssignSubject" :options="optionsAssignSubject"></b-form-select>
                   </b-form-group>
                   <b-form-group>
-                    <DropdownInput :textarea="false" className="assignment" placeHolder="+ Type (Assignment/MCQ)"
-                      :items="A_list3" />
+                                      <b-form-select class="input" v-model="selectedAssignType" :options="optionsAssignType"></b-form-select>
                   </b-form-group>
                   <b-form-group>
                     <b-form-input class="input" type="text" placeholder="Heading"></b-form-input>
@@ -346,16 +342,16 @@
 <script>
   import SetSection from "./SetSection"
   import CardImg3 from "./Card-Img-3"
-  import DropdownInput from "./DropdownInput"
   import VueApexCharts from 'vue-apexcharts'
 
   export default {
     data() {
       return {
         siteName: "",
-        A_list1: ["Item 1", "Item 2", "Item 3", "Item 4"],
-        A_list2: ["Item 1", "Item 2", "Item 3", "Item 4"],
-        A_list3: ["Item 1", "Item 2", "Item 3", "Item 4"],
+        selectedSubject: null,
+        selectedAssignGroup: null,
+        selectedAssignSubject: null,
+        selectedAssignType: null,
         displayModalAssignment: false,
         displayModalGroupCreate: false,
         series: [82, 18],
@@ -411,14 +407,41 @@
             group: "Assigned group",
             subject: "Subject",
           }
-        ]
+        ],
+        optionsGroup: [
+          { value: null, text: "+ Subject/Topic", disabled: true },
+          { value: '1', text: 'Item 1' },
+          { value: '2', text: 'Item 2' },
+          { value: '3', text: 'Item 3' },
+          { value: '4', text: 'Item 4' }
+        ],
+        optionsAssignGroup: [
+          { value: null, text: "+ Select Group", disabled: true },
+          { value: '1', text: 'Item 1' },
+          { value: '2', text: 'Item 2' },
+          { value: '3', text: 'Item 3' },
+          { value: '4', text: 'Item 4' }
+        ],
+        optionsAssignSubject: [
+          { value: null, text: "+ Subject/Topic", disabled: true },
+          { value: '1', text: 'Item 1' },
+          { value: '2', text: 'Item 2' },
+          { value: '3', text: 'Item 3' },
+          { value: '4', text: 'Item 4' }
+        ],
+        optionsAssignType: [
+          { value: null, text: "+ Type (Assignment/MCQ)", disabled: true },
+          { value: '1', text: 'Item 1' },
+          { value: '2', text: 'Item 2' },
+          { value: '3', text: 'Item 3' },
+          { value: '4', text: 'Item 4' }
+        ],
       }
     },
     components: {
       SetSection,
       CardImg3,
-      apexchart: VueApexCharts,
-      DropdownInput
+      apexchart: VueApexCharts
     },
     methods: {
 

@@ -26,11 +26,10 @@
               <h1 class="title shadow-none"><i class="far fa-edit"></i> Create...</h1>
               <b-form>
                 <b-form-group>
-                  <b-form-input class="input" type="text" placeholder="Select Category (Assign/Event/Ann/Mater)">
-                  </b-form-input>
+                  <b-form-select class="input" v-model="selectedCategory" :options="optionsCategory"></b-form-select>
                 </b-form-group>
                 <b-form-group>
-                  <b-form-input class="input" type="text" placeholder="Select Group (Class/Section)"></b-form-input>
+                  <b-form-select class="input" v-model="selectedGroup" :options="optionsGroup"></b-form-select>
                 </b-form-group>
                 <b-form-group>
                   <b-form-input class="input" type="text" placeholder="Select Subject"></b-form-input>
@@ -171,7 +170,21 @@
   export default {
     data() {
       return {
-        displayModal: false
+        displayModal: false,
+        selectedGroup: null,
+        selectedCategory: null,
+        optionsCategory: [
+          { value: null, text: "Select Category", disabled: true },
+          { value: 'Assign', text: 'Assign' },
+          { value: 'Event', text: 'Event' },
+          { value: 'Announcement', text: 'Announcement' },
+          { value: 'Event', text: 'Event' }
+        ],
+        optionsGroup: [
+          { value: null, text: "Select Group", disabled: true },
+          { value: 'Class', text: 'Class' },
+          { value: 'Section', text: 'Section' }
+        ]
       }
     }
   }

@@ -63,8 +63,7 @@
                     <b-form-input class="home-input" type="text" placeholder="Date of Birth"></b-form-input>
                   </b-form-group>
                   <b-form-group>
-                    <b-form-input class="home-input" type="text" placeholder="User type - student/teacher/admin">
-                    </b-form-input>
+                    <b-form-select class="home-input" v-model="selectedGroup" :options="['Student','Teacher','Admin']"></b-form-select>
                   </b-form-group>
                   <b-button style="margin-left: 70%" class="register-btn" href="" variant="info"
                     @click="registerModal1=false;registerModal2=true">Next</b-button>
@@ -365,12 +364,15 @@
 
 
 <script>
+
+
   export default {
     data() {
       return {
         registerModalDiv: false,
         registerModal1: false,
-        registerModal2: false
+        registerModal2: false,
+        selectedGroup: ""
       }
     },
     methods: {
