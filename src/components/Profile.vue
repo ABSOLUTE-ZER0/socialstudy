@@ -28,9 +28,9 @@
 
           <StartPost />
           <b-row>
-            <b-button @click="academics=true;posts=false" style="  margin-left: 7em;" class="profile-button"
-              variant="outline-primary">Academics</b-button>
-            <b-button @click="posts=true;academics=false;" class="profile-button" variant="outline-primary">Posts
+            <b-button @click="academics=true;posts=false" style="  margin-left: 7em;"
+              class="profile-button button">Academics</b-button>
+            <b-button @click="posts=true;academics=false;" class="profile-button button">Posts
             </b-button>
           </b-row>
           <div v-if="academics">
@@ -62,7 +62,7 @@
                   <h5 class="report-desc">{{item.institute}}</h5>
                 </b-col>
                 <b-col class="gone" cols="3">
-                  <b-button variant="info" class="report-button">View</b-button>
+                  <b-button variant="info" class="report-button button">View</b-button>
                 </b-col>
               </div>
             </b-row>

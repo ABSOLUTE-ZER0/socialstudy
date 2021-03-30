@@ -125,13 +125,16 @@
                 <h1 class="title shadow-none"><i class="far fa-edit"></i> Create Assignment</h1>
                 <b-form>
                   <b-form-group>
-                                      <b-form-select class="input" v-model="selectedAssignGroup" :options="optionsAssignGroup"></b-form-select>
+                    <b-form-select class="input" v-model="selectedAssignGroup" :options="optionsAssignGroup">
+                    </b-form-select>
                   </b-form-group>
                   <b-form-group>
-                                      <b-form-select class="input" v-model="selectedAssignSubject" :options="optionsAssignSubject"></b-form-select>
+                    <b-form-select class="input" v-model="selectedAssignSubject" :options="optionsAssignSubject">
+                    </b-form-select>
                   </b-form-group>
                   <b-form-group>
-                                      <b-form-select class="input" v-model="selectedAssignType" :options="optionsAssignType"></b-form-select>
+                    <b-form-select class="input" v-model="selectedAssignType" :options="optionsAssignType">
+                    </b-form-select>
                   </b-form-group>
                   <b-form-group>
                     <b-form-input class="input" type="text" placeholder="Heading"></b-form-input>
@@ -262,7 +265,7 @@
   .modal-content {
     width: 80%;
     margin-left: 10%;
-        border-radius: 2em;
+    border-radius: 2em;
 
   }
 
@@ -408,33 +411,93 @@
             subject: "Subject",
           }
         ],
-        optionsGroup: [
-          { value: null, text: "+ Subject/Topic", disabled: true },
-          { value: '1', text: 'Item 1' },
-          { value: '2', text: 'Item 2' },
-          { value: '3', text: 'Item 3' },
-          { value: '4', text: 'Item 4' }
+        optionsGroup: [{
+            value: null,
+            text: "+ Subject/Topic",
+            disabled: true
+          },
+          {
+            value: '1',
+            text: 'Item 1'
+          },
+          {
+            value: '2',
+            text: 'Item 2'
+          },
+          {
+            value: '3',
+            text: 'Item 3'
+          },
+          {
+            value: '4',
+            text: 'Item 4'
+          }
         ],
-        optionsAssignGroup: [
-          { value: null, text: "+ Select Group", disabled: true },
-          { value: '1', text: 'Item 1' },
-          { value: '2', text: 'Item 2' },
-          { value: '3', text: 'Item 3' },
-          { value: '4', text: 'Item 4' }
+        optionsAssignGroup: [{
+            value: null,
+            text: "+ Select Group",
+            disabled: true
+          },
+          {
+            value: '1',
+            text: 'Item 1'
+          },
+          {
+            value: '2',
+            text: 'Item 2'
+          },
+          {
+            value: '3',
+            text: 'Item 3'
+          },
+          {
+            value: '4',
+            text: 'Item 4'
+          }
         ],
-        optionsAssignSubject: [
-          { value: null, text: "+ Subject/Topic", disabled: true },
-          { value: '1', text: 'Item 1' },
-          { value: '2', text: 'Item 2' },
-          { value: '3', text: 'Item 3' },
-          { value: '4', text: 'Item 4' }
+        optionsAssignSubject: [{
+            value: null,
+            text: "+ Subject/Topic",
+            disabled: true
+          },
+          {
+            value: '1',
+            text: 'Item 1'
+          },
+          {
+            value: '2',
+            text: 'Item 2'
+          },
+          {
+            value: '3',
+            text: 'Item 3'
+          },
+          {
+            value: '4',
+            text: 'Item 4'
+          }
         ],
-        optionsAssignType: [
-          { value: null, text: "+ Type (Assignment/MCQ)", disabled: true },
-          { value: '1', text: 'Item 1' },
-          { value: '2', text: 'Item 2' },
-          { value: '3', text: 'Item 3' },
-          { value: '4', text: 'Item 4' }
+        optionsAssignType: [{
+            value: null,
+            text: "+ Type (Assignment/MCQ)",
+            disabled: true
+          },
+          {
+            value: '1',
+            text: 'Item 1'
+          },
+          {
+            value: '2',
+            text: 'Item 2'
+          },
+          {
+            value: '3',
+            text: 'Item 3'
+          },
+          {
+            value: '4',
+            text: 'Item 4'
+          }
         ],
       }
     },
