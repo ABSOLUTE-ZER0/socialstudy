@@ -108,9 +108,9 @@
             <CardImg3 :src="item.src" :name="item.name" :sub2="item.subject" :sub1="item.group" />
           </b-col>
           <b-col cols="6" md="4">
-            <b-button class="assignment-button" variant="info">Edit
+            <b-button class="button assignment-button" variant="info">Edit
             </b-button>
-            <b-button class="assignment-button" variant="danger">Delete
+            <b-button class="button assignment-button" variant="danger">Delete
             </b-button>
           </b-col>
         </b-row>
@@ -201,7 +201,7 @@
 
 
   .assignment-button {
-    margin: 2.5em 1em;
+    margin: 2.5em 0.5em;
     border-radius: 0.5em;
     font-size: 1.4em;
     width: 40%;
@@ -211,7 +211,7 @@
     margin: 1.5em;
     width: 30%;
     border-radius: 1em;
-    font-size: 2em;
+    font-size: 1.5em;
   }
 
   .attendance-title {

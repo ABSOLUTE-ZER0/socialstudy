@@ -5,13 +5,13 @@
         <CardImg
           src="https://image.shutterstock.com/image-photo/large-beautiful-drops-transparent-rain-600w-668593321.jpg"
           name="Bachelor of Technology" sub1="Under Graduate Degree" sub2="4 Year" />
-        <b-button class="edit-btn">Edit</b-button>
+        <b-button class="button edit-btn">Edit</b-button>
       </b-row>
       <b-row>
         <b-col cols="3">
           <b-row>
             <div class="group comp">
-              <b-button @click="activeGroup=group" variant="outline-info" class="group-btn" v-for="group in groups"
+              <b-button @click="activeGroup=group" variant="outline-info" class="group-btn  outline-button" v-for="group in groups"
                 :key="group"> {{group}}
               </b-button>
             </div>
@@ -20,10 +20,10 @@
 
         <b-col cols="9">
           <b-row class="tab-row">
-            <b-button shadow-none @click="activeTab='About'" class="tab-button">About</b-button>
-            <b-button @click="activeTab='Subject'" class="tab-button">Subject</b-button>
-            <b-button @click="activeTab='Event'" class="tab-button">Event</b-button>
-            <b-button @click="activeTab='People'" class="tab-button">People</b-button>
+            <b-button shadow-none @click="activeTab='About'" class="tab-button no-outline-button">About</b-button>
+            <b-button @click="activeTab='Subject'" class="tab-button no-outline-button">Subject</b-button>
+            <b-button @click="activeTab='Event'" class="tab-button no-outline-button">Event</b-button>
+            <b-button @click="activeTab='People'" class="tab-button no-outline-button">People</b-button>
           </b-row>
 
           <div v-on="item = groupFilter">
@@ -31,7 +31,7 @@
             <div v-if="activeTab=='About'">
               <b-row style="margin-top: 0" class="comp">
                 <p class="about"> {{item.about}} </p>
-                <b-button class="edit-btn edit2">Edit</b-button>
+                <b-button class="button edit-btn edit2">Edit</b-button>
 
               </b-row>
             </div>
@@ -46,7 +46,7 @@
                     <CardImg :src="sub.src" :name="sub.name" :sub1="sub.year" />
                 </b-col>
                 <b-col md="3">
-                  <b-button href="/subject/detail" class="subject-button" variant="outline-primary">View
+                  <b-button href="/subject/detail" class="button subject-button" variant="outline-primary">View
                   </b-button>
                 </b-col>
               </b-row>
@@ -100,7 +100,7 @@
                     <h5 class="event-sub"> {{ event.type }}</h5>
                   </b-col>
                   <b-col class="gone" md="3" cols="12">
-                    <b-button variant="info" class="event-button">Register</b-button>
+                    <b-button variant="info" class="button event-button">Register</b-button>
                   </b-col>
                 </div>
               </b-row>
@@ -113,7 +113,7 @@
                     :sub2="people.group" :sub3="people.institute" />
                 </b-col>
                 <b-col class="gone" md="4" cols="12">
-                  <b-button class="people-button" variant="outline-primary">Message
+                  <b-button class="button people-button" variant="outline-primary">Message
                   </b-button>
                 </b-col>
               </b-row>
@@ -140,21 +140,12 @@
     right: 8em;
     width: 10%;
     border-radius: 2em;
-    background-color: #01C4C9;
-    border: 1px solid #01C4C9;
   }
 
   .edit2 {
     top: 6em;
   }
 
-  .edit-btn:active,
-  .edit-btn:hover,
-  .edit-btn:focus {
-    background-color: #01C4C9 !important;
-    border: 1px solid #01C4C9 !important;
-    box-shadow: 1px black !important;
-  }
 
   .group {
     width: 100%;
@@ -166,8 +157,6 @@
     width: 100%;
     margin: 1em 0;
     padding: 1em;
-    color: #01C4C9;
-    border: 1px solid #01C4C9;
   }
 
   .tab-row {
@@ -182,8 +171,6 @@
     font-size: 1.5em;
     width: 20%;
     border: 0;
-    color: rgb(117, 117, 117);
-    background: none;
     text-align: left;
   }
 
@@ -284,7 +271,7 @@
   .modal-content {
     width: 80%;
     margin-left: 10%;
-        border-radius: 2em;
+    border-radius: 2em;
 
   }
 

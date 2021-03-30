@@ -5,7 +5,7 @@
 
       <b-row>
         <h1 class="sub-title">{{item.title}}</h1>
-        <b-button class="upload-btn">Upload</b-button>
+        <b-button class="button upload-btn">Upload</b-button>
       </b-row>
 
 

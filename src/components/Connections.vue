@@ -8,7 +8,7 @@
             :sub2="friend.group" :sub3="friend.institute" />
         </b-col>
         <b-col class="gone" cols="4">
-          <b-button class="faculty-button" variant="info">View Profile
+          <b-button class="button faculty-button" variant="info">View Profile
           </b-button>
         </b-col>
       </b-row>
@@ -31,7 +31,7 @@
 
       <b-row class="comp">
         <h1 class="title">Groups Created</h1>
-        <b-button class="create-btn">+ Create Group</b-button>
+        <b-button class="button create-btn">+ Create Group</b-button>
       </b-row>
     </b-col>
 
@@ -79,8 +79,9 @@
     height: fit-content;
     padding: 0.5em;
     font-size: 1em;
-    border-radius: 2em;
-    margin-top: 2em;
+    border-radius: 0.5em;
+    margin: 1em 2em;
+    margin-left: auto ;
   }
 
 

@@ -3,7 +3,7 @@
   <b-row>
     <b-col lg="8" cols="12">
       <StartPost />
-      <div v-for="post in posts" :key="post.id" style="padding: 2em" class="comp">
+      <div v-for="post in posts" :key="post.id" style="padding: 1em 2em" class="comp">
         <b-row>
           <b-col cols="2" md="auto">
             <b-img class="post-profile-img" :src="post.profileSrc" rounded="circle" alt="Circle image">
@@ -15,15 +15,15 @@
             <p class="post-profile-place">{{post.place}}</p>
           </b-col>
         </b-row>
-        <b-row class="post-text" style="margin-top:1em">
+        <b-row class="post-text">
           <b-col>
             <p>{{post.text}}</p>
           </b-col>
         </b-row>
-        <b-row style="margin-top:1em">
+        <b-row>
           <b-img class="post-img" :src="post.image"></b-img>
         </b-row>
-        <b-row v-if="post.hasVideo" class="post-video" style="margin-top:1em">
+        <b-row v-if="post.hasVideo" class="post-video">
           <b-embed :src="post.video"></b-embed>
         </b-row>
       </div>

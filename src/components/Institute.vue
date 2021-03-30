@@ -8,9 +8,9 @@
             <CardImg :src="sub.src" :name="sub.name" :sub1="sub.sub1" />
           </b-col>
           <b-col md="6" cols="12">
-            <b-button class="subject-button" variant="outline-primary">Leave
+            <b-button class="button subject-button button" variant="outline-primary">Leave
             </b-button>
-            <b-button @click="changePage()" class="subject-button" variant="outline-primary">View
+            <b-button @click="changePage()" class="subject-button button" variant="outline-primary">View
             </b-button>
           </b-col>
         </b-row>
@@ -37,7 +37,6 @@
     font-size: 1.4em;
     width: 30%;
     float: right;
-
   }
 
   

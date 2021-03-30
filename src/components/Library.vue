@@ -20,21 +20,21 @@
             <p class="post-profile-place">Place</p>
           </b-col>
         </b-row>
-        <b-row style="margin-top:1em">
+        <b-row>
           <b-col>
             <p class="post-text">Some random text goes here</p>
           </b-col>
         </b-row>
-        <b-row style="margin-top:1em">
+        <b-row>
           <b-img></b-img>
         </b-row>
-        <b-row v-if=false style="margin-top:1em">
+        <b-row v-if=false >
           <b-embed></b-embed>
         </b-row>
       </div>
     </b-col>
     <b-col class="friends-col comp d-none d-lg-block" cols="3">
-      <div class="comp filter">
+      <div class="filter">
         <h4>Filters</h4>
         <b-form-group class="filters" label="Chapter">
           <b-form-checkbox v-for="option in options" :key="option.value" :value="option.value">
