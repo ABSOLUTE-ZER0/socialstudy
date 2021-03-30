@@ -15,16 +15,16 @@
           <b-navbar style="text-align:center; padding: 0">
             <b-navbar-nav style="width:100%">
               <b-nav-item @click="pageName='NoticeBoard';changePage()" class="navitem">
-                <b-icon class="icon" icon="clipboard" font-scale="3"></b-icon>Notice Board
+                <b-icon style="color: rgb(0, 214, 203)" class="icon" icon="clipboard" font-scale="3"></b-icon>Notice Board
               </b-nav-item>
               <b-nav-item @click="pageName='Library';changePage()" class="navitem">
-                <b-icon class="icon" icon="book" font-scale="3"></b-icon>Library
+                <b-icon style="color: rgb(255, 112, 112)" class="icon" icon="book" font-scale="3"></b-icon>Library
               </b-nav-item>
               <b-nav-item @click="pageName='Institute';changePage()" class="navitem">
-                <b-icon class="icon" icon="building" font-scale="3"></b-icon>Institute
+                <b-icon style="color: rgb(143, 255, 148)" class="icon" icon="building" font-scale="3"></b-icon>Institute
               </b-nav-item>
               <b-nav-item @click="pageName='Connections';changePage()" class="navitem">
-                <b-icon class="icon" icon="person-plus" font-scale="3"></b-icon>Connections
+                <b-icon style="color: rgb(255, 143, 240)" class="icon" icon="person-plus" font-scale="3"></b-icon>Connections
               </b-nav-item>
             </b-navbar-nav>
           </b-navbar>
@@ -48,8 +48,6 @@
                 <b-nav-item class="d-md-none">
                   <b-icon icon="search"></b-icon>Search
                 </b-nav-item>
-
-                
               </b-navbar-nav>
             </b-collapse>
           </b-navbar>
@@ -70,6 +68,8 @@
 
   .navitem2{
     max-height: 10px;
+    font-size: 0.9em;
+    margin-top: 0.5em;
   }
 
   .profile-dropdown:after {
@@ -86,11 +86,12 @@
 
   .profile-dropdown-div{
     position: absolute;
-    top: 40px;
-    right: 0;
+    top: 43px;
+    left: 75%;
     width: fit-content;
     overflow: hidden;
     background-color: white;
+    border-radius: 0.25em;
   }
 
   h1 {
@@ -135,6 +136,7 @@
 
   .logout {
     height: fit-content;
+    font-size: 1em;
   }
 
 
@@ -206,10 +208,10 @@
     methods: {
       changePage: function () {
         this.$emit("changeSite", this.pageName)
+        this.profileDropdown = false
       },
       profileClick(){
         this.profileDropdown = !this.profileDropdown;
-
       }
     }
 

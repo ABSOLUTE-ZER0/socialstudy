@@ -75,6 +75,8 @@
   .search-bar {
     border: 0;
     margin-left: 0.5em;
+    width: calc(100% - 2.5em);
+    background-color: transparent;
   }
 
   .friends-col {
@@ -90,7 +92,7 @@
   .search-div {
     width: 100%;
     margin: 1em;
-    font-size: 1.5em;
+    font-size: 1.2em;
     border-radius: 0.5em;
     border: 0;
     color: gray;

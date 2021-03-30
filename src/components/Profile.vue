@@ -100,8 +100,8 @@
 
   .profile-img {
     position: absolute;
-    left: 160px;
-    top: 450px;
+    left: calc(100px + 10%);
+    top: 420px;
     width: 160px;
     height: 160px;
     background-color: rgb(0, 183, 255);
