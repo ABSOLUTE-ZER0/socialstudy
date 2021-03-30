@@ -1,5 +1,5 @@
 <template>
-  <div class="friends-div">
+  <div class="friends-div shadow">
     <b-row @mousedown.prevent="" @click="clicked=!clicked" class="title">
       <h4 class="title-text">Online Friends</h4>
     </b-row>

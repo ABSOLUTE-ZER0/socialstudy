@@ -1,5 +1,5 @@
 <template>
-  <div class="main-div">
+  <div class="shadow main-div">
     <b-container fluid>
       <b-row>
         <b-col cols="10" md="3">
@@ -38,13 +38,18 @@
                     class="icon1 fas fa-2x fa-comment-dots"></button>Message</b-nav-item>
                 <b-nav-item @click="pageName='Notification';changePage()" class="navitem2" href="#"><button
                     class="icon1 fas fa-2x fa-bell"></button>Notification</b-nav-item>
-                <b-nav-item @click="pageName='MyProfile';changePage()" class="navitem2" href="#"><button
-                    class="icon1 fas fa-user fa-2x"></button>My Profile</b-nav-item>
+                <b-nav-item @click="profileClick()" class="navitem2 profile-dropdown" href="#">
+                  <button class="icon1 fas fa-user fa-2x"></button>My Profile</b-nav-item>
+                  <div class="profile-dropdown-div shadow" v-if="profileDropdown">
+                    <b-nav-item @click="pageName='MyProfile';changePage()">My Profile</b-nav-item>
+                    <b-nav-item>Settings</b-nav-item>
+                    <b-button variant="danger" class="logout" href="/">LOGOUT</b-button>
+                  </div>
                 <b-nav-item class="d-md-none">
                   <b-icon icon="search"></b-icon>Search
                 </b-nav-item>
 
-                <b-button variant="danger" class="navitem2 logout" href="/">LOGOUT</b-button>
+                
               </b-navbar-nav>
             </b-collapse>
           </b-navbar>
@@ -56,14 +61,36 @@
 <style scoped>
   .main-div {
     background-color: rgb(255, 255, 255);
-    padding-top: 2em;
-    max-width: 100%;
+    padding: 2em 10% 0;
+    width: 500%;
     max-height: 10em;
-
+    padding: 0 200%;
+    margin-left: -200%;
   }
 
-  .navbar-nav {
-    width: 100%;
+  .navitem2{
+    max-height: 10px;
+  }
+
+  .profile-dropdown:after {
+    content: " ";
+    position: relative;
+    right: -40px;
+    top: -30px;
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+  }
+
+  .profile-dropdown-div{
+    position: absolute;
+    top: 40px;
+    right: 0;
+    width: fit-content;
+    overflow: hidden;
+    background-color: white;
   }
 
   h1 {
@@ -108,11 +135,8 @@
 
   .logout {
     height: fit-content;
-    margin-top: -2.5em;
-    position: absolute;
-    top: 0;
-    right: 0;
   }
+
 
 
   @media (max-width: 992px) and (min-width: 768px) {
@@ -173,7 +197,8 @@
   export default {
     data() {
       return {
-        pageName: "NoticeBoard"
+        pageName: "NoticeBoard",
+        profileDropdown: false
       }
     }
 
@@ -181,6 +206,10 @@
     methods: {
       changePage: function () {
         this.$emit("changeSite", this.pageName)
+      },
+      profileClick(){
+        this.profileDropdown = !this.profileDropdown;
+
       }
     }
 

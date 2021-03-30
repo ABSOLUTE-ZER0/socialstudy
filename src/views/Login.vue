@@ -261,6 +261,8 @@
   .modal-content {
     width: 80%;
     margin-left: 10%;
+        border-radius: 2em;
+
   }
 
   .register-btn {
@@ -323,6 +325,8 @@
     .modal-content {
     width: 100%;
     margin-left: 0;
+        border-radius: 2em;
+
   }
 
     .title {

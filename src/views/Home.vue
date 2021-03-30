@@ -1,7 +1,8 @@
 <template>
-  <div style="background-color: rgb(236, 236, 236); min-height: 100vh">
+  <div style="background-color: rgb(236, 236, 236); min-height: 100vh;padding: 0 10%;overflow-x: hidden;">
     <Header v-on:changeSite="updateSite($event)" />
-    <HomeView :siteNameProp="siteName" v-on:changeSite="updateSite($event);changePage()" v-if="options.find(check)==siteName" />
+    <HomeView :siteNameProp="siteName" v-on:changeSite="updateSite($event);changePage()"
+      v-if="options.find(check)==siteName" />
     <Profile v-if="siteName == 'MyProfile'" />
   </div>
 </template>
@@ -30,9 +31,9 @@
       updateSite(newValue) {
         this.siteName = newValue;
       },
-      check(name){
-        if(this.siteName == name)
-         return true
+      check(name) {
+        if (this.siteName == name)
+          return true
       }
 
     }

@@ -160,6 +160,8 @@
   .modal-content {
     width: 80%;
     margin-left: 10%;
+        border-radius: 2em;
+
   }
 
   .form-row{
