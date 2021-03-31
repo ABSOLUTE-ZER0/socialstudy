@@ -229,7 +229,7 @@
     ,
     methods: {
       changePage: function () {
-        if(this.pageName == 'Library'){
+        if(this.pageName == 'Institute'){
         this.$emit("changeSite", [this.pageName,"true"])
         }
         else{

@@ -73,12 +73,12 @@
     methods: {
       updateSite(newValue) {
         this.view = newValue;
+        console.log(this.view);
         newValue = "ToolView";
         this.siteName = newValue;
       },
       changePage() {
-        this.$emit("changeSite", this.siteName)
-        console.log(this.siteName);
+        this.$emit("changeSite", [this.siteName])
       },
       instituteView(value) {
         this.institute = value[0]
