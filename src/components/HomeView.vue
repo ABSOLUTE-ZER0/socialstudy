@@ -10,7 +10,7 @@
           <Tools v-on:changeSite="updateSite($event);changePage()" />
         </b-col>
 
-        <b-col lg="9" sm="12">
+        <b-col lg="9" sm="12" style="padding: 0">
           <NoticeBoard v-if="siteNameProp == 'NoticeBoard'" />
           <Library v-if="siteNameProp == 'Library'" />
           <Institute v-on:instituteView="instituteView($event);" v-if="siteNameProp == 'Institute'" />

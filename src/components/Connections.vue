@@ -13,7 +13,7 @@
         </b-col>
       </b-row>
     </b-col>
-    <b-col lg="4">
+    <b-col style="padding: 0" lg="4">
       <h1 class="title">Pending Connections</h1>
       <div class="comp req-div">
       <b-row v-for="friend in friends" :key="friend" >

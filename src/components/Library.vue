@@ -33,7 +33,7 @@
         </b-row>
       </div>
     </b-col>
-    <b-col class="friends-col comp d-none d-lg-block" cols="3">
+    <b-col class="friends-col comp d-none d-lg-block" cols="4">
       <div class="filter">
         <h4>Filters</h4>
         <b-form-group class="filters" label="Chapter">

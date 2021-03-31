@@ -1,7 +1,7 @@
 <template>
   <b-container fluid v-if="view">
     <b-row>
-      <b-col>
+      <b-col style="padding: 0">
         <h1 class="title2">Institutes that you are enrolled in</h1>
         <b-row v-for="sub in institutes" :key="sub" class="comp">
           <b-col md="6" cols="12">

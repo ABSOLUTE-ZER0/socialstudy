@@ -1,7 +1,7 @@
 <template>
   <div class="main-div">
     <b-container fluid>
-      <b-row class="comp detail-row">
+      <b-row style="margin:10px -15px !important" class="comp detail-row">
         <CardImg
           src="https://image.shutterstock.com/image-photo/large-beautiful-drops-transparent-rain-600w-668593321.jpg"
           name="Bachelor of Technology" sub1="Under Graduate Degree" sub2="4 Year" />
