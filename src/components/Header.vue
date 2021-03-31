@@ -14,18 +14,18 @@
         <b-col style="margin-top: 1em" class="options" cols="10" md="6">
           <b-navbar style="text-align:center; padding: 0">
             <b-navbar-nav style="width:100%">
-              <b-nav-item @click="pageName='NoticeBoard';changePage()" class="navitem">
-                <b-icon style="color: rgb(0, 214, 203)" class="icon" icon="clipboard" font-scale="3"></b-icon>Notice
+              <b-nav-item @click="pageName='NoticeBoard';changePage()" v-bind:class="{'active-tab':isActive('NoticeBoard')}" class="navitem">
+                <b-icon class="icon" icon="clipboard" font-scale="3"></b-icon>Notice
                 Board
               </b-nav-item>
-              <b-nav-item @click="pageName='Library';changePage()" class="navitem">
-                <b-icon style="color: rgb(255, 112, 112)" class="icon" icon="book" font-scale="3"></b-icon>Library
+              <b-nav-item @click="pageName='Library';changePage()" v-bind:class="{'active-tab':isActive('Library')}" class="navitem">
+                <b-icon class="icon" icon="book" font-scale="3"></b-icon>Library
               </b-nav-item>
-              <b-nav-item @click="pageName='Institute';changePage()" class="navitem">
-                <b-icon style="color: rgb(143, 255, 148)" class="icon" icon="building" font-scale="3"></b-icon>Institute
+              <b-nav-item @click="pageName='Institute';changePage()" v-bind:class="{'active-tab':isActive('Institute')}" class="navitem">
+                <b-icon class="icon" icon="building" font-scale="3"></b-icon>Institute
               </b-nav-item>
-              <b-nav-item @click="pageName='Connections';changePage()" class="navitem">
-                <b-icon style="color: rgb(255, 143, 240)" class="icon" icon="person-plus" font-scale="3"></b-icon>
+              <b-nav-item @click="pageName='Connections';changePage()" v-bind:class="{'active-tab':isActive('Connections')}" class="navitem">
+                <b-icon class="icon" icon="person-plus" font-scale="3"></b-icon>
                 Connections
               </b-nav-item>
             </b-navbar-nav>
@@ -92,7 +92,7 @@
     font-size: 1.2em;
     border-radius: 0.5em;
     border: 0;
-    background-color: rgba(18, 194, 201, 0.205);
+    background-color: #f3f7f7;
     margin-left: 0;
   }
 
@@ -138,6 +138,7 @@
   .icon {
     width: 100% !important;
     font-size: 2.5em !important;
+    font-weight: bolder;
   }
 
   .icon1 {
@@ -150,6 +151,14 @@
     height: fit-content;
     font-size: 1em;
     width: 100%;
+  }
+
+  .active-tab{
+    border-bottom: 2px solid grey;
+  }
+
+  .active-tab>.nav-link{
+    color: black !important;
   }
 
 
@@ -220,11 +229,25 @@
     ,
     methods: {
       changePage: function () {
-        this.$emit("changeSite", this.pageName)
+        if(this.pageName == 'Library'){
+        this.$emit("changeSite", [this.pageName,"true"])
+        }
+        else{
+        this.$emit("changeSite", [this.pageName])
+
+        }
         this.profileDropdown = false
       },
       profileClick() {
         this.profileDropdown = !this.profileDropdown;
+      },
+      isActive(name){
+        if(this.pageName == name){
+          return true
+        }
+        else{
+          return false
+        }
       }
     }
 

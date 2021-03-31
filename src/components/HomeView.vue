@@ -5,7 +5,7 @@
 
 
         <b-col lg="3" v-if="check()">
-          <Create v-if="siteNameProp == 'Institute'" />
+          <Create v-on:instituteViewAdmin="instituteViewAdmin($event);" v-if="siteNameProp == 'Institute'" />
           <Details v-if="siteNameProp != 'Institute'" />
           <Tools v-on:changeSite="updateSite($event);changePage()" />
         </b-col>
@@ -13,12 +13,13 @@
         <b-col lg="9" sm="12" style="padding: 0">
           <NoticeBoard v-if="siteNameProp == 'NoticeBoard'" />
           <Library v-if="siteNameProp == 'Library'" />
-          <Institute v-on:instituteView="instituteView($event);" v-if="siteNameProp == 'Institute'" />
+          <Institute v-on:instituteView="instituteView($event);" :propView="propView"
+            v-if="siteNameProp == 'Institute'" />
           <Connections v-if="siteNameProp == 'Connections'" />
           <ToolView :pageName="view" v-if="siteNameProp == 'ToolView'" />
         </b-col>
         <b-col lg="12" v-if="!check()">
-          <InstituteView v-if="siteNameProp == 'Institute'" />
+          <InstituteView :isAdmin="instituteAdmin" v-if="siteNameProp == 'Institute'" />
         </b-col>
       </b-row>
       <div>
@@ -53,7 +54,8 @@
         siteName: "NoticeBoard",
         view: "",
         institute: "",
-        list: ["InstituteView", "Institute"]
+        list: ["InstituteView", "Institute"],
+        instituteAdmin: false
       }
     },
     components: {
@@ -73,27 +75,33 @@
         this.view = newValue;
         newValue = "ToolView";
         this.siteName = newValue;
-
       },
       changePage() {
         this.$emit("changeSite", this.siteName)
+        console.log(this.siteName);
       },
       instituteView(value) {
-        this.institute = value
+        this.institute = value[0]
+        this.instituteAdmin = value[1]
+      },
+      instituteViewAdmin(value) {
+        this.institute = value[0]
+        this.instituteAdmin = value[1]
+        this.propView = "false"
       },
       check() {
         if (this.institute == this.list[0] && this.siteNameProp == this.list[1]) {
           return false
         } else {
           this.institute = ""
-
           return true
         }
       }
 
     },
     props: {
-      siteNameProp: String
+      siteNameProp: String,
+      propView: String
     }
   }
 </script>

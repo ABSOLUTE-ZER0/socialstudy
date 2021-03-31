@@ -5,7 +5,7 @@
       <h4 class="title1">Institutes created</h4>
       <b-row v-for="sub in institutesCreated" :key="sub" class="cards">
         <b-col>
-          <b-card class="card9" img-left :img-src="sub.src">
+          <b-card @click="changePageAdmin()" class="card9" img-left :img-src="sub.src">
             <b-card-body class="body">
               <b-card-title class="title"> {{sub.name}} </b-card-title>
               <b-card-sub-title class="sub mb-2"> {{sub.sub1}}</b-card-sub-title>
@@ -33,8 +33,8 @@
                   <b-form-input class="input" type="text" placeholder="Institute Name"></b-form-input>
                 </b-form-group>
                 <div class="form-row">
-                    <b-form-input class="input-samerow" type="text" placeholder="Country"></b-form-input>
-                    <b-form-input class="input-samerow" type="text" placeholder="State"></b-form-input>
+                  <b-form-input class="input-samerow" type="text" placeholder="Country"></b-form-input>
+                  <b-form-input class="input-samerow" type="text" placeholder="State"></b-form-input>
                 </div>
 
                 <b-form-group>
@@ -108,6 +108,11 @@
     padding-bottom: 0;
   }
 
+  .card9{
+    pointer-events: all;
+    cursor: pointer;
+  }
+
   .card {
     border: 0;
     width: 100%;
@@ -160,17 +165,17 @@
   .modal-content {
     width: 80%;
     margin-left: 10%;
-        border-radius: 2em;
+    border-radius: 2em;
 
   }
 
-  .form-row{
+  .form-row {
     width: 100%;
     display: flex;
     flex-flow: row wrap;
   }
 
-  .input-samerow{
+  .input-samerow {
     background-color: #EAFDFB;
     border: 0;
     margin: 1em 5%;
@@ -224,6 +229,13 @@
         ],
       }
     },
+    methods: {
+      changePageAdmin() {
+        console.log("test");
+        this.$emit("instituteViewAdmin", ["InstituteView", true]);
+        this.view = false;
+      }
+    }
 
 
   }

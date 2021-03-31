@@ -5,14 +5,14 @@
         <CardImg
           src="https://image.shutterstock.com/image-photo/large-beautiful-drops-transparent-rain-600w-668593321.jpg"
           name="Bachelor of Technology" sub1="Under Graduate Degree" sub2="4 Year" />
-        <b-button class="button edit-btn">Edit</b-button>
+        <b-button v-if="isAdmin" class="button edit-btn">Edit</b-button>
       </b-row>
       <b-row>
         <b-col cols="3">
           <b-row>
             <div class="group comp">
-              <b-button @click="activeGroup=group" variant="outline-info" class="group-btn  outline-button" v-for="group in groups"
-                :key="group"> {{group}}
+              <b-button @click="activeGroup=group" variant="outline-info" class="group-btn  outline-button"
+                v-for="group in groups" :key="group"> {{group}}
               </b-button>
             </div>
           </b-row>
@@ -31,27 +31,25 @@
             <div v-if="activeTab=='About'">
               <b-row style="margin-top: 0" class="comp">
                 <p class="about"> {{item.about}} </p>
-                <b-button class="button edit-btn edit2">Edit</b-button>
+                <b-button v-if="isAdmin" class="button edit-btn edit2">Edit</b-button>
 
               </b-row>
             </div>
 
             <div v-if="activeTab=='Subject'">
               <b-row style="text-align:right">
-                <button @click="openModal()" class="add-sub">+ Add Subject</button>
+                <button v-if="isAdmin" @click="openModal()" class="add-sub">+ Add Subject</button>
 
               </b-row>
-              <b-row  v-for="sub in item.subject" :key="sub" class="comp">
+              <b-row v-for="sub in item.subject" :key="sub" class="comp">
                 <b-col md="9">
-                    <CardImg :src="sub.src" :name="sub.name" :sub1="sub.year" />
+                  <CardImg :src="sub.src" :name="sub.name" :sub1="sub.year" />
                 </b-col>
                 <b-col md="3">
                   <b-button href="/subject/detail" class="button subject-button" variant="outline-primary">View
                   </b-button>
                 </b-col>
               </b-row>
-
-
 
               <div v-if="subCreateModal">
                 <div class="modal-mask createpostModal">
@@ -83,9 +81,6 @@
                   </div>
                 </div>
               </div>
-
-
-
             </div>
 
             <div v-if="activeTab=='Event'">
@@ -205,12 +200,12 @@
     display: flex;
   }
 
-      .subject-button {
+  .subject-button {
     margin: 2.5em 0.5em 0;
     border-radius: 0.5em;
     font-size: 1.4em;
     width: 80%;
-    }
+  }
 
   .event-date {
     color: rgb(128, 128, 128);
@@ -447,13 +442,12 @@
       CardImg3
     },
     methods: {
-      updateSite(value) {
-        this.view = value
-        this.$emit("instituteView", "InstituteView")
-      },
       openModal() {
         this.subCreateModal = true;
       }
+    },
+    props: {
+      isAdmin: Boolean
     }
   }
 </script>

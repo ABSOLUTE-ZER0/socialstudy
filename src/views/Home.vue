@@ -1,7 +1,7 @@
 <template>
   <div style="background-color: #f3f7f7; min-height: 100vh;padding: 0 10%;overflow-x: hidden;">
     <Header v-on:changeSite="updateSite($event)" />
-    <HomeView :siteNameProp="siteName" v-on:changeSite="updateSite($event);changePage()"
+    <HomeView :propView="propView" :siteNameProp="siteName" v-on:changeSite="updateSite($event);changePage()"
       v-if="options.find(check)==siteName" />
     <Profile v-if="siteName == 'MyProfile'" />
   </div>
@@ -18,8 +18,8 @@
     data() {
       return {
         siteName: 'NoticeBoard',
-        options: ["NoticeBoard", "Library", "Institute", "Connections", "ToolView"]
-
+        options: ["NoticeBoard", "Library", "Institute", "Connections", "ToolView"],
+        propView: "true"
       }
     },
     components: {
@@ -29,7 +29,10 @@
     },
     methods: {
       updateSite(newValue) {
-        this.siteName = newValue;
+        this.siteName = newValue[0];
+        if(this.siteName == 'Institute'){
+          this.propView = newValue[1]
+        }
       },
       check(name) {
         if (this.siteName == name)

@@ -1,11 +1,11 @@
 <template>
-  <b-container fluid v-if="view">
+  <b-container fluid v-if="check()">
     <b-row>
       <b-col style="padding: 0">
         <h1 class="title2">Institutes that you are enrolled in</h1>
         <b-row v-for="sub in institutes" :key="sub" class="comp">
           <b-col md="6" cols="12">
-            <CardImg :src="sub.src" :name="sub.name" :sub1="sub.sub1" />
+            <CardImg  :src="sub.src" :name="sub.name" :sub1="sub.sub1" />
           </b-col>
           <b-col md="6" cols="12">
             <b-button class="button subject-button button" variant="outline-primary">Leave
@@ -16,10 +16,6 @@
         </b-row>
       </b-col>
     </b-row>
-
-
-    
-
   </b-container>
 </template>
 
@@ -85,16 +81,25 @@
           }
         });
         return final.content;
-      },
+      }
     },
     components: {
       CardImg
     },
     methods: {
       changePage() {
-        this.$emit("instituteView", "InstituteView");
+        this.$emit("instituteView", ["InstituteView",false]);
         this.view = false;
+      },
+      check(){
+        if(this.propView == "false"){
+          return false
+        }
+        return this.view
       }
+    },
+    props:{
+      propView: String
     }
   }
 </script>
