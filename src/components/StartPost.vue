@@ -1,18 +1,18 @@
 <template>
   <b-row class="comp">
-    <b-button @click="displayModal=true" class="create-button shadow-none"><i class="far fa-edit"></i> Create...
+    <b-button @click="displayModal=true;selectedCategory=null" class="create-button shadow-none"><i class="far fa-edit"></i> Create...
     </b-button>
-    <b-col class="p-div">
+    <b-col @click="displayModal=true;selectedCategory='Assignment'" class="p-div">
       <p class="p"><i class="fas fa-image"></i> Assignment</p>
     </b-col>
-    <b-col class="p-div">
+    <b-col @click="displayModal=true;selectedCategory='Material'" class="p-div">
       <p class="p"><i class="fab fa-youtube"></i> Material</p>
     </b-col>
-    <b-col class="p-div">
+    <b-col @click="displayModal=true;selectedCategory='Announcement'" class="p-div">
       <p class="p"><i class="fab fa-wpforms"></i> Announcement</p>
 
     </b-col>
-    <b-col class="p-div">
+    <b-col @click="displayModal=true;selectedCategory='Event'" class="p-div">
       <p class="p"><i class="far fa-newspaper"></i> Event</p>
     </b-col>
 
@@ -175,8 +175,8 @@
         selectedCategory: null,
         optionsCategory: [
           { value: null, text: "Select Category", disabled: true },
-          { value: 'Assign', text: 'Assign' },
-          { value: 'Event', text: 'Event' },
+          { value: 'Assignment', text: 'Assignment' },
+          { value: 'Material', text: 'Material' },
           { value: 'Announcement', text: 'Announcement' },
           { value: 'Event', text: 'Event' }
         ],
