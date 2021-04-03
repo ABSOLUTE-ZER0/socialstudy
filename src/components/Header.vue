@@ -48,11 +48,28 @@
                   <button class="icon1 fas fa-user fa-2x"></button>Profile <b-icon class="dropdown-arrow"
                     icon="triangle-fill"></b-icon>
                 </b-nav-item>
-                <div class="profile-dropdown-div shadow" v-if="profileDropdown">
+
+
+                <div class="profile-dropdown-div shadow" v-bind:class="{'profile-dropdown-div-open':profileDropdown}">
+                  <div style="display:flex">
+                    <div class="dropdown-img">
+                      <b-img class="image" v-bind="mainProps" rounded="circle" alt="Circle image"></b-img>
+                    </div>
+                    <div class="dropdown-img-text">
+                      <p class="dropdown-text-1">Name</p>
+                      <p class="dropdown-text-2">Position</p>
+                    </div>
+                  </div>
+
+                  <hr>
+                  <h5 class="dropdown-subtitle">Account</h5>
                   <b-nav-item @click="pageName='MyProfile';changePage()">My Profile</b-nav-item>
                   <b-nav-item>Settings</b-nav-item>
-                  <b-button variant="danger" class="logout" href="/">LOGOUT</b-button>
+                  <hr>
+                  <b-button variant="danger" class="logout" href="/">Sign out</b-button>
                 </div>
+
+
                 <b-nav-item class="d-md-none">
                   <b-icon icon="search"></b-icon>Search
                 </b-nav-item>
@@ -85,12 +102,42 @@
     outline: 0 !important;
   }
 
-  .options{
+  .options {
     margin-top: 20px;
   }
 
-  .drop-down-div{
+  .drop-down-div {
     margin-top: 40px;
+  }
+
+  .dropdown-img-text {
+    margin-left: 10px;
+    margin-top: 7px;
+  }
+
+  .dropdown-img-text>p {
+    margin: 0;
+  }
+
+  .dropdown-text-1 {
+    font-size: 1.1em;
+    font-weight: bold;
+  }
+
+  .profile-dropdown-div>li>a {
+    padding: 0 !important;
+    margin-bottom: 5px;
+    font-size: 1em;
+    color: black !important;
+    font-weight: normal !important;
+
+  }
+
+  .dropdown-subtitle {
+    margin: 0;
+    margin-bottom: 5px;
+    font-size: 1.2em;
+    font-weight: bold;
   }
 
   .search-bar {
@@ -129,23 +176,40 @@
   }
 
   .profile-dropdown-div {
+    text-align: left;
+    padding: 10px;
     position: absolute;
-    top: 60px;
-    right: 5em;
-    transform: translateX(50%);
-    width: 8em !important;
+    top: 62px;
+    right: 0;
+    width: 300px !important;
     width: fit-content;
     overflow: hidden;
     background-color: white;
-    border-radius: 0.25em;
+    border-radius: 0.5em;
+    border-top-right-radius: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity cubic-bezier(0, 0, .2, 1), 0.35s;
+
+  }
+
+
+  .profile-dropdown-div-open {
+    transition: opacity 4s cubic-bezier(0, 0, .2, 1), 0.1s;
+    opacity: 1;
+    visibility: visible;
+  }
+
+
+  .image {
+    width: 50px;
+    height: 50px;
   }
 
   h1 {
     color: rgb(0, 203, 218);
     font-size: 3em !important;
   }
-
-
 
   .input-group-prepend {
     border-top-left-radius: 5em !important;
@@ -264,7 +328,10 @@
     data() {
       return {
         pageName: "NoticeBoard",
-        profileDropdown: false
+        profileDropdown: false,
+        mainProps: {
+          src: "https://placekitten.com/1000/300"
+        }
       }
     }
 

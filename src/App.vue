@@ -53,6 +53,12 @@
   }
 
 
+
+  /* modals */
+
+  
+
+
   @media (max-width: 768px) {
     body {
       font-size: 0.5em !important;
