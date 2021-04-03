@@ -22,15 +22,16 @@
           <div class="modal-dialog">
             <div class="modal-content">
               <b-icon @click="displayModal=false" class="exit-modal" icon="x"></b-icon>
-
-              <h1 class="modal-title shadow-none"><i class="far fa-edit"></i> Create...</h1>
+              <div class="modal-title-div">
+                <h1 class="modal-title shadow-none"><i class="far fa-edit"></i> Create new institute</h1>
+              </div>
               <b-form>
                 <b-form-group>
-                  <b-form-input class="input" type="text" placeholder="College/School/Coaching/Other">
+                  <b-form-input class="modal-input" type="text" placeholder="College/School/Coaching/Other">
                   </b-form-input>
                 </b-form-group>
                 <b-form-group>
-                  <b-form-input class="input" type="text" placeholder="Institute Name"></b-form-input>
+                  <b-form-input class="modal-input" type="text" placeholder="Institute Name"></b-form-input>
                 </b-form-group>
                 <div class="form-row">
                   <b-form-input class="input-samerow" type="text" placeholder="Country"></b-form-input>
@@ -38,17 +39,18 @@
                 </div>
 
                 <b-form-group>
-                  <b-form-input class="input" type="text" placeholder="City"></b-form-input>
+                  <b-form-input class="modal-input" type="text" placeholder="City"></b-form-input>
                 </b-form-group>
                 <b-form-group>
-                  <b-form-input class="input" type="text" placeholder="Course Name (e.g B.tech/ BBA)"></b-form-input>
+                  <b-form-input class="modal-input" type="text" placeholder="Course Name (e.g B.tech/ BBA)">
+                  </b-form-input>
                 </b-form-group>
                 <b-form-group>
-                  <b-form-input class="input" type="text" placeholder="Specialization/Department (IT/CS/Civil)">
+                  <b-form-input class="modal-input" type="text" placeholder="Specialization/Department (IT/CS/Civil)">
                   </b-form-input>
                 </b-form-group>
 
-                <b-button style="margin-left: 70%" class="post-btn" @click="displayModal=false">Post</b-button>
+                <b-button style="margin-left: 70%" class="button post-btn" @click="displayModal=false">Post</b-button>
               </b-form>
             </div>
           </div>
@@ -81,7 +83,6 @@
 
   .create-btn {
     background-color: #01C4C9;
-    border: 0;
     width: 90%;
     border-radius: 2em;
     margin: 1em 1em 0;
@@ -108,7 +109,7 @@
     padding-bottom: 0;
   }
 
-  .card9{
+  .card9 {
     pointer-events: all;
     cursor: pointer;
   }
@@ -141,11 +142,16 @@
     transition: opacity .3s ease;
   }
 
+  .modal-title-div {
+    width: 100%;
+    border-bottom: 1.5px solid #a8a8a86c;
+  }
+
   .modal-title {
     color: #01C4C9;
-    width: fit-content;
-    margin: 5% 5% 0;
-    border-bottom: 1px solid #01C4C9;
+    margin: 20px 5% 20px;
+    font-size: 2em;
+    text-shadow: 2px 1px 1px #01c2c980;
   }
 
   .modal-dialog {
@@ -163,28 +169,13 @@
   }
 
   .modal-content {
-    width: 80%;
-    margin-left: 10%;
-    border-radius: 2em;
-
+    width: 60%;
+    margin-left: 20%;
+    border-radius: 1em;
   }
 
-  .form-row {
-    width: 100%;
-    display: flex;
-    flex-flow: row wrap;
-  }
 
-  .input-samerow {
-    background-color: #EAFDFB;
-    border: 0;
-    margin: 1em 5%;
-    border-radius: 0.5em;
-    font-size: 1.5em;
-    width: 40%;
-  }
-
-  .input {
+  .modal-input {
     background-color: #EAFDFB;
     border: 0;
     margin: 1em 5% 0;
@@ -192,6 +183,23 @@
     font-size: 1.5em;
     width: 90%;
   }
+
+  .form-row {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0;
+  }
+
+  .input-samerow {
+    background-color: #EAFDFB;
+    border: 0;
+    margin: 1em 5% 0;
+    border-radius: 0.5em;
+    font-size: 1.5em;
+    width: 40%;
+  }
+
 
   .post-btn {
     margin: 1em;

@@ -43,10 +43,10 @@
         <div class="modal-wrapper ">
           <div class="modal-dialog">
             <div class="modal-content">
-              <div v-if="registerModal1" class="modal-dialog">
+              <div v-if="registerModal1">
                 <b-icon @click="closeRegisterModal" class="exit-modal" icon="x"></b-icon>
-                <div class="modal-header">
-                  <h1 class="register-title">Fill Your Basic Details</h1>
+              <div class="modal-title-div">
+                  <h1 class="modal-title">Fill Your Basic Details</h1>
                 </div>
                 <b-form>
                   <div class="inline-form">
@@ -73,11 +73,11 @@
 
 
 
-              <div v-if="registerModal2" class="modal-dialog">
+              <div v-if="registerModal2">
                 <b-icon @click="closeRegisterModal" class="exit-modal" icon="x"></b-icon>
 
-                <div class="modal-header">
-                  <h1 class="register-title">Current Education Details</h1>
+              <div class="modal-title-div">
+                  <h1 class="modal-title">Current Education Details</h1>
                 </div>
                 <b-form>
                   <div class="inline-form">
@@ -143,9 +143,18 @@
     margin-bottom: 1.5em;
   }
 
-  .register-title {
-    margin-bottom: 2%;
+  .modal-title-div {
+    width: 100%;
+    border-bottom: 1.5px solid #a8a8a86c;
   }
+
+  .modal-title {
+    color: #01C4C9;
+    margin: 20px 5% 20px;
+    font-size: 2em;
+    text-shadow: 2px 1px 1px #01c2c980;
+  }
+
 
   h3 {
     margin-top: 1.5em;
@@ -179,12 +188,12 @@
   }
 
   .home-input {
-    background-color: rgba(127, 255, 212, 0.175);
+    background-color: #EAFDFB;
     border: 0;
-    margin-bottom: 0.7rem;
+    margin: 1em 5% 0;
     border-radius: 0.5em;
     font-size: 1.5em;
-    width: 100%;
+    width: 90%;
   }
 
   .home-input-main{
@@ -198,13 +207,12 @@
 
   .home-input.small1,
   .home-input.small2 {
-    width: 45%;
+    width: 40%;
     margin-top: 5%;
-    margin-bottom: 1.4rem;
   }
 
   .home-input.small2 {
-    margin-left: 10%;
+    margin-left: 5%;
   }
 
 
@@ -258,15 +266,14 @@
   }
 
   .modal-content {
-    width: 80%;
-    margin-left: 10%;
-        border-radius: 2em;
-
+    width: 60%;
+    margin-left: 20%;
+    border-radius: 1em;
   }
 
+
   .register-btn {
-    margin: 5%;
-    margin-top: 0;
+    margin: 20px;
     width: 20%;
   }
 

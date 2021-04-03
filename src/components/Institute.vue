@@ -8,7 +8,7 @@
             <CardImg  :src="sub.src" :name="sub.name" :sub1="sub.sub1" />
           </b-col>
           <b-col md="6" cols="12">
-            <b-button class="button subject-button button" variant="outline-primary">Leave
+            <b-button class="subject-button" variant="danger">Leave
             </b-button>
             <b-button @click="changePage()" class="subject-button button" variant="outline-primary">View
             </b-button>
@@ -22,8 +22,8 @@
 
 <style scoped>
   .title2 {
-    padding: 1em 1em 0;
-    font-size: 2em;
+    margin: 1em 1em 0;
+    font-size: 2.1em;
     font-weight: bold;
   }
 

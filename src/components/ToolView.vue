@@ -8,17 +8,18 @@
           <div class="modal-dialog">
             <div class="modal-content">
               <b-icon @click="displayModalGroupCreate=false" class="exit-modal" icon="x"></b-icon>
-
-              <h1 class="title shadow-none"><i class="far fa-edit"></i> Create Assignment</h1>
+              <div class="modal-title-div">
+                <h1 class="modal-title shadow-none"><i class="far fa-edit"></i> Create a group</h1>
+              </div>
               <b-form>
                 <b-form-group>
-                  <b-form-input class="input" type="text" placeholder="Group Name"></b-form-input>
+                  <b-form-input class="modal-input" type="text" placeholder="Group Name"></b-form-input>
                 </b-form-group>
                 <b-form-group>
-                  <b-form-select class="input" v-model="selectedSubject" :options="optionsGroup"></b-form-select>
+                  <b-form-select class="modal-input" v-model="selectedSubject" :options="optionsGroup"></b-form-select>
                 </b-form-group>
                 <b-form-group>
-                  <b-form-input class="input" type="text" placeholder="Description"></b-form-input>
+                  <b-form-input class="modal-input" type="text" placeholder="Description"></b-form-input>
                 </b-form-group>
                 <b-button style="margin-left: 70%" class="post-btn" variant="info"
                   @click="displayModalGroupCreate=false">Submit</b-button>
@@ -122,25 +123,27 @@
               <div class="modal-content">
                 <b-icon @click="displayModalAssignment=false" class="exit-modal" icon="x"></b-icon>
 
-                <h1 class="title shadow-none"><i class="far fa-edit"></i> Create Assignment</h1>
+                <div class="modal-title-div">
+                  <h1 class="modal-title shadow-none"><i class="far fa-edit"></i> Create assignment</h1>
+                </div>
                 <b-form>
                   <b-form-group>
-                    <b-form-select class="input" v-model="selectedAssignGroup" :options="optionsAssignGroup">
+                    <b-form-select class="modal-input" v-model="selectedAssignGroup" :options="optionsAssignGroup">
                     </b-form-select>
                   </b-form-group>
                   <b-form-group>
-                    <b-form-select class="input" v-model="selectedAssignSubject" :options="optionsAssignSubject">
+                    <b-form-select class="modal-input" v-model="selectedAssignSubject" :options="optionsAssignSubject">
                     </b-form-select>
                   </b-form-group>
                   <b-form-group>
-                    <b-form-select class="input" v-model="selectedAssignType" :options="optionsAssignType">
+                    <b-form-select class="modal-input" v-model="selectedAssignType" :options="optionsAssignType">
                     </b-form-select>
                   </b-form-group>
                   <b-form-group>
-                    <b-form-input class="input" type="text" placeholder="Heading"></b-form-input>
+                    <b-form-input class="modal-input" type="text" placeholder="Heading"></b-form-input>
                   </b-form-group>
                   <b-form-group>
-                    <b-form-input class="input" type="text" placeholder="Description"></b-form-input>
+                    <b-form-input class="modal-input" type="text" placeholder="Description"></b-form-input>
                   </b-form-group>
                   <b-button style="margin-left: 70%" class="post-btn" variant="info"
                     @click="displayModalAssignment=false">Submit</b-button>
@@ -241,11 +244,16 @@
     transition: opacity .3s ease;
   }
 
-  .title {
+  .modal-title-div {
+    width: 100%;
+    border-bottom: 1.5px solid #a8a8a86c;
+  }
+
+  .modal-title {
     color: #01C4C9;
-    width: fit-content;
-    margin: 5% 5% 0;
-    border-bottom: 1px solid #01C4C9;
+    margin: 20px 5% 20px;
+    font-size: 2em;
+    text-shadow: 2px 1px 1px #01c2c980;
   }
 
   .modal-dialog {
@@ -263,13 +271,13 @@
   }
 
   .modal-content {
-    width: 80%;
-    margin-left: 10%;
-    border-radius: 2em;
-
+    width: 50%;
+    margin-left: 25%;
+    border-radius: 1em;
   }
 
-  .input {
+
+  .modal-input {
     background-color: #EAFDFB;
     border: 0;
     margin: 1em 5% 0;

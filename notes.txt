@@ -7,3 +7,7 @@ Register of Institute/Event tab is not shown so im leaving it after creating the
 View profile of Institute/people tab is not shown so im leaving it after creating the button
 
 
+
+Change my profile dropdown look
+
+

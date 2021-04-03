@@ -18,7 +18,10 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-size: 0.85em;
+  }
 
+  .form-group{
+    margin-bottom: 0 !important;
   }
 
   .comp {

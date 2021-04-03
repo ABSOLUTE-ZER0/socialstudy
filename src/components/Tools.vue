@@ -1,23 +1,26 @@
 <template>
       <b-row class="comp tool-div">
+        <div class="title-div">
           <h1 class="d-none d-lg-block title">Tools</h1>
+
+        </div>
 
       <b-card-group class="tool-card-div" deck>
         <b-card class="tool-card">
           <template class="tool-row">
-            <Navitem v-on:changeSite="updateSite($event);changePage()" :items="navitems1" />
+            <Navitem v-on:changeSite="updateSite($event);changePage()" :items="navitems1" :active="pageName" />
           </template>
         </b-card>
 
         <b-card class="tool-card">
           <template class="tool-row">
-            <Navitem v-on:changeSite="updateSite($event);changePage()" :items="navitems2" />
+            <Navitem v-on:changeSite="updateSite($event);changePage()" :items="navitems2" :active="pageName"/>
           </template>
         </b-card>
 
         <b-card class="tool-card">
           <template class="tool-row">
-            <Navitem v-on:changeSite="updateSite($event);changePage()" :items="navitems3" />
+            <Navitem v-on:changeSite="updateSite($event);changePage()" :items="navitems3" :active="pageName"/>
           </template>
         </b-card>
       </b-card-group>
@@ -31,10 +34,16 @@
     width: 100%;
   }
 
+  .title-div{
+    border-bottom: 1.5px solid rgba(0, 0, 0, 0.274);
+  width: 100%;
+  }
+
   .title{
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: bold;
-    margin: 1em 1em 0;
+    margin: 20px 20px 10px;
+    text-transform: uppercase;
   }
 
   .navitem{
@@ -113,13 +122,13 @@
         navitems1: [{
             name: "Start Live Class",
             pageName: "StartLiveClass",
-            imgclass: "fas fa-4x icon fa-video",
+            imgclass: "fas icon fa-video",
             color: "color:#df4949"
           },
           {
             name: "File Sharing",
             pageName: "FileSharing",
-            imgclass: "fas fa-4x icon fa-folder",
+            imgclass: "fas icon fa-folder",
             color: "color:#7a75ff"
           },
 
@@ -127,12 +136,12 @@
         navitems2: [{
             name: "Assignment",
             pageName: "Assignment",
-            imgclass: "fas fa-4x icon fa-clipboard-check",
+            imgclass: "fas icon fa-clipboard-check",
             color: "color:#2bd5a9"
           }, {
             name: "Manage Group",
             pageName: "ManageGroup",
-            imgclass: "fas fa-4x icon fa-users",
+            imgclass: "fas icon fa-users",
             color: "color:#efd74f"
           },
 
@@ -140,17 +149,17 @@
         navitems3: [{
             name: "Attendance",
             pageName: "Attendance",
-            imgclass: "fas fa-4x icon fa-clipboard-list",
+            imgclass: "fas icon fa-clipboard-list",
             color: "color:#6c757d"
           },
           {
             name: "Report Card",
             pageName: "ReportCard",
-            imgclass: "fas fa-4x icon fa-file-alt",
+            imgclass: "fas icon fa-file-alt",
             color: "color:#ffcd51"
           },
         ],
-        pageName: "MyProfile",
+        pageName: "",
         mainProps: {
           src: "https://placekitten.com/1000/300",
           width: 130,

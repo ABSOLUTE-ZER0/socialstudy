@@ -2,11 +2,10 @@
   <div class="main-div">
     <b-container fluid>
       <b-row>
-
-
+        
         <b-col lg="3" v-if="check()">
           <Create v-on:instituteViewAdmin="instituteViewAdmin($event);" v-if="siteNameProp == 'Institute'" />
-          <Details v-if="siteNameProp != 'Institute'" />
+          <Details v-on:changeSite="updatePage($event)" v-if="siteNameProp != 'Institute'" />
           <Tools v-on:changeSite="updateSite($event);changePage()" />
         </b-col>
 
@@ -73,12 +72,14 @@
     methods: {
       updateSite(newValue) {
         this.view = newValue;
-        console.log(this.view);
         newValue = "ToolView";
         this.siteName = newValue;
       },
       changePage() {
         this.$emit("changeSite", [this.siteName])
+      },
+      updatePage(value) {
+        this.$emit("changeSite", [value])
       },
       instituteView(value) {
         this.institute = value[0]

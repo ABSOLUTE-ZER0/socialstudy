@@ -30,7 +30,7 @@
     methods: {
       updateSite(newValue) {
         this.siteName = newValue[0];
-        if(this.siteName == 'Institute'){
+        if (this.siteName == 'Institute') {
           this.propView = newValue[1]
         }
       },
@@ -59,21 +59,16 @@
   }
 
   .no-outline-button {
-    color: rgb(117, 117, 117) !important;
+    border: 0 !important;
     background: none !important;
   }
 
-  .no-outline-button:hover,
-  .no-outline-button:active,
-  .no-outline-button:focus {
-    color: #01C4C9;
-    background: none !important;
-    box-shadow: none !important;
-  }
 
   .outline-button {
-    color: #01C4C9;
-    border: 1px solid #01C4C9;
+    color: #01C4C9 !important;
+    border: 1px solid #01C4C9 !important;
+    background-color: #ffffff !important;
+
   }
 
   .outline-button:hover,
@@ -83,5 +78,4 @@
     background-color: #01C4C9 !important;
     box-shadow: none !important;
   }
-
 </style>

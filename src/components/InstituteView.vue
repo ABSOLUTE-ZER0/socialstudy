@@ -11,19 +11,23 @@
         <b-col cols="3">
           <b-row>
             <div class="group comp">
-              <b-button @click="activeGroup=group" variant="outline-info" class="group-btn  outline-button"
-                v-for="group in groups" :key="group"> {{group}}
+              <b-button @click="activeGroup=group" class="group-btn" v-for="group in groups"
+                v-bind:class="{'active-group shadow': activeGroup==group}" :key="group"> {{group}}
               </b-button>
             </div>
           </b-row>
         </b-col>
 
-        <b-col cols="9">
+        <b-col cols="9" style="padding-right:0">
           <b-row class="tab-row">
-            <b-button shadow-none @click="activeTab='About'" class="tab-button no-outline-button">About</b-button>
-            <b-button @click="activeTab='Subject'" class="tab-button no-outline-button">Subject</b-button>
-            <b-button @click="activeTab='Event'" class="tab-button no-outline-button">Event</b-button>
-            <b-button @click="activeTab='People'" class="tab-button no-outline-button">People</b-button>
+            <b-button @click="activeTab='About'" class="tab-button no-outline-button"
+              v-bind:class="{'active-tab shadow': activeTab=='About'}">About</b-button>
+            <b-button @click="activeTab='Subject'" class="tab-button no-outline-button"
+              v-bind:class="{'active-tab shadow': activeTab=='Subject'}">Subject</b-button>
+            <b-button @click="activeTab='Event'" class="tab-button no-outline-button"
+              v-bind:class="{'active-tab shadow': activeTab=='Event'}">Event</b-button>
+            <b-button @click="activeTab='People'" class="tab-button no-outline-button"
+              v-bind:class="{'active-tab shadow': activeTab=='People'}">People</b-button>
           </b-row>
 
           <div v-on="item = groupFilter">
@@ -58,20 +62,22 @@
                       <div class="modal-content">
                         <b-icon @click="subCreateModal=false" class="exit-modal" icon="x"></b-icon>
 
-                        <h1 class="title shadow-none"><i class="far fa-edit"></i> Create...</h1>
+                        <div class="modal-title-div">
+                          <h1 class="modal-title shadow-none"><i class="far fa-edit"></i> Create new institute</h1>
+                        </div>
                         <b-form>
                           <b-form-group>
-                            <b-form-input class="input" type="text" placeholder="Subject Name">
+                            <b-form-input class="modal-input" type="text" placeholder="Subject Name">
                             </b-form-input>
                           </b-form-group>
                           <b-form-group>
-                            <b-form-input class="input" type="text" placeholder="Year"></b-form-input>
+                            <b-form-input class="modal-input" type="text" placeholder="Year"></b-form-input>
                           </b-form-group>
                           <b-form-group>
-                            <b-form-input class="input" type="text" placeholder="Type(Theory/practical)"></b-form-input>
+                            <b-form-input class="modal-input" type="text" placeholder="Type(Theory/practical)"></b-form-input>
                           </b-form-group>
                           <b-form-group>
-                            <b-form-input class="input" type="text" placeholder="Dsecription"></b-form-input>
+                            <b-form-input class="modal-input" type="text" placeholder="Dsecription"></b-form-input>
                           </b-form-group>
                           <b-button style="margin-left: 70%" class="post-btn" @click="subCreateModal=false">Create
                           </b-button>
@@ -144,39 +150,59 @@
 
   .group {
     width: 100%;
-    padding: 1em;
     margin-left: 2em;
+    border-radius: 0;
   }
 
   .group-btn {
     width: 100%;
-    margin: 1em 0;
     padding: 1em;
+    color: #01C4C9 !important;
+    background-color: rgb(255, 255, 255) !important;
+    border-radius: 0;
+    border: 0;
+    text-transform: uppercase;
+    font-weight: bold;
   }
 
   .tab-row {
-    border-bottom: 2px solid rgb(160, 160, 160);
+    border-bottom: 2px solid rgb(117, 117, 117);
     margin-bottom: 1em;
-    margin-left: 1em;
+    margin-left: 0;
+    margin-right: 10px;
+    display: flex;
   }
 
 
   .tab-button {
-    margin: 1em 0.5em 0;
+    margin: 0.5em 0 0;
     font-size: 1.5em;
-    width: 20%;
-    border: 0;
-    text-align: left;
+    flex: 1;
+    text-align: center;
+    color: rgb(117, 117, 117) !important;
   }
 
-  .tab-button:hover,
-  .tab-button:active,
-  .tab-button:focus {
-    color: #01C4C9;
-    background: none !important;
+  .active-tab {
+    background-color: rgb(117, 117, 117) !important;
+    color: white !important;
+    border-radius: 0.5em;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .active-group {
+    background-color: #01C4C9 !important;
+    color: white !important;
+    border-radius: 0;
+  }
+
+  .group-btn:hover,
+  .group-btn:active,
+  .group-btn:focus {
+    color: initial;
+    background-color: none;
     box-shadow: none !important;
   }
-
 
   .about {
     min-height: 10em;
@@ -242,11 +268,16 @@
     transition: opacity .3s ease;
   }
 
-  .title {
+  .modal-title-div {
+    width: 100%;
+    border-bottom: 1.5px solid #a8a8a86c;
+  }
+
+  .modal-title {
     color: #01C4C9;
-    width: fit-content;
-    margin: 5% 5% 0;
-    border-bottom: 1px solid #01C4C9;
+    margin: 20px 5% 20px;
+    font-size: 2em;
+    text-shadow: 2px 1px 1px #01c2c980;
   }
 
   .modal-dialog {
@@ -264,14 +295,13 @@
   }
 
   .modal-content {
-    width: 80%;
-    margin-left: 10%;
-    border-radius: 2em;
-
+    width: 60%;
+    margin-left: 20%;
+    border-radius: 1em;
   }
 
 
-  .input {
+  .modal-input {
     background-color: #EAFDFB;
     border: 0;
     margin: 1em 5% 0;
@@ -444,6 +474,9 @@
     methods: {
       openModal() {
         this.subCreateModal = true;
+      },
+      check() {
+
       }
     },
     props: {

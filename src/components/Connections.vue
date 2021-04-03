@@ -21,7 +21,7 @@
           <CardImg className="req" :src="friend.src" />
         </b-col>
         <b-col class="gone" cols="8">
-          <b-button class="req-btn" variant="info">Accept
+          <b-button class="button req-btn" variant="info">Accept
           </b-button>
           <b-button class="req-btn" variant="danger">Decline
           </b-button>

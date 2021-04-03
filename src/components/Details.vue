@@ -1,17 +1,22 @@
 <template>
   <div>
-    <b-row style="padding: 1em" class="comp gone">
-      <b-col style="text-align: center; margin-right: 2em" cols="12" md="auto">
-        <b-row>
-          <b-img style="margin-bottom: 1em" v-bind="mainProps" rounded="circle" alt="Circle image"></b-img>
+    <b-row class="comp gone">
+      <b-col class="image-col" cols="12">
+        <b-row @click="changePage()" class="image-div">
+          <b-col md="5">
+            <b-img class="image" v-bind="mainProps" rounded="circle" alt="Circle image"></b-img>
+          </b-col>
+          <b-col md="7" class="image-text-col gone-mid">
+            <p>Name</p>
+            <p>Position </p>
+          </b-col>
         </b-row>
-        <b-button variant="link" @click="pageName='MyProfile';changePage()">My Profile </b-button>
       </b-col>
-      <b-col>
-        <p>Name</p>
+      <b-col class="text-col" offset-md="5">
+        <p class="show">Name</p>
+        <p class="show">Position </p>
         <p>Institution</p>
         <p>Year and Branch</p>
-        <p>Position</p>
       </b-col>
     </b-row>
   </div>
@@ -20,6 +25,103 @@
 
 
 <style scoped>
+  .image-col {
+    padding: 20px;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+    background: linear-gradient(to bottom, rgb(255, 255, 255) 30%, rgb(1, 196, 201) 30%, rgb(1, 196, 201) 70%, rgb(255, 255, 255) 70%);
+  }
+
+  .image {
+    width: 110px;
+    height: 110px;
+    border: 5px solid white;
+  }
+
+
+  .image-div {
+    cursor: pointer;
+  }
+
+  .image-text-col>p {
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  .image-text-col {
+    margin-top: 30px;
+  }
+
+  .text-col {
+    margin-top: -40px;
+    margin-bottom: 10px;
+  }
+
+  .text-col>p {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .show{
+    display: none;
+  }
+
+  @media (max-width: 1500px) {
+    .image {
+      width: 90px;
+      height: 90px;
+      border: 3px solid white;
+    }
+
+    .image-text-col {
+      margin-top: 20px;
+    }
+
+  }
+
+  @media (max-width: 1200px) {
+
+  .image-col{
+    width: 100%;
+    text-align: center;
+  }
+  .image {
+    width: 90px;
+    height: 90px;
+    border: 5px solid white;
+    margin-left: 50%;
+  }
+
+
+  .text-col {
+    margin-top: -20px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+    
+  }
+
+  .text-col>p {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 5px;
+    width: 100%;
+    text-align: center;
+  }
+
+    .show{
+      display: block;
+    }
+
+    .gone-mid{
+      display: none;
+    }
+
+  }
+
+
 
   @media (max-width: 768px) {
     .gone {
@@ -78,7 +180,6 @@
             color: "color:#ffcd51"
           },
         ],
-        pageName: "MyProfile",
         mainProps: {
           src: "https://placekitten.com/1000/300",
           width: 130,
@@ -89,10 +190,7 @@
     },
     methods: {
       changePage: function () {
-        this.$emit("changeSite", this.pageName)
-      },
-      updateSite(newValue) {
-        this.pageName = newValue;
+        this.$emit("changeSite", "MyProfile")
       }
     },
 

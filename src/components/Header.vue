@@ -11,27 +11,31 @@
             </div>
           </b-input-group>
         </b-col>
-        <b-col style="margin-top: 1em" class="options" cols="10" md="6">
+        <b-col class="options" cols="10" md="6">
           <b-navbar style="text-align:center; padding: 0">
             <b-navbar-nav style="width:100%">
-              <b-nav-item @click="pageName='NoticeBoard';changePage()" v-bind:class="{'active-tab':isActive('NoticeBoard')}" class="navitem">
+              <b-nav-item @click="pageName='NoticeBoard';changePage()"
+                v-bind:class="{'active-tab':isActive('NoticeBoard')}" class="navitem">
                 <b-icon class="icon" icon="clipboard" font-scale="3"></b-icon>Notice
                 Board
               </b-nav-item>
-              <b-nav-item @click="pageName='Library';changePage()" v-bind:class="{'active-tab':isActive('Library')}" class="navitem">
+              <b-nav-item @click="pageName='Library';changePage()" v-bind:class="{'active-tab':isActive('Library')}"
+                class="navitem">
                 <b-icon class="icon" icon="book" font-scale="3"></b-icon>Library
               </b-nav-item>
-              <b-nav-item @click="pageName='Institute';changePage()" v-bind:class="{'active-tab':isActive('Institute')}" class="navitem">
+              <b-nav-item @click="pageName='Institute';changePage()" v-bind:class="{'active-tab':isActive('Institute')}"
+                class="navitem">
                 <b-icon class="icon" icon="building" font-scale="3"></b-icon>Institute
               </b-nav-item>
-              <b-nav-item @click="pageName='Connections';changePage()" v-bind:class="{'active-tab':isActive('Connections')}" class="navitem">
+              <b-nav-item @click="pageName='Connections';changePage()"
+                v-bind:class="{'active-tab':isActive('Connections')}" class="navitem">
                 <b-icon class="icon" icon="person-plus" font-scale="3"></b-icon>
                 Connections
               </b-nav-item>
             </b-navbar-nav>
           </b-navbar>
         </b-col>
-        <b-col style="margin-top: 1em" class="options drop-down-div" cols="2" md="3">
+        <b-col class="options drop-down-div" cols="2" md="3">
           <b-navbar style="padding: 0" right toggleable="lg">
             <b-navbar-toggle class="drop-down-button" target="nav-collapse"></b-navbar-toggle>
             <b-collapse style="text-align: center;z-index: 4" id="nav-collapse" is-nav>
@@ -41,7 +45,9 @@
                 <b-nav-item @click="pageName='Notification';changePage()" class="navitem2" href="#"><button
                     class="icon1 fas fa-2x fa-bell"></button>Notification</b-nav-item>
                 <b-nav-item @click="profileClick()" class="navitem2 profile-dropdown" href="#">
-                  <button class="icon1 fas fa-user fa-2x"></button>Profile <b-icon class="dropdown-arrow" icon="triangle-fill"></b-icon></b-nav-item>
+                  <button class="icon1 fas fa-user fa-2x"></button>Profile <b-icon class="dropdown-arrow"
+                    icon="triangle-fill"></b-icon>
+                </b-nav-item>
                 <div class="profile-dropdown-div shadow" v-if="profileDropdown">
                   <b-nav-item @click="pageName='MyProfile';changePage()">My Profile</b-nav-item>
                   <b-nav-item>Settings</b-nav-item>
@@ -68,7 +74,7 @@
     margin-left: -200%;
   }
 
-  .dropdown-arrow{
+  .dropdown-arrow {
     font-size: 0.7em !important;
     transform: rotate(180deg);
     position: relative;
@@ -79,12 +85,21 @@
     outline: 0 !important;
   }
 
-   .search-bar {
+  .options{
+    margin-top: 20px;
+  }
+
+  .drop-down-div{
+    margin-top: 40px;
+  }
+
+  .search-bar {
     border: 0;
     margin-left: 0.5em;
     width: calc(100% - 1.5em);
     background-color: transparent;
   }
+
   .search-div {
     width: 100%;
     margin: 0 1em;
@@ -102,10 +117,22 @@
     margin-top: 0.5em;
   }
 
+  .nav-link {
+    font-weight: bolder;
+    font-size: 0.9em;
+  }
+
+
+
+  .nav-link>a>svg {
+    font-weight: 900;
+  }
+
   .profile-dropdown-div {
     position: absolute;
-    top: 43px;
-    left: 75%;
+    top: 60px;
+    right: 5em;
+    transform: translateX(50%);
     width: 8em !important;
     width: fit-content;
     overflow: hidden;
@@ -118,10 +145,7 @@
     font-size: 3em !important;
   }
 
-  .navitem {
-    flex: auto;
 
-  }
 
   .input-group-prepend {
     border-top-left-radius: 5em !important;
@@ -153,12 +177,30 @@
     width: 100%;
   }
 
-  .active-tab{
-    border-bottom: 2px solid grey;
+  .navitem {
+    flex: 1;
   }
 
-  .active-tab>.nav-link{
+  .navitem:after {
+    content: " ";
+    position: absolute;
+    width: 25%;
+    top: 5em;
+    border-bottom: 2px solid black;
+    transform: translateX(-50%) scale3d(0, 1, 1);
+    transform-origin: center;
+  }
+
+
+  .active-tab:after {
+    transform: translateX(-50%) scale3d(1, 1, 1);
+    transition: transform 0.4s;
+  }
+
+  .active-tab>.nav-link {
     color: black !important;
+    font-size: 1em;
+    transition: 0.2s ease-in-out;
   }
 
 
@@ -229,11 +271,10 @@
     ,
     methods: {
       changePage: function () {
-        if(this.pageName == 'Institute'){
-        this.$emit("changeSite", [this.pageName,"true"])
-        }
-        else{
-        this.$emit("changeSite", [this.pageName])
+        if (this.pageName == 'Institute') {
+          this.$emit("changeSite", [this.pageName, "true"])
+        } else {
+          this.$emit("changeSite", [this.pageName])
 
         }
         this.profileDropdown = false
@@ -241,11 +282,10 @@
       profileClick() {
         this.profileDropdown = !this.profileDropdown;
       },
-      isActive(name){
-        if(this.pageName == name){
+      isActive(name) {
+        if (this.pageName == name) {
           return true
-        }
-        else{
+        } else {
           return false
         }
       }
