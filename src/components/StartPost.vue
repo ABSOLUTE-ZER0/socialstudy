@@ -28,7 +28,8 @@
               </div>
               <b-form>
                 <b-form-group>
-                  <b-form-select class="modal-input" v-model="selectedCategory" :options="optionsCategory"></b-form-select>
+                  <b-form-select class="modal-input" v-model="selectedCategory" :options="optionsCategory">
+                  </b-form-select>
                 </b-form-group>
                 <b-form-group>
                   <b-form-select class="modal-input" v-model="selectedGroup" :options="optionsGroup"></b-form-select>
@@ -62,6 +63,7 @@
     margin: 1em 2em;
     text-align: left;
     border-radius: 2em;
+    font-size: 1.2em;
   }
 
 
@@ -87,7 +89,7 @@
 
   .modal-title {
     color: #01C4C9;
-    margin: 20px 5% 20px;
+    margin: 40px 5% 20px;
     font-size: 2em;
     text-shadow: 2px 1px 1px #01c2c980;
   }
@@ -123,7 +125,7 @@
   }
 
   .post-btn {
-    margin: 1em;
+    margin: 1em 1em 2em;
     width: 20%;
     background-color: #01C4C9;
     border: 0;

@@ -2,7 +2,6 @@
   <div class="main-div">
     <b-container fluid>
       <b-row>
-        
         <b-col lg="3" v-if="check()">
           <Create v-on:instituteViewAdmin="instituteViewAdmin($event);" v-if="siteNameProp == 'Institute'" />
           <Details v-on:changeSite="updatePage($event)" v-if="siteNameProp != 'Institute'" />

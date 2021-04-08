@@ -2,12 +2,6 @@
 
   <b-row>
     <b-col class="" lg="8" cols="12">
-      <b-row class="comp">
-        <div class="search-div">
-          <b-icon icon="search"></b-icon>
-          <input class="search-bar" type="text" placeholder="Search Library">
-        </div>
-      </b-row>
       <div style="padding: 2em" class="comp">
         <b-row>
           <b-col cols="2" md="auto">
@@ -28,13 +22,20 @@
         <b-row>
           <b-img></b-img>
         </b-row>
-        <b-row v-if=false >
+        <b-row v-if=false>
           <b-embed></b-embed>
         </b-row>
       </div>
     </b-col>
-    <b-col class="friends-col comp d-none d-lg-block" cols="4">
-      <div class="filter">
+
+    <b-col class="d-none d-lg-block" cols="4">
+      <b-row class="comp">
+        <div class="search-div">
+          <b-icon icon="search"></b-icon>
+          <input class="search-bar" type="text" placeholder="Search Library">
+        </div>
+      </b-row>
+      <div class="filter comp">
         <h4>Filters</h4>
         <b-form-group class="filters" label="Chapter">
           <b-form-checkbox v-for="option in options" :key="option.value" :value="option.value">
@@ -79,10 +80,6 @@
     background-color: transparent;
   }
 
-  .friends-col {
-    margin-left: 4%;
-    height: fit-content;
-  }
 
   input:focus {
     outline: 0 !important;

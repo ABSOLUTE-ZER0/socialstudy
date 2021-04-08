@@ -74,7 +74,8 @@
                             <b-form-input class="modal-input" type="text" placeholder="Year"></b-form-input>
                           </b-form-group>
                           <b-form-group>
-                            <b-form-input class="modal-input" type="text" placeholder="Type(Theory/practical)"></b-form-input>
+                            <b-form-input class="modal-input" type="text" placeholder="Type(Theory/practical)">
+                            </b-form-input>
                           </b-form-group>
                           <b-form-group>
                             <b-form-input class="modal-input" type="text" placeholder="Dsecription"></b-form-input>
@@ -182,7 +183,7 @@
     color: rgb(117, 117, 117) !important;
   }
 
-  .active-tab {
+  button.active-tab.tab-button {
     background-color: rgb(117, 117, 117) !important;
     color: white !important;
     border-radius: 0.5em;
@@ -190,18 +191,31 @@
     border-bottom-right-radius: 0;
   }
 
-  .active-group {
+  button.active-group.group-btn {
     background-color: #01C4C9 !important;
     color: white !important;
     border-radius: 0;
+
   }
 
-  .group-btn:hover,
   .group-btn:active,
   .group-btn:focus {
     color: initial;
     background-color: none;
     box-shadow: none !important;
+  }
+
+  .tab-button:hover {
+    border-radius: 0.5em;
+  }
+
+  .group-btn:hover,
+  .tab-button:hover {
+    color: white !important;
+    background-color: rgb(148, 148, 148) !important;
+    box-shadow: none !important;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
   }
 
   .about {
