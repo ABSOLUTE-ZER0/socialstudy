@@ -224,29 +224,29 @@
         },
         item2: [{
           src: "https://image.shutterstock.com/image-photo/large-beautiful-drops-transparent-rain-600w-668593321.jpg",
-          name: "Data Structures & Algorithm",
+          name: "Lecture 1",
           year: "3rd Semester"
         }, {
           src: "https://image.shutterstock.com/image-photo/large-beautiful-drops-transparent-rain-600w-668593321.jpg",
-          name: "Data Structures & Algorithm",
+          name: "Lecture 2",
           year: "3rd Semester"
         }],
         item3: [{
           src: "https://image.shutterstock.com/image-photo/large-beautiful-drops-transparent-rain-600w-668593321.jpg",
-          name: "Data Structures & Algorithm",
+          name: "Notes 1",
           year: "3rd Semester"
         }, {
           src: "https://image.shutterstock.com/image-photo/large-beautiful-drops-transparent-rain-600w-668593321.jpg",
-          name: "Data Structures & Algorithm",
+          name: "Notes 2",
           year: "3rd Semester"
         }],
         item4: [{
           src: "https://image.shutterstock.com/image-photo/large-beautiful-drops-transparent-rain-600w-668593321.jpg",
-          name: "Data Structures & Algorithm",
+          name: "Assignment 1",
           year: "3rd Semester"
         }, {
           src: "https://image.shutterstock.com/image-photo/large-beautiful-drops-transparent-rain-600w-668593321.jpg",
-          name: "Data Structures & Algorithm",
+          name: "Assignment 2",
           year: "3rd Semester"
         }],
       }
