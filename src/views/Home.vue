@@ -4,6 +4,7 @@
     <HomeView :propView="propView" :siteNameProp="siteName" v-on:changeSite="updateSite($event);changePage()"
       v-if="options.find(check)==siteName" />
     <Profile v-if="siteName == 'MyProfile'" />
+    <SubjectDetails v-if="siteName == 'SubjectDetails'"/>
   </div>
 </template>
 
@@ -11,6 +12,7 @@
   import Header from "../components/Header";
   import HomeView from "../components/HomeView";
   import Profile from "../components/Profile";
+  import SubjectDetails from "../components/SubjectDetails"
 
 
 
@@ -26,9 +28,11 @@
       Header,
       HomeView,
       Profile,
+      SubjectDetails,
     },
     methods: {
       updateSite(newValue) {
+        console.log(newValue);
         this.siteName = newValue[0];
         if (this.siteName == 'Institute') {
           this.propView = newValue[1]

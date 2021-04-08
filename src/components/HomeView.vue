@@ -1,5 +1,5 @@
 <template>
-  <div class="main-div">
+  <div class="main-div" v-if="page!='subjectDetails'">
     <b-container fluid>
       <b-row>
         <b-col lg="3" v-if="check()">
@@ -17,13 +17,17 @@
           <ToolView :pageName="view" v-if="siteNameProp == 'ToolView'" />
         </b-col>
         <b-col lg="12" v-if="!check()">
-          <InstituteView :isAdmin="instituteAdmin" v-if="siteNameProp == 'Institute'" />
+          <InstituteView v-on:subjectDetailsPage="updatePage($event)" :isAdmin="instituteAdmin"
+            v-if="siteNameProp == 'Institute'" />
         </b-col>
       </b-row>
       <div>
         <Friends v-if="siteNameProp == 'NoticeBoard'" />
       </div>
     </b-container>
+    <div v-if="page=='subjectDetails'">
+      <SubjectDetails />
+    </div>
   </div>
 </template>
 
@@ -46,6 +50,7 @@
   import Create from "./CreateInstitute"
   import Friends from "./Friends"
 
+
   export default {
     data() {
       return {
@@ -53,7 +58,8 @@
         view: "",
         institute: "",
         list: ["InstituteView", "Institute"],
-        instituteAdmin: false
+        instituteAdmin: false,
+        page: ""
       }
     },
     components: {

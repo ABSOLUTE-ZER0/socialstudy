@@ -1,8 +1,5 @@
 <template>
-  <div style="background-color: #f7f3f3; min-height: 100vh">
-    <Header />
     <b-container fluid>
-
       <b-row>
         <h1 class="sub-title">{{item.title}}</h1>
         <b-button class="button upload-btn">Upload</b-button>
@@ -50,37 +47,7 @@
           </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         </b-col>
-
-
 
 
 
@@ -99,7 +66,6 @@
 
 
     </b-container>
-  </div>
 </template>
 
 
@@ -191,10 +157,7 @@
 
 
 <script>
-  import Header from "../components/Header";
   import CardImg from "../components/Card-Img"
-
-
 
 
   export default {
@@ -252,7 +215,6 @@
       }
     },
     components: {
-      Header,
       CardImg
     }
   }

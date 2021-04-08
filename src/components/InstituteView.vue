@@ -50,7 +50,7 @@
                   <CardImg :src="sub.src" :name="sub.name" :sub1="sub.year" />
                 </b-col>
                 <b-col md="3">
-                  <b-button href="/subject/detail" class="button subject-button" variant="outline-primary">View
+                  <b-button @click="changePage()" class="button subject-button" variant="outline-primary">View
                   </b-button>
                 </b-col>
               </b-row>
@@ -489,8 +489,8 @@
       openModal() {
         this.subCreateModal = true;
       },
-      check() {
-
+      changePage(){
+        this.$emit("subjectDetailsPage", "SubjectDetails")
       }
     },
     props: {
