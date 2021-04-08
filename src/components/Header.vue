@@ -248,7 +248,7 @@
   .navitem:after {
     content: " ";
     position: absolute;
-    width: 25%;
+    width: 17%;
     top: 5em;
     border-bottom: 2px solid black;
     transform: translateX(-50%) scale3d(0, 1, 1);
