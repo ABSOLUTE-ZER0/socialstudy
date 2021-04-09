@@ -12,8 +12,8 @@
               <b-card-sub-title class="sub mb-2"> {{sub.sub1}}</b-card-sub-title>
             </b-card-body>
             <div v-bind:class="{'hover':hover}" v-if="hoverId==sub.id">
-              <div class="hoverDisplay" v-for="item in sub.branch" :key="item">
-                <b-button @click="changePageAdmin()" class="hover-button">{{ item }}</b-button>
+              <div class="hoverDisplay" v-for="item in sub.branch" :key="item.id">
+                <b-button @click="changePageAdmin()" class='hover-button'>{{ item.name }}</b-button>
               </div>
             </div>
           </b-card>
@@ -113,7 +113,15 @@
     background-color: #f3f7f7 !important;
     color: #01C4C9 !important;
     border: 1px solid #01c4c9 !important;
+  }
 
+
+  .hover-button:hover,
+  .hover-button:focus,
+  .hover-button:active {
+    background-color: #a8a8a8 !important;
+    color: #000000 !important;
+    border: 0 !important;
   }
 
   .hover-button {
@@ -123,6 +131,25 @@
     color: black;
     text-align: left;
     border-radius: 0;
+    animation: scaleZ 300ms ease-in-out forwards;
+    transform-origin: top center;
+  }
+
+
+  @keyframes scaleZ {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+
+    80% {
+      transform: scale(1.07);
+    }
+
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
   }
 
 
@@ -134,12 +161,9 @@
     padding: 0.8em 1em 0;
   }
 
-  .body>.hover {
-    transition: hover 2sec;
-  }
-
   .hoverDisplay {
     width: 100%;
+
   }
 
 
@@ -266,21 +290,33 @@
             src: "https://image.shutterstock.com/image-photo/large-beautiful-drops-transparent-rain-600w-668593321.jpg",
             name: "Institute 1",
             sub1: "3rd Semester",
-            branch: ["branch1", "branch2", "branch3", "branch4"]
+            branch: [
+              {id: 1, name: "branch1"},
+              {id: 2, name: "branch2"},
+              {id: 3, name: "branch3"},
+              {id: 4, name: "branch4"}
+            ]
           },
           {
             id: 2,
             src: "https://image.shutterstock.com/image-photo/large-beautiful-drops-transparent-rain-600w-668593321.jpg",
             name: "Institute 2",
             sub1: "3rd Semester",
-            branch: ["branch1", "branch2"]
+            branch: [
+              {id: 1, name: "branch1"},
+              {id: 2, name: "branch2"}
+            ]
           },
           {
             id: 3,
             src: "https://image.shutterstock.com/image-photo/large-beautiful-drops-transparent-rain-600w-668593321.jpg",
             name: "Institute 3",
             sub1: "3rd Semester",
-            branch: ["branch1", "branch2", "branch3"]
+            branch: [
+              {id: 1, name: "branch1"},
+              {id: 2, name: "branch2"},
+              {id: 3, name: "branch3"}
+            ]
           }
         ],
       }
