@@ -43,7 +43,6 @@
             <div v-if="activeTab=='Subject'">
               <b-row style="text-align:right">
                 <button v-if="isAdmin" @click="openModal()" class="add-sub">+ Add Subject</button>
-
               </b-row>
               <b-row v-for="sub in item.subject" :key="sub" class="comp">
                 <b-col md="9">
@@ -63,7 +62,7 @@
                         <b-icon @click="subCreateModal=false" class="exit-modal" icon="x"></b-icon>
 
                         <div class="modal-title-div">
-                          <h1 class="modal-title shadow-none"><i class="far fa-edit"></i> Create new institute</h1>
+                          <h1 class="modal-title shadow-none"><i class="far fa-edit"></i> Create new subject</h1>
                         </div>
                         <b-form>
                           <b-form-group>
@@ -78,9 +77,10 @@
                             </b-form-input>
                           </b-form-group>
                           <b-form-group>
-                            <b-form-input class="modal-input" type="text" placeholder="Dsecription"></b-form-input>
+                            <b-form-input class="modal-input" type="text" placeholder="Description"></b-form-input>
                           </b-form-group>
-                          <b-button style="margin-left: 70%" class="post-btn" @click="subCreateModal=false">Create
+                          <b-button style="margin-left: 70%" class="post-btn button" @click="subCreateModal=false">
+                            Create
                           </b-button>
                         </b-form>
                       </div>
@@ -91,6 +91,9 @@
             </div>
 
             <div v-if="activeTab=='Event'">
+              <b-row style="text-align:right">
+                <button v-if="isAdmin" @click="eventCreateModal=true" class="add-sub">+ Add Event</button>
+              </b-row>
               <b-row v-for="event in item.events" :key="event" class="comp">
                 <div class="event">
                   <b-col cols="3">
@@ -102,10 +105,80 @@
                     <h5 class="event-sub"> {{ event.type }}</h5>
                   </b-col>
                   <b-col class="gone" md="3" cols="12">
-                    <b-button variant="info" class="button event-button">Register</b-button>
+                    <b-button @click="eventRegisterModal=true" variant="info" class="button event-button">Register</b-button>
                   </b-col>
                 </div>
               </b-row>
+
+              <div v-if="eventCreateModal">
+                <div class="modal-mask createpostModal">
+                  <div class="modal-wrapper ">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <b-icon @click="eventCreateModal=false" class="exit-modal" icon="x"></b-icon>
+
+                        <div class="modal-title-div">
+                          <h1 class="modal-title shadow-none"><i class="far fa-edit"></i> Create new event</h1>
+                        </div>
+                        <b-form>
+                          <b-form-group>
+                            <b-form-input class="modal-input" type="text" placeholder="Event Name">
+                            </b-form-input>
+                          </b-form-group>
+                          <b-form-group>
+                            <b-form-input class="modal-input" type="text" placeholder="Date"></b-form-input>
+                          </b-form-group>
+                          <b-form-group>
+                            <b-form-input class="modal-input" type="text" placeholder="Type">
+                            </b-form-input>
+                          </b-form-group>
+                          <b-form-group>
+                            <b-form-input class="modal-input" type="text" placeholder="Description"></b-form-input>
+                          </b-form-group>
+                          <b-form-group>
+                            <b-form-input class="modal-input" type="text" placeholder="Info needed while registration">
+                            </b-form-input>
+                          </b-form-group>
+                          <b-button style="margin-left: 70%" class="post-btn button" @click="eventCreateModal=false">
+                            Create
+                          </b-button>
+                        </b-form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div v-if="eventRegisterModal">
+                <div class="modal-mask createpostModal">
+                  <div class="modal-wrapper ">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <b-icon @click="eventRegisterModal=false" class="exit-modal" icon="x"></b-icon>
+
+                        <div class="modal-title-div">
+                          <h1 class="modal-title shadow-none"><i class="far fa-edit"></i> Register</h1>
+                        </div>
+                        <b-form>
+                          <b-form-group v-for="field in registrationFields" :key="field">
+                            <b-form-input class="modal-input" type="text" :placeholder="field">
+                            </b-form-input>
+                          </b-form-group>
+                          <b-button style="margin-left: 70%" class="post-btn button" @click="eventRegisterModal=false">
+                            Create
+                          </b-button>
+                        </b-form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+
             </div>
 
             <div v-if="activeTab=='People'">
@@ -338,6 +411,7 @@
     position: absolute;
     top: 0.2em;
     right: 0.5em;
+    cursor: pointer;
   }
 
   @media (max-width: 768px) {
@@ -406,8 +480,10 @@
       return {
         activeGroup: "Information Technology",
         activeTab: "About",
+        eventCreateModal: false,
         view: false,
         subCreateModal: false,
+        eventRegisterModal: false,
         display: {},
         groups: ['Information Technology', 'Computer Science', 'Civil Engineering', 'E&TC', 'Mechanical Engineering'],
         items: [{
@@ -464,7 +540,8 @@
               }]
             }
           }
-        ]
+        ],
+        registrationFields: ["Name","Phone No","Something","Email"]
       }
 
     },
@@ -489,7 +566,7 @@
       openModal() {
         this.subCreateModal = true;
       },
-      changePage(){
+      changePage() {
         this.$emit("subjectDetailsPage", "SubjectDetails")
       }
     },

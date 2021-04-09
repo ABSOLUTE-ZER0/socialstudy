@@ -84,11 +84,14 @@
 <style scoped>
   .main-div {
     background-color: rgb(255, 255, 255);
-    padding: 2em 10% 0;
     width: 500%;
     max-height: 10em;
-    padding: 0 200%;
+    padding: 0 210%;
     margin-left: -200%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
   }
 
   .dropdown-arrow {

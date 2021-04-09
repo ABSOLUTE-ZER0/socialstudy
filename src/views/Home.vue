@@ -1,10 +1,14 @@
 <template>
   <div style="background-color: #f3f7f7; min-height: 100vh;padding: 0 10%;overflow-x: hidden;">
+    <div class="header-div">
     <Header v-on:changeSite="updateSite($event)" />
+    </div>
+    <div class="content-div">
     <HomeView :propView="propView" :siteNameProp="siteName" v-on:changeSite="updateSite($event);changePage()"
       v-if="options.find(check)==siteName" />
     <Profile v-if="siteName == 'MyProfile'" />
     <SubjectDetails v-if="siteName == 'SubjectDetails'"/>
+    </div>
   </div>
 </template>
 
@@ -32,7 +36,6 @@
     },
     methods: {
       updateSite(newValue) {
-        console.log(newValue);
         this.siteName = newValue[0];
         if (this.siteName == 'Institute') {
           this.propView = newValue[1]
@@ -81,5 +84,9 @@
     color: #ffffff !important;
     background-color: #01C4C9 !important;
     box-shadow: none !important;
+  }
+
+  .content-div{
+    margin-top: 8em;
   }
 </style>

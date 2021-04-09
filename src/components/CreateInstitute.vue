@@ -3,13 +3,19 @@
     <b-button @click="displayModal=true" class="create-btn">+ Create New Institute</b-button>
     <div class="comp">
       <h4 class="title1">Institutes created</h4>
-      <b-row v-for="sub in institutesCreated" :key="sub" class="cards">
+      <b-row v-for="sub in institutesCreated" :key="sub.id" class="cards">
         <b-col>
-          <b-card @click="changePageAdmin()" class="card9" img-left :img-src="sub.src">
+          <b-card @mouseover="hover=true,hoverId=sub.id" @mouseleave="hoverId=0" class="card9" img-left
+            :img-src="sub.src">
             <b-card-body class="body">
               <b-card-title class="title"> {{sub.name}} </b-card-title>
               <b-card-sub-title class="sub mb-2"> {{sub.sub1}}</b-card-sub-title>
             </b-card-body>
+            <div v-bind:class="{'hover':hover}" v-if="hoverId==sub.id">
+              <div class="hoverDisplay" v-for="item in sub.branch" :key="item">
+                <b-button @click="changePageAdmin()" class="hover-button">{{ item }}</b-button>
+              </div>
+            </div>
           </b-card>
         </b-col>
       </b-row>
@@ -64,28 +70,39 @@
 <style scoped>
   .card-img-left {
     border: 0;
-    width: 3em;
-    height: 3em;
+    width: 40px;
+    height: 40px;
     margin-top: 0.5em;
     border-radius: 50%;
   }
 
 
   .title1 {
-    padding: 0.5em 1em 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-bottom: 1.5px solid rgba(0, 0, 0, 0.274);
+    padding: 20px 1em 10px;
+    font-size: 1.5em;
   }
 
 
   .cards {
-    margin: 1em 0;
-    margin-left: 0.5em;
+    padding: 0.8em 0;
   }
+
+  .card9:hover,
+  .card9:focus,
+  .card9:active {
+    background-color: #dadada !important;
+  }
+
+
 
   .create-btn {
     background-color: #01C4C9;
-    width: 90%;
+    width: 100%;
     border-radius: 2em;
-    margin: 1em 1em 0;
+    margin: 1em 0 0;
     border: 1px solid #01c4c9 !important;
     font-size: 1.5em;
   }
@@ -93,10 +110,19 @@
   .create-btn:hover,
   .create-btn:focus,
   .create-btn:active {
-    background-color: #ffffff !important;
+    background-color: #f3f7f7 !important;
     color: #01C4C9 !important;
     border: 1px solid #01c4c9 !important;
 
+  }
+
+  .hover-button {
+    width: 100%;
+    background-color: transparent;
+    border: 0;
+    color: black;
+    text-align: left;
+    border-radius: 0;
   }
 
 
@@ -105,13 +131,20 @@
   }
 
   .body {
-    padding: 1em;
-    padding-bottom: 0;
+    padding: 0.8em 1em 0;
   }
 
+  .body>.hover {
+    transition: hover 2sec;
+  }
+
+  .hoverDisplay {
+    width: 100%;
+  }
+
+
   .card9 {
-    pointer-events: all;
-    cursor: pointer;
+    padding-left: 1em;
   }
 
   .card {
@@ -120,12 +153,14 @@
   }
 
   .title {
-    font-size: 0.9em;
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 8px;
   }
 
   .sub {
     color: black !important;
-    font-size: 0.8em;
+    font-size: 0.9em;
   }
 
 
@@ -222,29 +257,53 @@
   export default {
     data() {
       return {
+        hover: false,
         view: false,
+        hoverId: 0,
         displayModal: false,
         institutesCreated: [{
+            id: 1,
             src: "https://image.shutterstock.com/image-photo/large-beautiful-drops-transparent-rain-600w-668593321.jpg",
-            name: "Data Structures & Algorithm",
-            sub1: "3rd Semester"
+            name: "Institute 1",
+            sub1: "3rd Semester",
+            branch: ["branch1", "branch2", "branch3", "branch4"]
           },
           {
+            id: 2,
             src: "https://image.shutterstock.com/image-photo/large-beautiful-drops-transparent-rain-600w-668593321.jpg",
-            name: "Data Structures & Algorithm",
-            sub1: "3rd Semester"
+            name: "Institute 2",
+            sub1: "3rd Semester",
+            branch: ["branch1", "branch2"]
+          },
+          {
+            id: 3,
+            src: "https://image.shutterstock.com/image-photo/large-beautiful-drops-transparent-rain-600w-668593321.jpg",
+            name: "Institute 3",
+            sub1: "3rd Semester",
+            branch: ["branch1", "branch2", "branch3"]
           }
         ],
       }
     },
     methods: {
       changePageAdmin() {
-        console.log("test");
         this.$emit("instituteViewAdmin", ["InstituteView", true]);
         this.view = false;
+      },
+      showHover(id) {
+        return id
+      }
+    },
+    computed: {
+      hoverDisplay() {
+        for (var i in this.institutesCreated) {
+          if (i.id == this.hoverId) {
+            return i
+          }
+        }
+        return null
       }
     }
-
 
   }
 </script>

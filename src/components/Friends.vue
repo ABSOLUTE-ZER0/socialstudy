@@ -38,6 +38,7 @@
     width: 100%;
     font-size: 1.5em;
     margin: 0.1em 0;
+    color: white;
   }
 
   .title {

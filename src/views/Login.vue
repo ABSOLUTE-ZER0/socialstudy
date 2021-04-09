@@ -130,11 +130,7 @@
   }
 
   .input-col {
-    position: absolute;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-    width: 100%;
+    margin-top: -10em;
   }
 
   h1, .title {

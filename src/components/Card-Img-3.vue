@@ -1,5 +1,5 @@
 <template>
-  <b-card @click="log" img-left :img-src="src">
+  <b-card img-left :img-src="src">
     <b-card-body class="profile" :style="styles">
       <b-card-title class="title"> {{name}} </b-card-title>
       <b-card-sub-title class="mb-2 sub"> {{sub1}} | {{sub2}}</b-card-sub-title>
@@ -70,11 +70,6 @@
       sub2: String,
       sub3: String,
       styles: String
-    },
-    methods: {
-      log() {
-        console.log("hello");
-      }
-    },
+    }
   }
 </script>
